@@ -32,7 +32,7 @@
 
 
 
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/img/TiddlyWiki.png">
 
 
 
@@ -76,7 +76,9 @@
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -95,7 +97,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1492484495&amp;di=2c9ca41b52ee895f6603b4b8043a0b48&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fwww.bz55.com%2Fuploads%2Fallimg%2F130411%2F1-130411105042-50.jpg" class="animated zoomIn">
+            <img src="/img/fav.jpg" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/">劳柏明</a></h1>
@@ -175,7 +177,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js炫酷特效/">js炫酷特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页布局/">网页布局</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js炫酷特效/">js炫酷特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js设计模式/">js设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js面向对象/">js面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页布局/">网页布局</a></li></ul>
                     </div>
                 </section>
                 
@@ -207,7 +209,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1492484495&amp;di=2c9ca41b52ee895f6603b4b8043a0b48&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fwww.bz55.com%2Fuploads%2Fallimg%2F130411%2F1-130411105042-50.jpg" class="animated zoomIn">
+                <img src="/img/fav.jpg" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页">劳柏明</a></h1>
@@ -276,6 +278,10 @@
 
         <div class="article-info info-on-archive">
           
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/网页布局/">网页布局</a>
+    </div>
+
 
           
     <div class="article-tag tagcloud">
@@ -309,6 +315,10 @@
 
         <div class="article-info info-on-archive">
           
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/网页布局/">网页布局</a>
+    </div>
+
 
           
     <div class="article-tag tagcloud">
@@ -342,6 +352,10 @@
 
         <div class="article-info info-on-archive">
           
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/网页布局/">网页布局</a>
+    </div>
+
 
           
     <div class="article-tag tagcloud">
@@ -396,22 +410,6 @@
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
 
 
 

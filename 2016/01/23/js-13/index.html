@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="劳柏明" />
+
+
+
+<meta name="description" content="一个小项目哦,用来备忘自己的信息,并且加以提醒功能">
+<meta name="keywords" content="jquery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery入门之备忘录提醒功能">
+<meta property="og:url" content="//carrot.me/2016/01/23/js-13/index.html">
+<meta property="og:site_name" content="劳柏明博客">
+<meta property="og:description" content="一个小项目哦,用来备忘自己的信息,并且加以提醒功能">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-1.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-2.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-3.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-4.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-5.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-6.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-7.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-8.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-9.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-10.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-11.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js13-12.png">
+<meta property="og:updated_time" content="2017-04-11T13:04:30.297Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery入门之备忘录提醒功能">
+<meta name="twitter:description" content="一个小项目哦,用来备忘自己的信息,并且加以提醒功能">
+<meta name="twitter:image" content="//carrot.me/assets/blogImg/js13-1.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="劳柏明博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/TiddlyWiki.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>jquery入门之备忘录提醒功能 | 劳柏明博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/fav.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">劳柏明</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">热爱前端的小白工程师</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js炫酷特效/">js炫酷特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js设计模式/">js设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js面向对象/">js面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页布局/">网页布局</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">劳柏明</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/fav.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">劳柏明</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">热爱前端的小白工程师</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-js-13" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/23/js-13/" class="article-date">
+      <time datetime="2016-01-23T04:36:00.000Z" itemprop="datePublished">2016-01-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jquery入门之备忘录提醒功能
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>这个也算一个小项目了吧,也是写了好几遍才把逻辑理清楚,做这些小项目最重要就是思路,把实现步骤一个个写出来,后面就可以很顺利的写出来了,这里也用到其他框架一个是store.min.js,另外一个是时间界面框架jquery.datetimepicker.full.js,具体原理如下</p>
+<p>①判断滚动距离让小火箭出现,然后改变顶部样式,点击小火箭可以回到顶部<br>②当用户点击发布按钮,记录一些必要的变量用来进行以后操作,定义一个数组,把所有数据都保存到数组中<br>③动态创建节点,根据数组中保存数据以及数量进行布局<br>④删除按钮,删除数组中对应的数据即可<br>⑤详情按钮可以让用户设置一些内容以及提醒时间,然后之前定义过的变量保存用户输入的内容<br>⑥更新按钮,用户的点击更细按钮,就开始更新数组中的数据<br>⑦开个定时器用来判断用户输入的时间,假如到时间就提醒<br>代码如下</p>
+<p><img src="/assets/blogImg/js13-1.png" alt=""><br><img src="/assets/blogImg/js13-2.png" alt=""><br><img src="/assets/blogImg/js13-3.png" alt=""><br><img src="/assets/blogImg/js13-4.png" alt=""><br><img src="/assets/blogImg/js13-5.png" alt=""><br><img src="/assets/blogImg/js13-6.png" alt=""><br><img src="/assets/blogImg/js13-7.png" alt=""><br><img src="/assets/blogImg/js13-8.png" alt=""><br><img src="/assets/blogImg/js13-9.png" alt=""><br><img src="/assets/blogImg/js13-10.png" alt=""><br><img src="/assets/blogImg/js13-11.png" alt=""><br><img src="/assets/blogImg/js13-12.png" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/22/js-12/">
+                    jquery入门之瀑布流布局
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/24/js-14/">
+                    jquery学习总结
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"jquery入门之备忘录提醒功能　| 劳柏明博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/22/js-12/" title="上一篇: jquery入门之瀑布流布局">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/24/js-14/" title="下一篇: jquery学习总结">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/js-18/">js设计模式之工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-17/">js面向对象总结三</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/js-16/">js面向对象总结二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/25/js-15/">js面向对象总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/js-14/">jquery学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/23/js-13/">jquery入门之备忘录提醒功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/js-12/">jquery入门之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/js-11/">js特效之滑动绚丽小球</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/js-10/">js特效之有3D感图片切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/js-9/">js特效之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/18/js-8/">js特效之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/js-7/">js特效之满天星星</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/js-6/">js特效之轮播图切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/js-5/">js特效之九宫格思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/14/js-4/">js学习之总结js基础部分</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/js-3/">js学习之运动框架封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-2/">js学习之简单的应用二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-1/">js学习之简单的应用一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/css3-1/">css3学习之云层效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/css3-2/">css3学习之3d音乐界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/webLayout-food/">网页布局学习之绿色食品网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/webLayout-jd/">网页布局学习之京东官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/webLayout-tb/">网页布局学习之淘宝官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/firstBlog2/">第一篇博客</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 劳柏明
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
