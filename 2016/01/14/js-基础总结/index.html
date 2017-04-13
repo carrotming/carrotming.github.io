@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="劳柏明" />
+
+
+
+<meta name="description" content="js基础总结">
+<meta name="keywords" content="js基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js学习之总结js基础部分">
+<meta property="og:url" content="//carrot.me/2016/01/14/js-基础总结/index.html">
+<meta property="og:site_name" content="劳柏明博客">
+<meta property="og:description" content="js基础总结">
+<meta property="og:image" content="//carrot.me/assets/blogImg/js4.jpg">
+<meta property="og:updated_time" content="2017-04-13T03:13:47.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js学习之总结js基础部分">
+<meta name="twitter:description" content="js基础总结">
+<meta name="twitter:image" content="//carrot.me/assets/blogImg/js4.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="劳柏明博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/TiddlyWiki.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>js学习之总结js基础部分 | 劳柏明博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/fav.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">劳柏明</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">热爱前端的小白工程师</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js炫酷特效/">js炫酷特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js设计模式/">js设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js面向对象/">js面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页布局/">网页布局</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">劳柏明</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/fav.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">劳柏明</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">热爱前端的小白工程师</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-js-基础总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/14/js-基础总结/" class="article-date">
+      <time datetime="2016-01-14T04:02:00.000Z" itemprop="datePublished">2016-01-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js学习之总结js基础部分
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/js基础/">js基础</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js基础/">js基础</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>自己花了一点时间做总结!当然如果有不对敬请见谅啦,以后回过头想复习或者找某一个难题时候或许能帮到我呢!! 当然有一部分是复制其他人的代码!! 学习整一个js基础花了10几天时间,所以感觉还是挺深的,后面还有我的一些炫酷特效,因为我是基本自学全部课程,然后回过头想想自己是不是要把自己学习历程发出来,以后自己看到时候也会感激现在自己如此努力.后面就期待我的炫酷特效吧(其实就给我自己看啦,哈哈)</p>
+<p>二.注释的认识<br>•    注释的作用:用来说明代码,提升代码的可读性<br>•    注释的种类:1.单行注释 使用 // 快捷键是crl +/ 2.多行注释 使用/<em>*/快捷键是 ctr +shift +/<br>三.变量<br>•    变量的定义:变量是用来存储数字,字符以及可以表示这些东西的东西,<br>•    变量的使用1 .声明变量 var 2.赋值变量 = 3.使用变量.例如 var a; a = 5;console.log(a);<br>•    变量的命名:从语法意义上命名,变量是由字母数字,下划线以及$符号组成,但是不能一数字开头,而且不能使用保留字;从形式上变量是由他的实际表示的意思的英文组成,然后采用驼峰命名法,就是如果当一个变量是由多个单词组成,那么当第二个单词开始的每一个单词的第二个字母都是大写,例如 lastName<br>•    变量的类型1,数值 2.字符 3.布尔 4.对象 5.未定义类型<br>•    变量的赋值:用来赋值的值不会改变,被赋值的值会发生改变,<br>•    变量如果不赋值会输出未定义类型:var a ; console.log(a);<br>•    其他类型和布尔类型的转化1.对于数值类型,只要不是0就是真;2.对于字符类型,只有不是空就是真;3.对于对象类型,如果是null,才是假,其余是真的;4.对于未定义类型,都是真的<br>四.运算符<br>•    运算符:运算符是用来连接变量组成语句的符号<br>•    运算符的种类:算术运算符 关系运算符 逻辑运算符<br>•    算术运算符:1. + - </em> / % 2.* / %的优先级高于 + - 3.使用小括号可以提升优先级别 4. += 以及-=的认识,+= -=表示变量赋值分时候 ,如果用自己赋值给自己就可以使用+=或者-= ,例如 var a=5; a= a+5;可以替换为 a+=5;<br> 5.++以及—的认识:一般++和—放在变量中使用,如果对于++,放在变量的后面,表示先使用变量,然后让变量的值加一,赋值给原来的变量;如果放在变量的前面表示先让变量的值加一,然后在赋值<br>•    关系运算符:1. &gt; &lt; &gt;= &lt;= == === != !== 2.特点:&gt;=以及&lt;=只有一个满足条件就可以; ==只需要比较内容就可以;===既要先比较类型,在比较内容,如果两个都符合才可以 != 和!==是== ===的相反;关系运算符的结果都是布尔类型;关系运算符不可以连续<br>•    逻辑运算符:1.&amp;&amp; || !2.特点:关系运算符进行运算符的都是布尔值 ;&amp;&amp;只有两边都是真的时候结果才是真;||只有有一个是真的返回结果就是真 ;!表示取反<br>五.逻辑运算的一些特点<br>•    对于&amp;&amp;运算符如果第一个表达式是真的那么第二个表达式需要计算<br>•    对于||如果第一个是真的,那么第二个不用计算,如果第一个为假,那么第二个需要计算.<br>•    数值或者字符参与逻辑运算:如果返回真,对于&amp;&amp;运算符,那就返回的结果是第二个表示真的值,如果返回假的,那么返回第一个为假的值;对于||,如果结果为真,返回第一个为真的值,如果为假,返回最后一个为假的值<br>•    运算符的优先级:1.算术运算符高于关系运算符,关系运算符高于逻辑运算符 2.一般单目运算符高于双目运算符3.赋值运算符的等级最低</p>
+<p>六.常见数学公式的使用<br>•    取出最大值以及最小值的公式:max(); min();<br>•    取出一个数值的正的平方根:sqart();<br>•    设置一个数的几次方:pow()<br>•    输入框的认识和使用<br>•    转化整数的公式的认识:1.parseInt() 2.可以直接把数值字符转化成整数,可以截断字符,截取出数值,但是必须第一个字母是数字<br>七.if语句的认识<br>•    基本if语句的形式:if(判断条件){如果条件成立执行代码}else{如果条件不成立执行这里的代码};<br>•    多重if语句的形式:if(判断条件1){如果条件1成立就执行代码}else if(判断条件二){如果条件二成立就执行括号中的代码}else{如果都不成立,就执行这里的代码}<br>•    多重if语句的跳楼现象,也叫阻断现象:就是对于多重if语句如果,第一个条件成立了,后面的所有的条件都不再判断,<br>•    阻止跳楼现象:就是写的时候,把else去掉就可以了<br>•    嵌套if语句:就是if语句中有if语句,形式:if(if(){}else{} )else{if(){}else{}};</p>
+<p>一.js具体的作用<br>    js可以操作样式(css):直接修改某一个盒子的高度,获取标签的方法是getelementById();<br>    js可以操作结构(html):设置一个双标签的内容的是.innerHTML,包含了标签的中间的所有的东西<br>二.事件的基本认识<br>     事件的三要素:事件源:就是谁被触发了,事件属性:就是你做了什么导致了结果,事件指令:就是事件出发的结果或者影响或者事件触发后要去做的事情,形式是function(){}<br>    事件三要素的组合:事件源.事件属性= 事件指令<br>    点击事件的认识以及应用:onClick,通过点击按钮切换盒子的宽度颜色,以及换肤来使用加深理解，在实现换肤的效果中我们需要注意：不能通过设置line-height<br>来设置对应中间图片让图片居中<br>    鼠标移动事件的认识以及应用:通过鼠标移动上去修改图片的显示，以及选取食物切来加深鼠标移上去以及出来的事件；在选取食物的事例中，我们需要注意可以通过display和visiblity来隐藏标签，但是display不会占用位置，但是visibility会占用位置，我们使用display来隐藏<br>    if语句的应用:通过使用竞价的来理解，注意理解isNaN，如果结果是true,表示不是一个数字，而且可以判断数值和字符；NaN表示一个特殊的数值类型，自己和自己也是不相等的。<br>    switch语句的应用:使用selet标签显示不同的语句1.当select发生改变的时候,我们直接使用onchange来监听发生了改变;2.当需要获取选中的值得时候,使用select标签的value属性来获取，每个option中不要设置value值<br>    代码的抽取:使用电脑选取切换来实现,代码抽取的原则:1.相同的东西放在一起 2.不同的东西作为参数然后形成一个函数就可以<br>    transform属性的使用以及应用:1. Transform使用的时候是相对于第一次的位置为基准值 2. Transform旋转后会改变坐标系3.不同的浏览器的属性值是不一样的.4.transform如果想要设置同时改变，不要写在一起，不能独立写，否则会覆盖<br>    搜索框的实现：注意我们设置背景图片是从padding开始设置的，还需要注意获取焦点以及失去光标焦点的事件的认识</p>
+<p>    Js放置的位置：可以放置在三个位置，可以放置行内样式，可以放置页内样式，可以放置外联样式，一般我们使用页内样式和外联样式</p>
+<p>    window.onlaod的认识:,window.onload表示当窗口加载完毕了,这个时候我们在js代码中获取标签才可以获取到,所以如果我们把js写在js标签的上面我们就需要先当窗口加载完毕后来获取对应的标签.<br>三.数组的基本认识<br>    数组的定义：数组可以用来存储大量的数据，而且可以存储<br>    数组的特点：数组是有序的，数组中的元素可以通过序号来访问，形式：数组名称[序号];数组可以存储不同类型的数据<br>    数组的长度：数组名称.length<br>    数组的遍历：可以通过for循环来遍历<br>    数组的应用：实现不同的行数设置不同的颜色<br>    三目运算符：形式：判断条件？代码一：代码二，如果判断条件成立就执行代码一，如果不成立就执行代码二，主要应用到全选以及反选中<br>    数组应用之排他思想：所谓排他就是让其他的所有的设置一种样式，但是自己设置自己独立的属性，一般我们实现需要两步：1.设置所有的为其他样式 2.设置自己为自己的样式<br>    This的认识：this一般放在事件指令中，表示谁被触发了，一般是事件源。</p>
+<p>一.数组的认识</p>
+<p>    js可以操作样式(css):直接修改某一个盒子的高度,获取标签的方法是getelementById();<br>    数组的基本应用:实现九宫格算法<br>    拍他思想的认识:1.先设置所有的为一种属性2.然后设置自己的独立属性,覆盖原来的<br>    this的认识:this一般在事件指令中,表示谁被触发了,就表示谁<br>    拍他思想的应用,给不同的行设置不同的颜色通过拍图思想或者monse方法的对立性（mouse有两个对立的方法）<br>    变量和属性以及方法和函数的区别:属性需要隶属于某一个对象,变量不需要,函数属于某一个对象就是方法<br>    属性的扩展：可以给某个一个对象扩展属性，用来记录可能销毁的值<br>    tab栏切换<br>    tab栏切换抽取<br>    数组的基本方法:1-push(),在数组的后面添加一个元素返回数组的长度;2-pop():从数组的后面删除一个元素返回删除的元素;3-shift(),从数组的前面删除一个元素 ,4-unshift(),从数组的前面添加一个元素,5-contact连接两个元素,原来的数组不会发生改变,6.sort();数组转化成字符后排序,但是如果要按照数值排序,需要使用匿名函数参数,函数参数会自动执行7.数组转化字符：join（）8.字符转化数组 ：split（）9.slice：用来删除某个位置的某几个元素</p>
+<p>二.字符串的常用方法的认识<br>    转化成字符方法的认识 1.使用连接符号+ 2.使用String方法<br>     获取某一位置的字符以及unicode编码的认识: charCodeAt()；获取某一个位置的字符：charat();<br>    获取某一个字符的位置的方法的认识,indexof(),如果从后往前后去：lastindexof(),注意排序还是从左到右<br>    获取一个字符的真正的占字节的方法的获取:一般如果是汉字unicode编码就是大于127,在0和127内是普通的字母数字。<br>    转化大小写：转化大写：toUpperCase;转化小写：toLowerCase<br>    截取字符的方法的认识:slice(),如果传入一个参数表示从这个参数开始截取后面的所有的字符,如果传入两个参数,表示截取从第一个参数的位置第二个参数的位置的所有字符,但是不包括第二个参数所在位置的字符<br>    subStr:如果传入一个参数和上面一样,但是如果传入两个参数,第二个参数表示从第一个参数开始截取字符的长度<br>    实现判断选取文件是否正确的实例</p>
+<p>三.定时器<br>    定时器:可以用来做到每隔一段时间自动执行某个操作的东西就叫做定时器<br>    定时器的种类:一次定时器(setTimeout)和多次定时器(setInerval()<br>    定时器的清除:clearTimeout():清除一次定时器; clearInerval():清除多次定时器<br>    定时器的动画：1.匀速动画 2.缓动动画</p>
+<p>一.节点的认识<br>    节点的创建:一般是通过document来创建<br>    节点的添加,一般是通过被添加节点的父节点来添加<br>    节点的删除:一般也是通过删除节点的父节点来删除<br>    节点的插入:节点的插入一般是通过插入节点的父节点  来操作的<br>       获取孩子节点:通过children来获取<br>       获取兄弟节点: nextElementSibling||nextSibling<br>    获取父节点:parentNode<br>    使用节点的操作动态实现九宫格的实例.<br>    使用节点的操作实现动态发布微博的实例<br>二. 时间对象的认识<br>    时间对象的创建<br>    获取当前时间的年月日星期以及时分秒:注意获取的月份是从0-11,0表示一月,其余依次类推;获取星期注意如果结果是0表示周日,如果结果是1表示周一,依次类推<br>    实现日历效果<br>    自定义时间,就是直接在对应的创建时间对象的括号中写入自己设置的时间就可以<br>    实现时钟效果,时钟效果注意设置背景图片的时候,我们设置的每一个div的宽度为父标签的宽度.</p>
+<p>一.字典<br>    字典的创建通过{}<br>    字典的特点:不可以重复,没有顺序<br>    字典的访问,通过key值来访问,一般使用.如果不行就是用[]<br>    字典的遍历:使用for(var key in json)来遍历<br>    字典给标签设置属性<br>    通过json动态创建节点,外层是数组,里面是字典<br>    通过字典封装js工具类<br>二.事件<br>    事件对象的认识:就是事件触发的时候,会把和事件相关的东西打包成一个事件对象,通过参数event传递给事件指令<br>    最大事件源的认识:最大事件源就是documtent<br>    最大事件源的作用1.获取界面中的某些基本的东西 2.触发整个屏幕的相关的事件<br>    事件对象的兼容性写法:var event = evetn ||window.event<br>    事件对象的应用:自定义弹出菜单:事件是oncontextmenu,鼠标跟随:使用缓动动画,<br>    事件对象的应用:拖拽鼠标<br>    Offset属性的认识:包含了宽高以及位置<br>    offsetWidth:包含标签本身的width＋padding + border,offsetHeight是同样的道理<br>    offsetLeft:表示当前的标签距离他的offsetParent标签的左边的距离,<br>    offsetParent:如果获取一个标签的offsetleft,那么如果他相对于他的父标签有定位,那么他的父标签就是他的offsetparent,如果没有就找爷爷,依次往上寻找,如果一直没有,就是body为offsetparent<br>    Offset属性的特点:1不需要写style 2获取出来的值是数值3.只可以取得值,不可以设置值<br>    滚动事件的认识:事件源是window 事件属性onscroll.</p>
+<p>好长啊,反正没人看.自己看就好咯!!!!</p>
+<p><img src="/assets/blogImg/js4.jpg" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/13/js-运动框架封装/">
+                    js学习之运动框架封装
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/15/js-九宫格思想/">
+                    js特效之九宫格思想
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"js学习之总结js基础部分　| 劳柏明博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/13/js-运动框架封装/" title="上一篇: js学习之运动框架封装">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/15/js-九宫格思想/" title="下一篇: js特效之九宫格思想">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/Ajax-跨域和缓存/">Ajax学习之跨域和缓存</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/11/Ajax-评论功能/">Ajax学习之评论功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/Ajax-原生js封装/">Ajax学习之原生js封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/canvas-笨鸟飞/">canvas学习之笨鸟飞游戏</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/canvas-knova应用二/">canvas学习之konva框架旋转中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/07/canvas-knova应用一/">canvas学习之konva框架饼状图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/06/canvas-红包图片效果/">canvas学习之图片效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/canvas-倒计时效果/">canvas学习之倒计时效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/canvas-放大镜效果/">canvas学习之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/canvas-绘制时钟/">canvas学习之绘制时钟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/js-命名空间模式/">js设计模式之命名空间模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/js-备忘模式/">js设计模式之备忘模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/30/js-观察者模式/">js设计模式之观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/js-单利模式/">js设计模式之单利模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/js-工厂模式/">js设计模式之工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-Object的静态成员/">js面向对象之Object的静态成员</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-原型链总结/">js面向对象之原型链总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-面向对象总结三/">js面向对象总结三</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/js-面向对象总结二/">js面向对象总结二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/25/js-面向对象总结一/">js面向对象总结一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-入口原理分析/">jquery进价之原理分析(入口,节点,样式,属性)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-总结/">jquery学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/23/jquery-备忘提醒功能/">jquery入门之备忘录提醒功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/jquery-瀑布流/">jquery入门之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/js-绚丽小球/">js特效之滑动绚丽小球</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/js-3D图片切换/">js特效之有3D感图片切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/js-瀑布流布局/">js特效之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/18/js-放大镜效果/">js特效之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/js-满天星星/">js特效之满天星星</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/js-轮播切换/">js特效之轮播图切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/js-九宫格思想/">js特效之九宫格思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/14/js-基础总结/">js学习之总结js基础部分</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/js-运动框架封装/">js学习之运动框架封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-选择分享功能/">js学习之简单的应用二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-节点操作/">js学习之简单的应用一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/css3-云层动画/">css3学习之云层效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/css3-3D音乐播放器/">css3学习之3d音乐界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/webLayout-绿色食品网布局/">网页布局学习之绿色食品网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/webLayout-京东布局/">网页布局学习之京东官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/webLayout-淘宝布局/">网页布局学习之淘宝官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/第一篇博客/">第一篇博客</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 劳柏明
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
