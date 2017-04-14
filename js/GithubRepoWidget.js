@@ -79,7 +79,6 @@
 					'<p class="link"></p>'+
 					'</div>'+
 					'<div class="github-box-download">'+
-					'<div class="updated"></div>'+
 					'<a class="download" href="' + repoUrl + '/zipball/master" title="Get repository">Download as zip</a>'+
 					'</div>'+
 					'</div>';

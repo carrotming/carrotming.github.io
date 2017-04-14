@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="劳柏明" />
+
+
+
+<meta name="description" content="在手机端很火的游戏哦,简单的实现这个游戏效果.">
+<meta name="keywords" content="canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas学习之笨鸟飞游戏">
+<meta property="og:url" content="//carrot.me/2016/02/09/canvas-笨鸟飞/index.html">
+<meta property="og:site_name" content="劳柏明博客">
+<meta property="og:description" content="在手机端很火的游戏哦,简单的实现这个游戏效果.">
+<meta property="og:image" content="//carrot.me/assets/blogImg/canvas-13.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/canvas-14.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/canvas-15.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/canvas-16.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/canvas-17.png">
+<meta property="og:updated_time" content="2017-04-13T08:31:09.481Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas学习之笨鸟飞游戏">
+<meta name="twitter:description" content="在手机端很火的游戏哦,简单的实现这个游戏效果.">
+<meta name="twitter:image" content="//carrot.me/assets/blogImg/canvas-13.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="劳柏明博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/TiddlyWiki.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>canvas学习之笨鸟飞游戏 | 劳柏明博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/fav.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">劳柏明</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">热爱前端的小白工程师</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js炫酷特效/">js炫酷特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js设计模式/">js设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js面向对象/">js面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页布局/">网页布局</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">劳柏明</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/fav.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">劳柏明</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">热爱前端的小白工程师</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-canvas-笨鸟飞" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/09/canvas-笨鸟飞/" class="article-date">
+      <time datetime="2016-02-09T10:11:00.000Z" itemprop="datePublished">2016-02-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      canvas学习之笨鸟飞游戏
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/canvas/">canvas</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/canvas/">canvas</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>这个游戏代码也挺多,当初写这个游戏花了很长时间,不过可以通过这个游戏让自己的逻辑思维更加好,而且对面向对象更加深入了.这里用到了jquery一个小库,专门用了定义类名,方便我们实现面向对象,类似java那种用类名形式</p>
+<h1 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h1><p>笨鸟设计思路<br>一: 游戏js</p>
+<p>初始化帧数 设置一个run的游戏入口  里面开个定时器执行 游戏开始的函数  还需要游戏暂停  游戏结束函数</p>
+<p>二:帧率js</p>
+<p>初始化 总帧数  开始时间  开始帧数  真实帧数  里面定义一个方法计算真实帧数(帧数统计函数)</p>
+<p>该函数让总帧数每帧都递增 记录当前时间  只有当前时间-开始时间&gt;1S的时候 才开始计算真实帧率</p>
+<p>计算方法是 总帧数-开始的帧数  最后别忘了更新开始时间和开始帧数  开始时间=当前时间  开始帧数等于当前总帧数</p>
+<p>然后在Game js 文件初始化里面 实例化该帧率对象 顺便获取上下文绘图 传入ID获得 然后在游戏开始函数把帧数和时间</p>
+<p>绘制到画布上 利用实例化对象执行帧数统计函数 当然有画布肯定需要清屏 把真实帧数和总帧数绘制到画布上</p>
+<p>三:加载本地数据</p>
+<p>LoadSourceTools</p>
+<p>初始化 一个对象用来保存所有的加载出来的图片 ,定义一个方法用来加载本地图片</p>
+<p>利用AJAX  创建请求对象 监听状态码  onreadystatechang  判断状态码</p>
+<p>请求对象.readyState==4  请求对象.status==200 表示请求成功</p>
+<p>定义一个变量记录加载图片数量  获取请求的数据 请求对象.responseText</p>
+<p>把获得数据转换为json格式  JSON.parse 建立一个图片数组接收json数据里面的.images</p>
+<p>遍历数组创建图片对象 src 索引  在每一张图片加载完后  记录图片的个数++</p>
+<p>拿到数据里面的对应的名字 然后给用来保存图片的对象动态添加名字把image传入到该对象中</p>
+<p>通过一个回调函数来获得该对象 ,图片数组的长度,图片的个数</p>
+<p>最后请求对象通过.open(‘get’,数据名称) 获得数据</p>
+<p>请求对象.send(null) get方法可以不写字符串</p>
+<p>最后在游戏js 初始化中 实例化加载本地数据对象 调用该方法 获取里面的图片</p>
+<p>四:绘制背景 并且运动</p>
+<p>初始化所需要的数据</p>
+<p>图片资源  x坐标 y坐标 图片宽高 速度用来移动  总格数,当前页面显示的个数</p>
+<p>定义3个方法 一个用来渲染 一个用来让图片移动 一个停止</p>
+<p>渲染方法 需要画2倍的个数 因为需要无限循坏 通过drawImage画</p>
+<p>具体参数为 当前图片 x坐标+对应i*宽度, y坐标 图片宽高</p>
+<p>更新方法 让x坐标按照指定的速度递减 当走过一个一个屏幕也就是总个数*图片宽是后,要让x坐标回到原点</p>
+<p>达到无限循环效果</p>
+<p>停止方法就是让速度变为0</p>
+<p>在游戏js 的游戏运入口放法里面实话对应的对象 通过之前指定的图片名称 在初始化里面判断所有图片是否加载</p>
+<p>完成,加载完成就调用run方法  然后在游戏运行方法里面执行对应的渲染和移动方法</p>
+<p>第五步 绘制管道</p>
+<p>初始化所需要的数据,图片资源 一个控制管道口方向的变量 图片宽度 图片的高度</p>
+<p>x坐标 画布最右侧  y坐标口向下为0 口向上为画布高度-(地板+图片高度) 速度</p>
+<p>定义三个3个方法 和绘制背景一样 不同的是 更新的时候当坐标x小于图片的宽时候就</p>
+<p>移除管道 在游戏js 入口定义一个数据把实例化对象装起来 每100帧绘制一个管道 调用</p>
+<p>渲染和移动方法</p>
+<p>六步 小鸟的自由落体</p>
+<p>x坐标 画布1/3  y坐标100  宽图片宽 高图片高  翅膀状态 对应图片的三个状态</p>
+<p>用012表示  翅膀煽动的频率  小鸟下落时当前的总帧数 下落速度</p>
+<p>下落速度有个公式 0.001<em>0.5</em>9.8*Math.pow(帧数差,2)</p>
+<p>在游戏js 初始化实例化小鸟对象 在游戏运行调用移动和渲染方法</p>
+<p>七步 小鸟自由落体加旋转</p>
+<p>初始化一个旋转角度</p>
+<p>在渲染方法里面先把坐标位移到图片中心再旋转</p>
+<p>在移动方法里面角度+1</p>
+<p>八步 点击让小鸟飞</p>
+<p>初始化一个小鸟状态,记录小鸟当前的状态,0为自由落体,1为点击向上飞 再定义一个空气阻力,</p>
+<p>这个空气阻力用来判断假如用户不点击 会把小鸟状态转换为自由落体</p>
+<p>飞到画布顶端判断不让飞出顶端</p>
+<p>定义一个点击方法 用来改变小鸟的状态 改变角度,头向上,每次点击初始化空气阻力</p>
+<p>九步 碰撞检测</p>
+<p>初始化一个变量用来记录小鸟是否死亡 小鸟死亡的状态 碰到地板和管道 都调用gameOver函数</p>
+<p>小鸟本身和管道和小鸟关系</p>
+<p>小鸟本身控制 碰到地板游戏结束 调用gameOver函数</p>
+<p>管道和小鸟 碰到游戏结束 具体关系用图表示</p>
+<p>十步 鸟死亡特效加游戏结束</p>
+<p>鸟方法 初始化一个变量记录鸟是否死亡 一个动画索引</p>
+<p>在渲染方法判断鸟是否死亡 定义死亡图片宽高  定义一个列和行用来截取图片位置 把图片绘制到</p>
+<p>对应小鸟死亡的位置上  把游戏结束的图片绘制到画布上  return 结束函数</p>
+<p>在移动方法让动画索引递增,当动画索引等于列*行的时候就结束游戏 return 结束程序</p>
+<p>代码如下</p>
+<h1 id="游戏具体文件"><a href="#游戏具体文件" class="headerlink" title="游戏具体文件"></a>游戏具体文件</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div></pre></td><td class="code"><pre><div class="line">(function ()&#123;</div><div class="line">  window.Game=Class.extend(&#123;</div><div class="line">      init:function (option)&#123;</div><div class="line">          <span class="comment">//备份指针</span></div><div class="line">          <span class="keyword">var</span> self=<span class="keyword">this</span>;</div><div class="line">          <span class="comment">//初始化数据</span></div><div class="line">        option=option||&#123;&#125;;</div><div class="line">          <span class="comment">//游戏帧率</span></div><div class="line">          <span class="keyword">this</span>.FPS=option.FPS||<span class="number">50</span>;</div><div class="line">          <span class="comment">//上下文的id</span></div><div class="line">          <span class="keyword">this</span>.id=option.id;</div><div class="line">          <span class="comment">//获取id</span></div><div class="line">          <span class="keyword">this</span>.canvas=document.getElementById(<span class="keyword">this</span>.id);</div><div class="line">          <span class="comment">//获取上下文</span></div><div class="line">          <span class="keyword">this</span>.context= <span class="keyword">this</span>.canvas.getContext(<span class="string">"2d"</span>);</div><div class="line">          <span class="comment">//实例化帧率工具对象</span></div><div class="line">          <span class="keyword">this</span>.frame=new FrameTools();</div><div class="line">          <span class="comment">//实例化加载本地资源工具对象</span></div><div class="line">          <span class="keyword">this</span>.loadImage=new LoadSourceTools();</div><div class="line">          <span class="comment">//调用加载数据方法  第一个参数 数据    第二个回调 获得具体信息</span></div><div class="line">          <span class="keyword">this</span>.loadImage.loadImage(<span class="string">'r.json'</span>,function (imgObj,imgLength,index)&#123;</div><div class="line">              <span class="comment">//判断所有图片是否加载完成 总个数==索引</span></div><div class="line">              <span class="keyword">if</span>(imgLength==index)&#123;</div><div class="line">                  <span class="comment">//执行run函数</span></div><div class="line">                  self.allImage=imgObj;</div><div class="line">                  self.run();</div><div class="line">              &#125;</div><div class="line">          &#125;)</div><div class="line">        <span class="comment">//记录游戏是否结束</span></div><div class="line">          <span class="keyword">this</span>.isGameOver=<span class="literal">false</span>;</div><div class="line">      &#125;,</div><div class="line">      <span class="comment">//游戏运行入口</span></div><div class="line">      run:function ()&#123;</div><div class="line">          <span class="comment">//备份指针</span></div><div class="line">          <span class="keyword">var</span> self=<span class="keyword">this</span>;</div><div class="line">          self.timer=setInterval(function ()&#123;</div><div class="line">              <span class="comment">//游戏运行函数</span></div><div class="line">              self.gameLoop();</div><div class="line">          &#125;,<span class="number">1000</span>/self.FPS);</div><div class="line">          <span class="comment">//1000/self.FPS  时间  该帧率一秒内的时间</span></div><div class="line">          <span class="comment">//初始化背景图片</span></div><div class="line">          <span class="comment">//创建地板图片</span></div><div class="line">           <span class="keyword">this</span>.floor=new Background(&#123;</div><div class="line">              img:self.allImage[<span class="string">'diban'</span>],</div><div class="line">              y:self.canvas.height<span class="number">-48</span>,</div><div class="line">              width:<span class="number">48</span>,</div><div class="line">              height:<span class="number">48</span>,</div><div class="line">              speed:<span class="number">10</span></div><div class="line">          &#125;);</div><div class="line">          <span class="comment">//创建树木</span></div><div class="line">          <span class="keyword">this</span>.tree=new Background(&#123;</div><div class="line">              img:self.allImage[<span class="string">'shu'</span>],</div><div class="line">              y:self.canvas.height<span class="number">-48</span><span class="number">-216</span>,</div><div class="line">              width:<span class="number">300</span>,</div><div class="line">              height:<span class="number">216</span>,</div><div class="line">              speed:<span class="number">10</span></div><div class="line">          &#125;)</div><div class="line">          <span class="comment">//创建房子</span></div><div class="line">          <span class="keyword">this</span>.house=new Background(&#123;</div><div class="line">              img:self.allImage[<span class="string">'fangzi'</span>],</div><div class="line">              y:self.canvas.height<span class="number">-48</span><span class="number">-300</span>,</div><div class="line">              width:<span class="number">300</span>,</div><div class="line">              height:<span class="number">256</span>,</div><div class="line">              speed:<span class="number">10</span>,</div><div class="line">          &#125;)</div><div class="line">          <span class="comment">//创建管道数组 里面放管道对象</span></div><div class="line">          <span class="keyword">this</span>.pipeArr=[new Pipe()];</div><div class="line">          <span class="comment">//创建小鸟对象</span></div><div class="line">          <span class="keyword">this</span>.bird=new StupidBird(&#123;</div><div class="line">              width:<span class="number">85</span>,</div><div class="line">              height:<span class="number">60</span>,</div><div class="line">          &#125;)</div><div class="line">      &#125;,</div><div class="line">      <span class="comment">//游戏运行</span></div><div class="line">      gameLoop:function ()&#123;</div><div class="line">          <span class="comment">//清屏</span></div><div class="line">          <span class="keyword">this</span>.context.clearRect(<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">this</span>.canvas.width,<span class="keyword">this</span>.canvas.height);</div><div class="line">          <span class="comment">//执行计算真实帧率的方法</span></div><div class="line">          <span class="keyword">this</span>.frame.countFrame();</div><div class="line">          <span class="comment">//把真实帧率和总帧率绘制到画布上</span></div><div class="line">          <span class="keyword">this</span>.context.fillText(<span class="string">'FPS/'</span>+<span class="keyword">this</span>.frame.realFrame,<span class="number">15</span>,<span class="number">15</span>); <span class="comment">//真实帧率</span></div><div class="line">          <span class="keyword">this</span>.context.fillText(<span class="string">'劳柏明/'</span>+<span class="keyword">this</span>.frame.sumFrame,<span class="number">15</span>,<span class="number">30</span>); <span class="comment">//总帧率</span></div><div class="line">          <span class="comment">//  调用房子的绘制和移动方法</span></div><div class="line">          <span class="keyword">this</span>.house.move();</div><div class="line">          <span class="keyword">this</span>.house.render();</div><div class="line">          <span class="comment">// //调用树木的绘制和移动方法</span></div><div class="line">          <span class="keyword">this</span>.tree.move();</div><div class="line">          <span class="keyword">this</span>.tree.render();</div><div class="line">          <span class="comment">//调用地板的绘制和移动方法</span></div><div class="line">          <span class="keyword">this</span>.floor.move();</div><div class="line">          <span class="keyword">this</span>.floor.render();</div><div class="line">          <span class="comment">//每隔100帧就往管道数组添加管道 总帧率%5==0 修改频率可以减少管道与管道之间的间隙</span></div><div class="line">          <span class="keyword">if</span>(<span class="keyword">this</span>.frame.sumFrame%<span class="number">80</span>==<span class="number">0</span>)&#123;</div><div class="line">              <span class="keyword">this</span>.pipeArr.push(new Pipe());</div><div class="line">          &#125;</div><div class="line">          <span class="comment">//循环遍历数组 让里面的管道渲染和移动</span></div><div class="line">          <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.pipeArr.length;i++)&#123;</div><div class="line">                <span class="comment">//先更新再渲染</span></div><div class="line">              <span class="keyword">this</span>.pipeArr[i].move();</div><div class="line">              <span class="keyword">this</span>.pipeArr[i].render();</div><div class="line">          &#125;</div><div class="line">        <span class="comment">//调用小鸟的渲染和下移动方法</span></div><div class="line">          <span class="keyword">this</span>.bird.move();</div><div class="line">          <span class="keyword">this</span>.bird.render();</div><div class="line">      &#125;,</div><div class="line">      <span class="comment">//死亡或按暂停了</span></div><div class="line">      pause:function ()&#123;</div><div class="line">            clearInterval(<span class="keyword">this</span>.timer);</div><div class="line">      &#125;,</div><div class="line">      <span class="comment">//游戏结束</span></div><div class="line">      gameOver:function ()&#123;</div><div class="line">         <span class="comment">//让有运动的物体停止</span></div><div class="line">          <span class="comment">//全部调用pause函数</span></div><div class="line">          <span class="keyword">this</span>.house.pause();</div><div class="line">          <span class="keyword">this</span>.tree.pause();</div><div class="line">          <span class="keyword">this</span>.floor.pause();</div><div class="line">          <span class="keyword">this</span>.pipeArr.forEach(function (item , index) &#123;</div><div class="line">              item.pause();</div><div class="line">          &#125;);</div><div class="line">          <span class="comment">//小鸟死亡</span></div><div class="line">          <span class="keyword">this</span>.bird.die = <span class="literal">true</span>;</div><div class="line">          <span class="comment">//记录游戏结束</span></div><div class="line">          <span class="keyword">this</span>.isGameOver = <span class="literal">true</span>;</div><div class="line">          <span class="comment">//让按钮出现</span></div><div class="line">          begin.style.display=<span class="string">'block'</span>;</div><div class="line">      &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h1 id="帧率计算"><a href="#帧率计算" class="headerlink" title="帧率计算"></a>帧率计算</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">(function ()&#123;</div><div class="line">  window.FrameTools=Class.extend(&#123;</div><div class="line">     init:function ()&#123;</div><div class="line">         <span class="comment">//定义总帧数</span></div><div class="line">         <span class="keyword">this</span>.sumFrame=<span class="number">0</span>;</div><div class="line">         <span class="comment">//开始时间</span></div><div class="line">         <span class="keyword">this</span>.beginTime=new Date();</div><div class="line">         <span class="comment">//开始的帧数</span></div><div class="line">         <span class="keyword">this</span>.beginFrame=<span class="number">0</span>;</div><div class="line">         <span class="comment">//真实帧数</span></div><div class="line">         <span class="keyword">this</span>.realFrame=<span class="number">0</span>;</div><div class="line">     &#125;,</div><div class="line">      <span class="comment">//计算真实帧数的函数</span></div><div class="line">      countFrame:function ()&#123;</div><div class="line">          <span class="comment">//总帧数每调用函数一次就加一次</span></div><div class="line">          <span class="keyword">this</span>.sumFrame++;</div><div class="line">          <span class="comment">//当前时间</span></div><div class="line">          <span class="keyword">this</span>.curTime=new Date();</div><div class="line">          <span class="comment">//满足当前时间减去开始时间大于一秒才去计算真实帧数</span></div><div class="line">          <span class="keyword">if</span>(<span class="keyword">this</span>.curTime- <span class="keyword">this</span>.beginTime&gt;<span class="number">1000</span>)&#123;</div><div class="line">              <span class="comment">//真实帧率=总帧率-开始的帧率</span></div><div class="line">              <span class="keyword">this</span>.realFrame=<span class="keyword">this</span>.sumFrame-<span class="keyword">this</span>.beginFrame;</div><div class="line">              <span class="comment">//更新开始帧率</span></div><div class="line">              <span class="keyword">this</span>.beginFrame=<span class="keyword">this</span>.sumFrame;</div><div class="line">              <span class="comment">//更是开始时间</span></div><div class="line">              <span class="keyword">this</span>.beginTime=<span class="keyword">this</span>.curTime;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h1 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h1><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">window</span>.LoadSourceTools = Class.extend(&#123;</div><div class="line">        <span class="attribute">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">//所有图片对象</span></div><div class="line">            <span class="keyword">this</span>.allImageObj = &#123;&#125;;</div><div class="line">        &#125;,</div><div class="line">        <span class="comment">//加载图片方法 第一个参数数据 第二个回调函数 用来获取具体信息</span></div><div class="line">        <span class="attribute">loadImage</span>: <span class="function"><span class="keyword">function</span> (<span class="params">url, callBack</span>) </span>&#123;</div><div class="line">            <span class="comment">//保存指针</span></div><div class="line">            <span class="built_in">var</span> self=<span class="keyword">this</span>;</div><div class="line">            <span class="comment">//创建请求对象</span></div><div class="line">            <span class="built_in">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">            <span class="comment">////监听状态码</span></div><div class="line">            xhr.onreadystatechange=<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>) &#123;</div><div class="line">                    <span class="keyword">if</span> (xhr.status == <span class="number">200</span>) &#123;</div><div class="line">                        <span class="comment">//请求成功</span></div><div class="line">                        <span class="built_in">var</span> countImage = <span class="number">0</span>;<span class="comment">//计算图片的个数</span></div><div class="line">                        <span class="comment">//获取响应数据</span></div><div class="line">                        <span class="built_in">var</span> responseData = xhr.responseText;</div><div class="line">                        <span class="built_in">var</span> jsonData = <span class="built_in">JSON</span>.parse(responseData);</div><div class="line">                        <span class="comment">//建立一个图片数组从说数据中拿出图片</span></div><div class="line">                        <span class="built_in">var</span> imageArr = jsonData.images;</div><div class="line">                        <span class="comment">//遍历图片数组</span></div><div class="line">                        <span class="keyword">for</span> (<span class="built_in">var</span> i = <span class="number">0</span>; i &lt; imageArr.length; i++) &#123;</div><div class="line">                            <span class="comment">//创建图片对象</span></div><div class="line">                            <span class="built_in">var</span> img=<span class="keyword">new</span> Image();</div><div class="line">                            <span class="comment">//图片的src</span></div><div class="line">                            img.src=imageArr[i].src;</div><div class="line">                            <span class="comment">//记录索引</span></div><div class="line">                            img.index=i;</div><div class="line">                            <span class="comment">//图片加载完后</span></div><div class="line">                            img.onload=<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">                                <span class="comment">//图片个数每次+1</span></div><div class="line">                                countImage++;</div><div class="line">                                <span class="comment">//拿到数据里面的对应图片名字</span></div><div class="line">                                <span class="built_in">var</span> imgName=imageArr[<span class="keyword">this</span>.index].name;</div><div class="line">                                <span class="comment">//通过动态特性给对象添加属性,把图片给这个属性</span></div><div class="line">                                self.allImageObj[imgName]=<span class="keyword">this</span>;</div><div class="line">                                <span class="comment">//回调函数用来把数据拿出来 整一个图片对象 图片数组长度 每一张图片对应的索引</span></div><div class="line">                                callBack(self.allImageObj,imageArr.length,countImage);</div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;;</div><div class="line">            <span class="comment">//open 和 send</span></div><div class="line">            xhr.open(<span class="string">'GET'</span>,<span class="built_in">url</span>);<span class="comment">//get 方式  url数据地址</span></div><div class="line">            xhr.send(<span class="literal">null</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h1 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">(function ()&#123;</div><div class="line">   window.Background=Class.extend(&#123;</div><div class="line">       init:function (option)&#123;</div><div class="line">           <span class="comment">//图片</span></div><div class="line">           <span class="keyword">this</span>.img=option.img;</div><div class="line">          <span class="comment">//x坐标 默认在0开始</span></div><div class="line">           <span class="keyword">this</span>.x=<span class="number">0</span>;</div><div class="line">           <span class="comment">//y坐标,根据具体位置来定</span></div><div class="line">           <span class="keyword">this</span>.y=option.y;</div><div class="line">           <span class="comment">//图片的宽</span></div><div class="line">           <span class="keyword">this</span>.width=option.width,</div><div class="line">           <span class="comment">//图片的高</span></div><div class="line">           <span class="keyword">this</span>.height=option.height;</div><div class="line">           <span class="comment">//图片移动速度</span></div><div class="line">           <span class="keyword">this</span>.speed=option.speed;</div><div class="line">           <span class="comment">//一个画布容纳的个数 画布的宽除图片的宽</span></div><div class="line">           <span class="keyword">this</span>.count=parseInt(game.canvas.width/<span class="keyword">this</span>.width)+<span class="number">1</span>;</div><div class="line">       &#125;,</div><div class="line">       <span class="comment">//渲染</span></div><div class="line">       render:function ()&#123;</div><div class="line">           <span class="comment">//循环  画2个画布宽的动画</span></div><div class="line">         <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>*<span class="keyword">this</span>.count;i++)&#123;</div><div class="line">             <span class="comment">//参数 第一个图片 第二个每个图片的X轴坐标 第三个y坐标不变 第四五个图片的宽高</span></div><div class="line">             game.context.drawImage(<span class="keyword">this</span>.img,<span class="keyword">this</span>.x+i*<span class="keyword">this</span>.width,<span class="keyword">this</span>.y,<span class="keyword">this</span>.width,<span class="keyword">this</span>.height);</div><div class="line">         &#125;</div><div class="line">       &#125;,</div><div class="line">       <span class="comment">//移动</span></div><div class="line">       move:function ()&#123;</div><div class="line">         <span class="comment">//让x轴坐标移动</span></div><div class="line">           <span class="keyword">this</span>.x-=<span class="keyword">this</span>.speed;</div><div class="line">           <span class="comment">//当x轴移动到超过一个屏幕的距离时候 让x轴回到原点</span></div><div class="line">           <span class="keyword">if</span>(<span class="keyword">this</span>.x&lt;-<span class="keyword">this</span>.count*<span class="keyword">this</span>.width)&#123;</div><div class="line">               <span class="keyword">this</span>.x=<span class="number">0</span>;</div><div class="line">           &#125;</div><div class="line">       &#125;,</div><div class="line">       <span class="comment">//停止</span></div><div class="line">       pause:function ()&#123;</div><div class="line">         <span class="keyword">this</span>.speed=<span class="number">0</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;)</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h1 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">(function ()&#123;</div><div class="line">   window.Pipe=Class.extend(&#123;</div><div class="line">       init:function ()&#123;</div><div class="line">           <span class="comment">//管道随机方向 0 代表口向下 1代表口向上</span></div><div class="line">           <span class="keyword">this</span>.dir= _.random(<span class="number">0</span>,<span class="number">1</span>);</div><div class="line">           <span class="comment">//图片的宽</span></div><div class="line">           <span class="keyword">this</span>.width=<span class="number">148</span>;</div><div class="line">           <span class="comment">//图片的高 因为管道的高不定 所以弄一个随机值</span></div><div class="line">             <span class="keyword">this</span>.height= _.random(<span class="number">80</span>,game.canvas.height*<span class="number">0.5</span>);</div><div class="line">           <span class="comment">//x坐标</span></div><div class="line">           <span class="keyword">this</span>.x=game.canvas.width;</div><div class="line">           <span class="comment">//y坐标 根据口的方向决定</span></div><div class="line">           <span class="keyword">this</span>.y=<span class="keyword">this</span>.dir==<span class="number">0</span>?<span class="number">0</span>:game.canvas.height<span class="number">-48</span>-<span class="keyword">this</span>.height;</div><div class="line">           <span class="comment">//速度</span></div><div class="line">           <span class="keyword">this</span>.speed=<span class="number">20</span>;</div><div class="line">       &#125;,</div><div class="line">       render:function ()&#123;</div><div class="line">           <span class="comment">//备份指针</span></div><div class="line">           <span class="keyword">var</span> self=<span class="keyword">this</span>;</div><div class="line">           <span class="comment">//管道口向下</span></div><div class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.dir==<span class="number">0</span>)&#123;</div><div class="line">                <span class="comment">//第一个参数图片 第二个截取图片x坐标 第三个图片Y坐标 三四个截图的宽高 五六放的位置 七八,图片的宽高</span></div><div class="line">                game.context.drawImage(game.allImage[<span class="string">'pipe1'</span>],<span class="number">0</span>,<span class="number">1664</span>-<span class="keyword">this</span>.height,<span class="keyword">this</span>.width,<span class="keyword">this</span>.height,<span class="keyword">this</span>.x,<span class="keyword">this</span>.y,<span class="keyword">this</span>.width,<span class="keyword">this</span>.height);</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.dir==<span class="number">1</span>)&#123;</div><div class="line">                game.context.drawImage(game.allImage[<span class="string">'pipe0'</span>],<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">this</span>.width,<span class="keyword">this</span>.height,<span class="keyword">this</span>.x,<span class="keyword">this</span>.y,<span class="keyword">this</span>.width,<span class="keyword">this</span>.height);</div><div class="line">            &#125;</div><div class="line">       &#125;,</div><div class="line">       move:function ()&#123;</div><div class="line">           <span class="comment">//x坐标递减</span></div><div class="line">         <span class="keyword">this</span>.x-=<span class="keyword">this</span>.speed  ;</div><div class="line">           <span class="comment">//判断条件 x坐标&lt;-自身宽 意思就是画布左侧</span></div><div class="line">           <span class="keyword">if</span>(<span class="keyword">this</span>.x&lt;-<span class="keyword">this</span>.width)&#123;</div><div class="line">              <span class="comment">//game定义一个数组 移除该管道对象</span></div><div class="line">               game.pipeArr= _.without(game.pipeArr,<span class="keyword">this</span>);</div><div class="line">           &#125;</div><div class="line">           <span class="comment">//判断小鸟和管道之间的碰撞,先x坐标 管道的头和尾</span></div><div class="line">           <span class="keyword">if</span>((game.bird.x&lt;<span class="keyword">this</span>.x+<span class="keyword">this</span>.width)&amp;&amp;(game.bird.x&gt;<span class="keyword">this</span>.x-game.bird.width))&#123;</div><div class="line">               <span class="comment">//判断口的方向 口向下</span></div><div class="line">               <span class="keyword">if</span>(<span class="keyword">this</span>.dir==<span class="number">0</span>)&#123;</div><div class="line">                   <span class="keyword">if</span>(game.bird.y&lt;<span class="keyword">this</span>.height)&#123;</div><div class="line">                       <span class="comment">//游戏结束</span></div><div class="line">                       game.gameOver();</div><div class="line">                   &#125;</div><div class="line">               &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.dir==<span class="number">1</span>)&#123;</div><div class="line">                   <span class="keyword">if</span>(game.bird.y&gt;<span class="keyword">this</span>.y-game.bird.height)&#123;</div><div class="line">                       <span class="comment">//游戏结束</span></div><div class="line">                       game.gameOver();</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;,</div><div class="line">       pause:function ()&#123;</div><div class="line">           <span class="comment">//速度停止</span></div><div class="line">         <span class="keyword">this</span>.speed=<span class="number">0</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;)</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h1 id="小鸟"><a href="#小鸟" class="headerlink" title="小鸟"></a>小鸟</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div></pre></td><td class="code"><pre><div class="line">(function ()&#123;</div><div class="line">   window.StupidBird=Class.extend(&#123;</div><div class="line">       init:function (option)&#123;</div><div class="line"></div><div class="line">           <span class="comment">//x坐标</span></div><div class="line">          <span class="keyword">this</span>.x=game.canvas.width*<span class="number">0.5</span>;</div><div class="line">           <span class="comment">//y坐标</span></div><div class="line">           <span class="keyword">this</span>.y=<span class="number">100</span>;</div><div class="line">           <span class="comment">//小鸟的宽</span></div><div class="line">           <span class="keyword">this</span>.width=option.width;</div><div class="line">           <span class="comment">//小鸟的高</span></div><div class="line">           <span class="keyword">this</span>.height=option.height;</div><div class="line">           <span class="comment">//小鸟图片的状态 对应图片3种状态</span></div><div class="line">           <span class="keyword">this</span>.BirdState=<span class="number">0</span>;</div><div class="line">           <span class="comment">//小鸟振动频率</span></div><div class="line">           <span class="keyword">this</span>.BirdFrequency=<span class="number">5</span>;</div><div class="line">           <span class="comment">//小鸟下落的帧数</span></div><div class="line">           <span class="keyword">this</span>.BirdFrame=game.frame.sumFrame;</div><div class="line">           <span class="comment">//下落的速度</span></div><div class="line">           <span class="keyword">this</span>.speedY=<span class="number">0</span>;</div><div class="line">           <span class="comment">//旋转角度</span></div><div class="line">           <span class="keyword">this</span>.rotateDeg=<span class="number">0</span>;</div><div class="line">           <span class="comment">//小鸟的状态 0自由落体 1向上飞</span></div><div class="line">           <span class="keyword">this</span>.state=<span class="number">0</span>;</div><div class="line">           <span class="comment">//空气阻力,作用更换小鸟的状态</span></div><div class="line">            <span class="keyword">this</span>.nowel=<span class="number">1</span>;</div><div class="line">           <span class="comment">//添加点击事件</span></div><div class="line">           <span class="keyword">this</span>.addClick();</div><div class="line">           <span class="comment">//记录小鸟是否死亡</span></div><div class="line">           <span class="keyword">this</span>.die=<span class="literal">false</span>;</div><div class="line">           <span class="comment">//记录小鸟的动画索引</span></div><div class="line">           <span class="keyword">this</span>.animationIndex=<span class="number">0</span>;</div><div class="line"></div><div class="line">       &#125;,</div><div class="line">       render:function ()&#123;</div><div class="line">           <span class="comment">//备份指针</span></div><div class="line">           <span class="keyword">var</span> self=<span class="keyword">this</span>;</div><div class="line"></div><div class="line">           <span class="comment">//小鸟死亡画死亡特效</span></div><div class="line">           <span class="keyword">if</span>(<span class="keyword">this</span>.die)&#123;</div><div class="line">               <span class="comment">//死亡图片的宽高 和游戏结束的宽高</span></div><div class="line">               <span class="keyword">var</span> dieW=<span class="number">325</span>,dieH=<span class="number">138</span>,gameW=<span class="number">626</span>,gameH=<span class="number">144</span>;</div><div class="line">                    <span class="comment">// 0 1 2 3 4 列 控制x坐标</span></div><div class="line">               <span class="keyword">var</span> row= <span class="keyword">this</span>.animationIndex%<span class="number">5</span>;</div><div class="line">                <span class="comment">// 行 控制y坐标</span></div><div class="line">               <span class="keyword">var</span> line=parseInt(<span class="keyword">this</span>.animationIndex/<span class="number">5</span>);</div><div class="line">               <span class="comment">//死亡特效</span></div><div class="line">               game.context.drawImage(game.allImage[<span class="string">'blood'</span>],row*dieW,line*dieH,dieW,dieH,self.x<span class="number">-100</span>,self.y,dieW,dieH);</div><div class="line">               <span class="comment">//画游戏结束图标</span></div><div class="line">               game.context.drawImage(game.allImage[<span class="string">'gameover'</span>],(game.canvas.width - <span class="number">626</span>) * <span class="number">0.5</span> , (game.canvas.height - <span class="number">144</span>) * <span class="number">0.5</span> );</div><div class="line">               <span class="comment">//画游戏开始图标</span></div><div class="line">               game.context.drawImage(game.allImage[<span class="string">'gamebegin'</span>],(game.canvas.width - <span class="number">337</span>) * <span class="number">0.5</span> , (game.canvas.height - <span class="number">75</span>) * <span class="number">0.3</span> );</div><div class="line">               <span class="comment">//game.context.drawImage(game.allImage['carrot'],500,0);</span></div><div class="line">               <span class="comment">//结束程序</span></div><div class="line">               <span class="keyword">return</span>;</div><div class="line">           &#125;</div><div class="line">            <span class="comment">//保存</span></div><div class="line">           game.context.save();</div><div class="line">           <span class="comment">//移动图片坐标</span></div><div class="line">           game.context.translate(self.x +self.width * <span class="number">0.5</span>, self.y + self.height*<span class="number">0.5</span>);</div><div class="line">           <span class="comment">//旋转图片</span></div><div class="line">           game.context.rotate(self.rotateDeg/<span class="number">180</span>*Math.PI);</div><div class="line">           <span class="comment">//还原图片坐标 要不坐标会叠加一起图片</span></div><div class="line">           game.context.translate(-(<span class="keyword">this</span>.x +<span class="keyword">this</span>.width * <span class="number">0.5</span>), -(<span class="keyword">this</span>.y + <span class="keyword">this</span>.height*<span class="number">0.5</span> ) );</div><div class="line">            <span class="comment">//绘制小鸟</span></div><div class="line">           game.context.drawImage(game.allImage[<span class="string">'bird'</span>],self.BirdState*self.width,<span class="number">0</span>,self.width,self.height,<span class="keyword">this</span>.x,<span class="keyword">this</span>.y,self.width,self.height);</div><div class="line">           <span class="comment">//还原状态</span></div><div class="line">           game.context.restore();</div><div class="line">       &#125;,</div><div class="line">       move:function ()&#123;</div><div class="line"></div><div class="line">           <span class="comment">//死亡特效动画</span></div><div class="line">           <span class="keyword">if</span>(<span class="keyword">this</span>.die)&#123;</div><div class="line">               <span class="comment">//动画索引++</span></div><div class="line">               <span class="keyword">this</span>.animationIndex++;</div><div class="line">               <span class="comment">//根据图片决定</span></div><div class="line">               <span class="keyword">if</span>(<span class="keyword">this</span>.animationIndex==<span class="number">30</span>)&#123;</div><div class="line">                   <span class="comment">//游戏停止</span></div><div class="line">                   game.pause();</div><div class="line">               &#125;</div><div class="line">               <span class="comment">//结束程序;</span></div><div class="line">               <span class="keyword">return</span> ;</div><div class="line"></div><div class="line">           &#125;</div><div class="line"></div><div class="line">           <span class="comment">//碰到地板 结束游戏</span></div><div class="line">           <span class="keyword">if</span>(<span class="keyword">this</span>.y&gt;=game.canvas.height<span class="number">-48</span>-<span class="keyword">this</span>.height)&#123;</div><div class="line">               game.gameOver();</div><div class="line">               <span class="keyword">return</span> ;</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           <span class="comment">//判断下落的帧数对频率去模</span></div><div class="line">           <span class="keyword">if</span>(game.frame.sumFrame%<span class="keyword">this</span>.BirdFrequency==<span class="number">0</span>)&#123;</div><div class="line">               <span class="keyword">this</span>.BirdState++;</div><div class="line">               <span class="comment">//0 1 2 3个状态循环</span></div><div class="line">               <span class="keyword">if</span>(<span class="keyword">this</span>.BirdState==<span class="number">2</span>)&#123;</div><div class="line">                   <span class="keyword">this</span>.BirdState=<span class="number">0</span>;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">           <span class="comment">//小鸟自由落体</span></div><div class="line">           <span class="keyword">if</span>(<span class="keyword">this</span>.state==<span class="number">0</span>)&#123;</div><div class="line">               <span class="keyword">this</span>.speedY=<span class="number">0.001</span>*<span class="number">0.5</span>*<span class="number">9.8</span>*Math.pow(game.frame.sumFrame-<span class="keyword">this</span>.BirdFrame,<span class="number">2</span>);</div><div class="line">               <span class="comment">//角度递增</span></div><div class="line">               <span class="keyword">this</span>.rotateDeg+=<span class="number">1</span>;</div><div class="line">               <span class="comment">//小鸟向上飞</span></div><div class="line">           &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.state==<span class="number">1</span>)&#123;</div><div class="line">               <span class="comment">//空气阻力递增</span></div><div class="line">               <span class="keyword">this</span>.nowel++; <span class="comment">//让小鸟状态改变的条件</span></div><div class="line">               <span class="keyword">this</span>.speedY=<span class="number">-15</span>+<span class="keyword">this</span>.nowel;</div><div class="line">               <span class="comment">//用户不点击时候</span></div><div class="line">               <span class="keyword">if</span>(<span class="keyword">this</span>.speedY&gt;<span class="number">0</span>)&#123;</div><div class="line">                   <span class="comment">//小鸟自由落体</span></div><div class="line">                   <span class="keyword">this</span>.state=<span class="number">0</span>;</div><div class="line">                   <span class="comment">//更新当前的下落的帧数</span></div><div class="line">                   <span class="keyword">this</span>.BirdFrame=game.frame.sumFrame;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">           <span class="comment">//y坐标递增 小鸟自由落体</span></div><div class="line">           <span class="keyword">this</span>.y+=<span class="keyword">this</span>.speedY;</div><div class="line">           <span class="comment">//小鸟到达画布顶端</span></div><div class="line">           <span class="keyword">if</span>(<span class="keyword">this</span>.y&lt;<span class="number">0</span>)&#123;</div><div class="line">               <span class="keyword">this</span>.x-=<span class="number">1</span>;</div><div class="line">               <span class="keyword">this</span>.y=<span class="number">0</span>;</div><div class="line">           &#125;</div><div class="line">       &#125;,</div><div class="line">       addClick:function ()&#123;</div><div class="line">           <span class="comment">//备份指针</span></div><div class="line">           <span class="keyword">var</span> self=<span class="keyword">this</span>;</div><div class="line">          <span class="comment">//点击整一个画布</span></div><div class="line">           game.canvas.addEventListener(<span class="string">'mousedown'</span>,function ()&#123;</div><div class="line">                <span class="comment">//改变小鸟的状态</span></div><div class="line">               self.state=<span class="number">1</span>;</div><div class="line">               <span class="comment">//改变角度,头朝上</span></div><div class="line">               self.rotateDeg=<span class="number">-25</span>;</div><div class="line">               <span class="comment">//初始化空气阻力</span></div><div class="line">               self.nowel=<span class="number">1</span>;</div><div class="line">           &#125;)</div><div class="line">       &#125;,</div><div class="line"></div><div class="line">   &#125;)</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h1 id="碰撞检测"><a href="#碰撞检测" class="headerlink" title="碰撞检测"></a>碰撞检测</h1><p><img src="/assets/blogImg/canvas-13.png" alt=""></p>
+<p><img src="/assets/blogImg/canvas-14.png" alt=""></p>
+<h1 id="游戏截图"><a href="#游戏截图" class="headerlink" title="游戏截图"></a>游戏截图</h1><p><img src="/assets/blogImg/canvas-15.png" alt=""></p>
+<p><img src="/assets/blogImg/canvas-16.png" alt=""></p>
+<p><img src="/assets/blogImg/canvas-17.png" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/02/08/canvas-knova应用二/">
+                    canvas学习之konva框架旋转中心
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/10/Ajax-原生js封装/">
+                    Ajax学习之原生js封装
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"canvas学习之笨鸟飞游戏　| 劳柏明博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/02/08/canvas-knova应用二/" title="Pre: canvas学习之konva框架旋转中心">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/10/Ajax-原生js封装/" title="Next: Ajax学习之原生js封装">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/Ajax-跨域和缓存/">Ajax学习之跨域和缓存</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/11/Ajax-评论功能/">Ajax学习之评论功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/Ajax-原生js封装/">Ajax学习之原生js封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/canvas-笨鸟飞/">canvas学习之笨鸟飞游戏</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/canvas-knova应用二/">canvas学习之konva框架旋转中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/07/canvas-knova应用一/">canvas学习之konva框架饼状图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/06/canvas-红包图片效果/">canvas学习之图片效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/canvas-倒计时效果/">canvas学习之倒计时效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/canvas-放大镜效果/">canvas学习之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/canvas-绘制时钟/">canvas学习之绘制时钟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/js-命名空间模式/">js设计模式之命名空间模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/js-备忘模式/">js设计模式之备忘模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/30/js-观察者模式/">js设计模式之观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/js-单利模式/">js设计模式之单利模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/js-工厂模式/">js设计模式之工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-Object的静态成员/">js面向对象之Object的静态成员</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-原型链总结/">js面向对象之原型链总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-面向对象总结三/">js面向对象总结三</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/js-面向对象总结二/">js面向对象总结二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/25/js-面向对象总结一/">js面向对象总结一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-入口原理分析/">jquery进价之原理分析(入口,节点,样式,属性)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-总结/">jquery学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/23/jquery-备忘提醒功能/">jquery入门之备忘录提醒功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/jquery-瀑布流/">jquery入门之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/js-绚丽小球/">js特效之滑动绚丽小球</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/js-3D图片切换/">js特效之有3D感图片切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/js-瀑布流布局/">js特效之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/18/js-放大镜效果/">js特效之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/js-满天星星/">js特效之满天星星</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/js-轮播切换/">js特效之轮播图切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/js-九宫格思想/">js特效之九宫格思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/14/js-基础总结/">js学习之总结js基础部分</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/js-运动框架封装/">js学习之运动框架封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-选择分享功能/">js学习之简单的应用二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-节点操作/">js学习之简单的应用一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/css3-云层动画/">css3学习之云层效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/css3-3D音乐播放器/">css3学习之3d音乐界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/webLayout-绿色食品网布局/">网页布局学习之绿色食品网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/webLayout-京东布局/">网页布局学习之京东官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/webLayout-淘宝布局/">网页布局学习之淘宝官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/第一篇博客/">第一篇博客</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 劳柏明
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
