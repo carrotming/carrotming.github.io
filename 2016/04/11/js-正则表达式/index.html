@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="劳柏明" />
+
+
+
+<meta name="description" content="火星文虽难学,不过大概还是要懂得!!">
+<meta name="keywords" content="正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js之正则表达式">
+<meta property="og:url" content="//carrot.me/2016/04/11/js-正则表达式/index.html">
+<meta property="og:site_name" content="劳柏明博客">
+<meta property="og:description" content="火星文虽难学,不过大概还是要懂得!!">
+<meta property="og:updated_time" content="2017-04-18T07:02:08.860Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js之正则表达式">
+<meta name="twitter:description" content="火星文虽难学,不过大概还是要懂得!!">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="劳柏明博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/TiddlyWiki.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>js之正则表达式 | 劳柏明博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/fav.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">劳柏明</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">热爱前端的小白工程师</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js炫酷特效/">js炫酷特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js设计模式/">js设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js面向对象/">js面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架学习/">框架学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动web/">移动web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页布局/">网页布局</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">劳柏明</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/fav.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">劳柏明</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">热爱前端的小白工程师</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-js-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/11/js-正则表达式/" class="article-date">
+      <time datetime="2016-04-11T12:36:00.000Z" itemprop="datePublished">2016-04-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js之正则表达式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/正则表达式/">正则表达式</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>正则表达式我最不想学的东西,因为火星文谁看得懂啊,有事谷歌,百度不就好啦,虽然嘴上这样说,但是还是要去学习.以后不懂上自己博客找咯!原文地址<a href="http://www.cnblogs.com/China3S/archive/2013/11/30/3451971.html" target="_blank" rel="external">http://www.cnblogs.com/China3S/archive/2013/11/30/3451971.html</a></p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>正则表达式就是一种特殊的字符串模式，用于匹配一组字符串，就好比用模具做产品，而正则就是这个模具，定义一种规则去匹配符合规则的字符。</p>
+<h1 id="匹配工具"><a href="#匹配工具" class="headerlink" title="匹配工具"></a>匹配工具</h1><p><a href="http://www.regexpal.com/" target="_blank" rel="external">http://www.regexpal.com/</a><br><a href="http://rubular.com/" target="_blank" rel="external">http://rubular.com/</a><br>正则匹配软件<br>   McTracer </p>
+<h1 id="正则字符简单介绍"><a href="#正则字符简单介绍" class="headerlink" title="正则字符简单介绍"></a>正则字符简单介绍</h1><h2 id="元字符介绍"><a href="#元字符介绍" class="headerlink" title="元字符介绍"></a>元字符介绍</h2><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">\	</span>将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“<span class="symbol">\n</span>”匹配一个换行符。串行“<span class="symbol">\\</span>”匹配“<span class="symbol">\”</span>而“<span class="symbol">\(</span>”则匹配“(”。</div><div class="line">^	匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配“<span class="symbol">\n</span>”或“<span class="symbol">\r</span>”之后的位置。</div><div class="line">$	匹配输入字符串的结束位置。如果设置了RegExp对象的Multiline属性，$也匹配“<span class="symbol">\n</span>”或“<span class="symbol">\r</span>”之前的位置。</div><div class="line">*	匹配前面的子表达式零次或多次。例如，zo*能匹配“z”以及“zoo”。*等价于&#123;0,&#125;。</div><div class="line">+	匹配前面的子表达式一次或多次。例如，“zo+”能匹配“zo”以及“zoo”，但不能匹配“z”。+等价于&#123;1,&#125;。</div><div class="line">?	匹配前面的子表达式零次或一次。例如，“do(es)?”可以匹配“does”或“does”中的“do”。?等价于&#123;0,1&#125;。</div><div class="line">&#123;n&#125;	n是一个非负整数。匹配确定的n次。例如，“o&#123;2&#125;”不能匹配“Bob”中的“o”，但是能匹配“food”中的两个o。</div><div class="line">&#123;n,&#125;	n是一个非负整数。至少匹配n次。例如，“o&#123;2,&#125;”不能匹配“Bob”中的“o”，但能匹配“foooood”中的所有o。“o&#123;1,&#125;”等价于“o+”。“o&#123;0,&#125;”则等价于“o*”。</div><div class="line">&#123;n,m&#125;	m和n均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次。例如，“o&#123;1,3&#125;”将匹配“fooooood”中的前三个o。“o&#123;0,1&#125;”等价于“o?”。请注意在逗号和两个数之间不能有空格。</div><div class="line">?	当该字符紧跟在任何一个其他限制符（*,+,?，&#123;n&#125;，&#123;n,&#125;，&#123;n,m&#125;）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“oooo”，“o+?”将匹配单个“o”，而“o+”将匹配所有“o”。</div><div class="line">.	匹配除“<span class="symbol">\n</span>”之外的任何单个字符。要匹配包括“<span class="symbol">\n</span>”在内的任何字符，请使用像“(.|<span class="symbol">\n</span>)”的模式。</div><div class="line">(pattern)	匹配pattern并获取这一匹配。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用$0…$9属性。要匹配圆括号字符，请使用“<span class="symbol">\(</span>”或“<span class="symbol">\)</span>”。</div><div class="line">(?:pattern)	匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“(|)”来组合一个模式的各个部分是很有用。例如“industr(?:y|ies)”就是一个比“industry|industries”更简略的表达式。</div><div class="line">(?=pattern)	正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“Windows(?=95|98|NT|2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</div><div class="line">(?!pattern)	正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</div><div class="line">(?&lt;=pattern)	反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“(?&lt;=95|98|NT|2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。</div><div class="line">(?&lt;!pattern)	反向否定预查，与正向否定预查类拟，只是方向相反。例如“(?&lt;!95|98|NT|2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。</div><div class="line">x|y	匹配x或y。例如，“z|food”能匹配“z”或“food”。“(z|f)ood”则匹配“zood”或“food”。</div><div class="line">[xyz]	字符集合。匹配所包含的任意一个字符。例如，“[abc]”可以匹配“plain”中的“a”。</div><div class="line">[^xyz]	负值字符集合。匹配未包含的任意字符。例如，“[^abc]”可以匹配“plain”中的“p”。</div><div class="line">[a-z]	字符范围。匹配指定范围内的任意字符。例如，“[a-z]”可以匹配“a”到“z”范围内的任意小写字母字符。</div><div class="line">[^a-z]	负值字符范围。匹配任何不在指定范围内的任意字符。例如，“[^a-z]”可以匹配任何不在“a”到“z”范围内的任意字符。</div><div class="line"><span class="symbol">\b</span>	匹配一个单词边界，也就是指单词和空格间的位置。例如，“er<span class="symbol">\b</span>”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”。</div><div class="line"><span class="symbol">\B</span>	匹配非单词边界。“er<span class="symbol">\B</span>”能匹配“verb”中的“er”，但不能匹配“never”中的“er”。</div><div class="line"><span class="symbol">\c</span>x	匹配由x指明的控制字符。例如，<span class="symbol">\c</span>M匹配一个Control-M或回车符。x的值必须为A-Z或a-z之一。否则，将c视为一个原义的“c”字符。</div><div class="line"><span class="symbol">\d</span>	匹配一个数字字符。等价于[0-9]。</div><div class="line"><span class="symbol">\D</span>	匹配一个非数字字符。等价于[^0-9]。</div><div class="line"><span class="symbol">\f</span>	匹配一个换页符。等价于<span class="symbol">\x</span>0c和<span class="symbol">\c</span>L。</div><div class="line"><span class="symbol">\n</span>	匹配一个换行符。等价于<span class="symbol">\x</span>0a和<span class="symbol">\c</span>J。</div><div class="line"><span class="symbol">\r</span>	匹配一个回车符。等价于<span class="symbol">\x</span>0d和<span class="symbol">\c</span>M。</div><div class="line"><span class="symbol">\s</span>	匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ <span class="symbol">\f</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\t</span><span class="symbol">\v</span>]。</div><div class="line"><span class="symbol">\S</span>	匹配任何非空白字符。等价于[^ <span class="symbol">\f</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\t</span><span class="symbol">\v</span>]。</div><div class="line"><span class="symbol">\t</span>	匹配一个制表符。等价于<span class="symbol">\x</span>09和<span class="symbol">\c</span>I。</div><div class="line"><span class="symbol">\v</span>	匹配一个垂直制表符。等价于<span class="symbol">\x</span>0b和<span class="symbol">\c</span>K。</div><div class="line"><span class="symbol">\w</span>	匹配包括下划线的任何单词字符。等价于“[A-Za-z0-9_]”。</div><div class="line"><span class="symbol">\W</span>	匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。</div><div class="line"><span class="symbol">\x</span>n	匹配n，其中n为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，“<span class="symbol">\x</span>41”匹配“A”。“<span class="symbol">\x</span>041”则等价于“<span class="symbol">\x</span>04&amp;1”。正则表达式中可以使用ASCII编码。.</div><div class="line"><span class="symbol">\n</span>um	匹配num，其中num是一个正整数。对所获取的匹配的引用。例如，“(.)<span class="symbol">\1</span>”匹配两个连续的相同字符。</div><div class="line"><span class="symbol">\n</span>	标识一个八进制转义值或一个向后引用。如果<span class="symbol">\n</span>之前至少n个获取的子表达式，则n为向后引用。否则，如果n为八进制数字（0-7），则n为一个八进制转义值。</div><div class="line"><span class="symbol">\n</span>m	标识一个八进制转义值或一个向后引用。如果<span class="symbol">\n</span>m之前至少有nm个获得子表达式，则nm为向后引用。如果<span class="symbol">\n</span>m之前至少有n个获取，则n为一个后跟文字m的向后引用。如果前面的条件都不满足，若n和m均为八进制数字（0-7），则<span class="symbol">\n</span>m将匹配八进制转义值nm。</div><div class="line"><span class="symbol">\n</span>ml	如果n为八进制数字（0-3），且m和l均为八进制数字（0-7），则匹配八进制转义值nml。</div><div class="line"><span class="symbol">\u</span>n	匹配n，其中n是一个用四个十六进制数字表示的Unicode字符。例如，<span class="symbol">\u</span>00A9匹配版权符号（©）。</div></pre></td></tr></table></figure>
+<h1 id="常用正则表达式大全"><a href="#常用正则表达式大全" class="headerlink" title="常用正则表达式大全"></a>常用正则表达式大全</h1><figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div></pre></td><td class="code"><pre><div class="line">匹配中文字符的正则表达式： [u4e00-u9fa5]   </div><div class="line">　　评注：匹配中文还真是个头疼的事，有了这个表达式就好办了 </div><div class="line">　　匹配双字节字符(包括汉字在内)：[^x00-xff] </div><div class="line">　　评注：可以用来计算字符串的长度（一个双字节字符长度计<span class="number">2</span>，<span class="symbol">ASCII</span>字符计<span class="number">1</span>） </div><div class="line">　　匹配空白行的正则表达式：ns*r </div><div class="line">　　评注：可以用来删除空白行 </div><div class="line">　　匹配<span class="symbol">HTML</span>标记的正则表达式：&lt;(<span class="symbol">S</span>*?)[^&gt;]*&gt;.*?|&lt;.*? /&gt; </div><div class="line">　　评注：网上流传的版本太糟糕，上面这个也仅仅能匹配部分，对于复杂的嵌套标记依旧无能为力 </div><div class="line">　　匹配首尾空白字符的正则表达式：^s*|s*$ </div><div class="line">　　评注：可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式 </div><div class="line">　　匹配<span class="symbol">Email</span>地址的正则表达式：w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)* </div><div class="line">　　评注：表单验证时很实用 </div><div class="line">　　匹配网址<span class="symbol">URL</span>的正则表达式：[a-zA-z]+://[^s]* </div><div class="line">　　评注：网上流传的版本功能很有限，上面这个基本可以满足需求 </div><div class="line">　　匹配帐号是否合法(字母开头，允许<span class="number">5</span><span class="number">-16</span>字节，允许字母数字下划线)：^[a-zA-<span class="symbol">Z</span>][a-zA-<span class="symbol">Z0</span><span class="number">-9</span><span class="symbol">_</span>]&#123;<span class="number">4</span>,<span class="number">15</span>&#125;$ </div><div class="line">　　评注：表单验证时很实用 </div><div class="line">　　匹配国内电话号码：d&#123;<span class="number">3</span>&#125;-d&#123;<span class="number">8</span>&#125;|d&#123;<span class="number">4</span>&#125;-d&#123;<span class="number">7</span>&#125; </div><div class="line">　　评注：匹配形式如 <span class="number">0511</span><span class="number">-4405222</span> 或 <span class="number">021</span><span class="number">-87888822</span> </div><div class="line">　　匹配腾讯<span class="symbol">QQ</span>号：[<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">4</span>,&#125; </div><div class="line">　　评注：腾讯<span class="symbol">QQ</span>号从<span class="number">10000</span>开始 </div><div class="line">　　匹配中国邮政编码：[<span class="number">1</span><span class="number">-9</span>]d&#123;<span class="number">5</span>&#125;(?!d) </div><div class="line">　　评注：中国邮政编码为<span class="number">6</span>位数字 </div><div class="line">　　匹配身份证：d&#123;<span class="number">15</span>&#125;|d&#123;<span class="number">18</span>&#125; </div><div class="line">　　评注：中国的身份证为<span class="number">15</span>位或<span class="number">18</span>位 </div><div class="line">　　匹配ip地址：d+.d+.d+.d+ </div><div class="line">　　评注：提取ip地址时有用 </div><div class="line">　　匹配特定数字： </div><div class="line">　　^[<span class="number">1</span><span class="number">-9</span>]d*$　 　 //匹配正整数 </div><div class="line">　　^-[<span class="number">1</span><span class="number">-9</span>]d*$ 　 //匹配负整数 </div><div class="line">　　^-?[<span class="number">1</span><span class="number">-9</span>]d*$　　 //匹配整数 </div><div class="line">　　^[<span class="number">1</span><span class="number">-9</span>]d*|<span class="number">0</span>$　 //匹配非负整数（正整数 + <span class="number">0</span>） </div><div class="line">　　^-[<span class="number">1</span><span class="number">-9</span>]d*|<span class="number">0</span>$　　 //匹配非正整数（负整数 + <span class="number">0</span>） </div><div class="line">　　^[<span class="number">1</span><span class="number">-9</span>]d*.d*|<span class="number">0.</span>d*[<span class="number">1</span><span class="number">-9</span>]d*$　　 //匹配正浮点数 </div><div class="line">　　^-([<span class="number">1</span><span class="number">-9</span>]d*.d*|<span class="number">0.</span>d*[<span class="number">1</span><span class="number">-9</span>]d*)$　 //匹配负浮点数 </div><div class="line">　　^-?([<span class="number">1</span><span class="number">-9</span>]d*.d*|<span class="number">0.</span>d*[<span class="number">1</span><span class="number">-9</span>]d*|<span class="number">0</span>?<span class="number">.0</span>+|<span class="number">0</span>)$　 //匹配浮点数 </div><div class="line">　　^[<span class="number">1</span><span class="number">-9</span>]d*.d*|<span class="number">0.</span>d*[<span class="number">1</span><span class="number">-9</span>]d*|<span class="number">0</span>?<span class="number">.0</span>+|<span class="number">0</span>$　　 //匹配非负浮点数（正浮点数 + <span class="number">0</span>） </div><div class="line">　　^(-([<span class="number">1</span><span class="number">-9</span>]d*.d*|<span class="number">0.</span>d*[<span class="number">1</span><span class="number">-9</span>]d*))|<span class="number">0</span>?<span class="number">.0</span>+|<span class="number">0</span>$　　//匹配非正浮点数（负浮点数 + <span class="number">0</span>） </div><div class="line">　　评注：处理大量数据时有用，具体应用时注意修正 </div><div class="line">　　匹配特定字符串： </div><div class="line">　　^[<span class="symbol">A</span>-<span class="symbol">Za</span>-z]+$　　//匹配由<span class="number">26</span>个英文字母组成的字符串 </div><div class="line">　　^[<span class="symbol">A</span>-<span class="symbol">Z</span>]+$　　//匹配由<span class="number">26</span>个英文字母的大写组成的字符串 </div><div class="line">　　^[a-z]+$　　//匹配由<span class="number">26</span>个英文字母的小写组成的字符串 </div><div class="line">　　^[<span class="symbol">A</span>-<span class="symbol">Za</span>-z0<span class="number">-9</span>]+$　　//匹配由数字和<span class="number">26</span>个英文字母组成的字符串 </div><div class="line">　　^w+$　　//匹配由数字、<span class="number">26</span>个英文字母或者下划线组成的字符串 </div><div class="line">　　在使用<span class="symbol">RegularExpressionValidator</span>验证控件时的验证功能及其验证表达式介绍如下: </div><div class="line">　　只能输入数字：“^[<span class="number">0</span><span class="number">-9</span>]*$” </div><div class="line">　　只能输入n位的数字：“^d&#123;n&#125;$” </div><div class="line">　　只能输入至少n位数字：“^d&#123;n,&#125;$” </div><div class="line">　　只能输入m-n位的数字：“^d&#123;m,n&#125;$” </div><div class="line">　　只能输入零和非零开头的数字：“^(<span class="number">0</span>|[<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]*)$” </div><div class="line">　　只能输入有两位小数的正实数：“^[<span class="number">0</span><span class="number">-9</span>]+(.[<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">2</span>&#125;)?$” </div><div class="line">　　只能输入有<span class="number">1</span><span class="number">-3</span>位小数的正实数：“^[<span class="number">0</span><span class="number">-9</span>]+(.[<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">1</span>,<span class="number">3</span>&#125;)?$” </div><div class="line">　　只能输入非零的正整数：“^+?[<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]*$” </div><div class="line">　　只能输入非零的负整数：“^-[<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]*$” </div><div class="line">　　只能输入长度为<span class="number">3</span>的字符：“^.&#123;<span class="number">3</span>&#125;$” </div><div class="line">　　只能输入由<span class="number">26</span>个英文字母组成的字符串：“^[<span class="symbol">A</span>-<span class="symbol">Za</span>-z]+$” </div><div class="line">　　只能输入由<span class="number">26</span>个大写英文字母组成的字符串：“^[<span class="symbol">A</span>-<span class="symbol">Z</span>]+$” </div><div class="line">　　只能输入由<span class="number">26</span>个小写英文字母组成的字符串：“^[a-z]+$” </div><div class="line">　　只能输入由数字和<span class="number">26</span>个英文字母组成的字符串：“^[<span class="symbol">A</span>-<span class="symbol">Za</span>-z0<span class="number">-9</span>]+$” </div><div class="line">　　只能输入由数字、<span class="number">26</span>个英文字母或者下划线组成的字符串：“^w+$” </div><div class="line">　　验证用户密码:“^[a-zA-<span class="symbol">Z</span>]w&#123;<span class="number">5</span>,<span class="number">17</span>&#125;$”正确格式为：以字母开头，长度在<span class="number">6</span><span class="number">-18</span>之间， </div><div class="line">　　只能包含字符、数字和下划线。 </div><div class="line">　　验证是否含有^<span class="comment">%&amp;'',;=?$"等字符：“[^%&amp;'',;=?$x22]+” </span></div><div class="line">　　只能输入汉字：“^[u4e00-u9fa5],&#123;<span class="number">0</span>,&#125;$” </div><div class="line">　　验证<span class="symbol">Email</span>地址：“^w+[-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*$” </div><div class="line">　　验证<span class="symbol">InternetURL</span>：“^http://([w-]+.)+[w-]+(/[w-./?<span class="comment">%&amp;=]*)?$” </span></div><div class="line">　　验证电话号码：“^((d&#123;<span class="number">3</span>,<span class="number">4</span>&#125;)|d&#123;<span class="number">3</span>,<span class="number">4</span>&#125;-)?d&#123;<span class="number">7</span>,<span class="number">8</span>&#125;$” </div><div class="line">　　正确格式为：“<span class="symbol">XXXX</span>-<span class="symbol">XXXXXXX</span>”，“<span class="symbol">XXXX</span>-<span class="symbol">XXXXXXXX</span>”，“<span class="symbol">XXX</span>-<span class="symbol">XXXXXXX</span>”， </div><div class="line">　　“<span class="symbol">XXX</span>-<span class="symbol">XXXXXXXX</span>”，“<span class="symbol">XXXXXXX</span>”，“<span class="symbol">XXXXXXXX</span>”。 </div><div class="line">　　验证身份证号（<span class="number">15</span>位或<span class="number">18</span>位数字）：“^d&#123;<span class="number">15</span>&#125;|d&#123;&#125;<span class="number">18</span>$” </div><div class="line">　　验证一年的<span class="number">12</span>个月：“^(<span class="number">0</span>?[<span class="number">1</span><span class="number">-9</span>]|<span class="number">1</span>[<span class="number">0</span><span class="number">-2</span>])$”正确格式为：“<span class="number">01</span>”-“<span class="number">09</span>”和“<span class="number">1</span>”“<span class="number">12</span>” </div><div class="line">　　验证一个月的<span class="number">31</span>天：“^((<span class="number">0</span>?[<span class="number">1</span><span class="number">-9</span>])|((<span class="number">1</span>|<span class="number">2</span>)[<span class="number">0</span><span class="number">-9</span>])|<span class="number">30</span>|<span class="number">31</span>)$” </div><div class="line">　　正确格式为：“<span class="number">01</span>”“<span class="number">09</span>”和“<span class="number">1</span>”“<span class="number">31</span>”。 </div><div class="line">　　匹配中文字符的正则表达式： [u4e00-u9fa5] </div><div class="line">　　匹配双字节字符(包括汉字在内)：[^x00-xff] </div><div class="line">　　匹配空行的正则表达式：n[s| ]*r </div><div class="line">　　匹配<span class="symbol">HTML</span>标记的正则表达式：/&lt;(.*)&gt;.*|&lt;(.*) /&gt;/ </div><div class="line">　　匹配首尾空格的正则表达式：(^s*)|(s*$) </div><div class="line">　　匹配<span class="symbol">Email</span>地址的正则表达式：w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)* </div><div class="line">　　匹配网址<span class="symbol">URL</span>的正则表达式：http://([w-]+.)+[w-]+(/[w- ./?<span class="comment">%&amp;=]*)? </span></div><div class="line">　　(<span class="number">1</span>)应用：计算字符串的长度（一个双字节字符长度计<span class="number">2</span>，<span class="symbol">ASCII</span>字符计<span class="number">1</span>） </div><div class="line">　　<span class="symbol">String</span>.prototype.len=function()&#123;return this.replace([^x00-xff]/g,<span class="string">"aa"</span>).length;&#125; </div><div class="line">　　(<span class="number">2</span>)应用：<span class="symbol">JavaScript</span>中没有像vbscript那样的trim函数，我们就可以利用这个表达式来实现 </div><div class="line">　　<span class="symbol">String</span>.prototype.trim = function() </div><div class="line">　　&#123; </div><div class="line">　　return this.replace(/(^s*)|(s*$)/g, <span class="string">""</span>); </div><div class="line">　　&#125; </div><div class="line">　　(<span class="number">3</span>)应用：利用正则表达式分解和转换<span class="symbol">IP</span>地址 </div><div class="line">　　function <span class="symbol">IP2V</span>(ip) //<span class="symbol">IP</span>地址转换成对应数值 </div><div class="line">　　&#123; </div><div class="line">　　re=/(d+).(d+).(d+).(d+)/g //匹配<span class="symbol">IP</span>地址的正则表达式 </div><div class="line">　　if(re.test(ip)) </div><div class="line">　　&#123; </div><div class="line">　　return <span class="symbol">RegExp</span>.$<span class="number">1</span>*<span class="symbol">Math</span>.pow(<span class="number">255</span>,<span class="number">3</span>))+<span class="symbol">RegExp</span>.$<span class="number">2</span>*<span class="symbol">Math</span>.pow(<span class="number">255</span>,<span class="number">2</span>))+<span class="symbol">RegExp</span>.$<span class="number">3</span>*<span class="number">255</span>+<span class="symbol">RegExp</span>.$<span class="number">4</span>*<span class="number">1</span> </div><div class="line">　　&#125; </div><div class="line">　　else </div><div class="line">　　&#123; </div><div class="line">　　throw new <span class="symbol">Error</span>(<span class="string">"Not a valid IP address!"</span>) </div><div class="line">　　&#125; </div><div class="line">　　&#125; </div><div class="line">　　(<span class="number">4</span>)应用：从<span class="symbol">URL</span>地址中提取文件名的javascript程序 </div><div class="line">　　s=<span class="string">"http://www.9499.net/page1.htm"</span>; </div><div class="line">　　s=s.replace(/(.*/)&#123;<span class="number">0</span>,&#125;([^.]+).*/ig,<span class="string">"$2"</span>) ;//<span class="symbol">Page1</span>.htm </div><div class="line">　　(<span class="number">5</span>)应用：利用正则表达式限制网页表单里的文本框输入内容 </div><div class="line">　　用正则表达式限制只能输入中文：onkeyup=<span class="string">"value=value.replace(/[^u4E00-u9FA5]/g,'') "</span>onbeforepaste=<span class="string">"clipboardData.setData(''text'',clipboardData.getData(''text'').replace(/[^u4E00-u9FA5]/g,''))"</span> </div><div class="line">　　用正则表达式限制只能输入全角字符： onkeyup=<span class="string">"value=value.replace(/[^uFF00-uFFFF]/g,'') "</span>onbeforepaste=<span class="string">"clipboardData.setData(''text'',clipboardData.getData(''text'').replace(/[^uFF00-uFFFF]/g,''))"</span> </div><div class="line">　　用正则表达式限制只能输入数字：onkeyup=<span class="string">"value=value.replace(/[^d]/g,'') "</span>onbeforepaste= <span class="string">"clipboardData.setData(''text'',clipboardData.getData(''text'').replace(/[^d]/g,''))"</span> </div><div class="line">　　用正则表达式限制只能输入数字和英文：onkeyup=<span class="string">"value=value.replace(/[W]/g,'') "</span>onbeforepaste=<span class="string">"clipboardData.setData(''text'',clipboardData.getData(''text'').replace(/[^d]/g,''</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/04/06/Bootstarp-应用布局(二)详解/">
+                    Bootstrap应用布局(二)
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/04/13/js-内存管理/">
+                    js之内存管理
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#匹配工具"><span class="toc-number">2.</span> <span class="toc-text">匹配工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正则字符简单介绍"><span class="toc-number">3.</span> <span class="toc-text">正则字符简单介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#元字符介绍"><span class="toc-number">3.1.</span> <span class="toc-text">元字符介绍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用正则表达式大全"><span class="toc-number">4.</span> <span class="toc-text">常用正则表达式大全</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"js之正则表达式　| 劳柏明博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/04/06/Bootstarp-应用布局(二)详解/" title="Pre: Bootstrap应用布局(二)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/04/13/js-内存管理/" title="Next: js之内存管理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/20/webLayout-布局技巧/">网页布局之布局技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/js-内存管理/">js之内存管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/11/js-正则表达式/">js之正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/06/Bootstarp-应用布局(二)详解/">Bootstrap应用布局(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/Bootstarp-应用布局(一)/">Bootstrap应用布局(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/04/Bootstarp-Bootstarp学习/">Bootstrap入门学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/mobile-移动web开发/">移动web学习之模仿京东M站</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/Ajax-跨域和缓存/">Ajax学习之跨域和缓存</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/11/Ajax-评论功能/">Ajax学习之评论功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/Ajax-原生js封装/">Ajax学习之原生js封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/canvas-笨鸟飞/">canvas学习之笨鸟飞游戏</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/canvas-knova应用二/">canvas学习之konva框架旋转中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/07/canvas-knova应用一/">canvas学习之konva框架饼状图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/06/canvas-红包图片效果/">canvas学习之图片效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/canvas-倒计时效果/">canvas学习之倒计时效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/canvas-放大镜效果/">canvas学习之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/canvas-绘制时钟/">canvas学习之绘制时钟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/js-命名空间模式/">js设计模式之命名空间模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/js-备忘模式/">js设计模式之备忘模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/30/js-观察者模式/">js设计模式之观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/js-单利模式/">js设计模式之单利模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/js-工厂模式/">js设计模式之工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-Object的静态成员/">js面向对象之Object的静态成员</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-原型链总结/">js面向对象之原型链总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-面向对象总结三/">js面向对象总结三</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/js-面向对象总结二/">js面向对象总结二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/25/js-面向对象总结一/">js面向对象总结一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-入口原理分析/">jquery进价之原理分析(入口,节点,样式,属性)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-总结/">jquery学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/23/jquery-备忘提醒功能/">jquery入门之备忘录提醒功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/jquery-瀑布流/">jquery入门之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/js-绚丽小球/">js特效之滑动绚丽小球</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/js-3D图片切换/">js特效之有3D感图片切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/js-瀑布流布局/">js特效之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/18/js-放大镜效果/">js特效之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/js-满天星星/">js特效之满天星星</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/js-轮播切换/">js特效之轮播图切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/js-九宫格思想/">js特效之九宫格思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/14/js-基础总结/">js学习之总结js基础部分</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/js-运动框架封装/">js学习之运动框架封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-选择分享功能/">js学习之简单的应用二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-节点操作/">js学习之简单的应用一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/css3-云层动画/">css3学习之云层效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/css3-3D音乐播放器/">css3学习之3d音乐界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/webLayout-绿色食品网布局/">网页布局学习之绿色食品网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/webLayout-京东布局/">网页布局学习之京东官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/webLayout-淘宝布局/">网页布局学习之淘宝官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/第一篇博客/">第一篇博客</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 劳柏明
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
