@@ -15,17 +15,33 @@
 
 
 
-<meta name="description" content="设计模式之观察者模式">
-<meta name="keywords" content="js设计模式">
+<meta name="description" content="手把手教你搭建个人博客">
+<meta name="keywords" content="心情">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js设计模式之观察者模式">
-<meta property="og:url" content="//carrot.me/2016/01/30/js-观察者模式/index.html">
+<meta property="og:title" content="hexo+github搭建个人博客">
+<meta property="og:url" content="//carrot.me/2016/01/01/hexo+github-搭建个人博客 /index.html">
 <meta property="og:site_name" content="劳柏明博客">
-<meta property="og:description" content="设计模式之观察者模式">
-<meta property="og:updated_time" content="2017-04-13T02:09:07.749Z">
+<meta property="og:description" content="手把手教你搭建个人博客">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-1.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-2.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-4.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-3.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-5.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-6.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-7.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-8.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-9.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-10.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-12.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-11.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-4.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-13.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/node-14.png">
+<meta property="og:updated_time" content="2017-04-19T09:45:18.376Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js设计模式之观察者模式">
-<meta name="twitter:description" content="设计模式之观察者模式">
+<meta name="twitter:title" content="hexo+github搭建个人博客">
+<meta name="twitter:description" content="手把手教你搭建个人博客">
+<meta name="twitter:image" content="//carrot.me/assets/blogImg/node-1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +73,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>js设计模式之观察者模式 | 劳柏明博客</title>
+<title>hexo+github搭建个人博客 | 劳柏明博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -248,11 +264,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-js-观察者模式" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-hexo+github-搭建个人博客 " class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/30/js-观察者模式/" class="article-date">
-      <time datetime="2016-01-30T10:36:00.000Z" itemprop="datePublished">2016-01-30</time>
+      <a href="/2016/01/01/hexo+github-搭建个人博客 /" class="article-date">
+      <time datetime="2016-01-01T06:36:00.000Z" itemprop="datePublished">2016-01-01</time>
 </a>
 
 
@@ -267,7 +283,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js设计模式之观察者模式
+      hexo+github搭建个人博客
     </h1>
   
 
@@ -276,13 +292,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/js设计模式/">js设计模式</a>
+    <a class="article-category-link" href="/categories/心情/">心情</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js设计模式/">js设计模式</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心情/">心情</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -292,12 +308,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>核心过程</p>
-<p>提供一个对象 例如叫发布者  Publisher  在这个对象里面添加方法 具体方法是注册观察者 删除观察者,调用观察者方法</p>
-<p>提供一个函数  该函数用来让一个对象成为发布者 </p>
-<p>然后根据需求创建观察者,发布者   可以创建多个观察者,发布者,并且观察者也能成为发布者</p>
-<p>代码如下</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">//成为发布者具有功能</span></div><div class="line">    <span class="keyword">var</span>  Publisher=&#123;</div><div class="line">        <span class="comment">//注册观察者功能</span></div><div class="line">      addUser:<span class="function"><span class="keyword">function</span> (<span class="params">fn,type</span>)</span>&#123;</div><div class="line">         <span class="keyword">if</span>(<span class="keyword">typeof</span> fn!=<span class="string">'function'</span>)&#123;</div><div class="line">             <span class="keyword">throw</span> <span class="string">'请放入一个函数'</span></div><div class="line">         &#125;</div><div class="line">          <span class="keyword">if</span>(<span class="keyword">this</span>.user[type]==<span class="literal">undefined</span>)&#123;</div><div class="line">              <span class="keyword">this</span>.user[type]=[];</div><div class="line">          &#125;</div><div class="line">          <span class="keyword">this</span>.user[type].push(fn); <span class="comment">//</span></div><div class="line">      &#125;,</div><div class="line">        <span class="comment">//删除观察者功能</span></div><div class="line">       removeUser:<span class="function"><span class="keyword">function</span> (<span class="params">fn,type</span>)</span>&#123;</div><div class="line">           <span class="keyword">this</span>.state(type,fn);</div><div class="line">       &#125;,</div><div class="line">        <span class="comment">//合并</span></div><div class="line">      state:<span class="function"><span class="keyword">function</span> (<span class="params">type,fn</span>)</span>&#123;</div><div class="line">          <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.user[type].length;i++)&#123;</div><div class="line">             <span class="keyword">if</span>(fn==<span class="literal">undefined</span>)&#123;</div><div class="line">                 <span class="keyword">this</span>.user[type][i]();</div><div class="line">             &#125;<span class="keyword">else</span>&#123;</div><div class="line">                 <span class="keyword">this</span>.user[type].splice(i,<span class="number">1</span>);</div><div class="line">             &#125;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//成为发布者</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">MakePublisher</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> Publisher)&#123;</div><div class="line">            <span class="keyword">if</span>(Publisher.hasOwnProperty(i)&amp;&amp;<span class="keyword">typeof</span> Publisher[i]==<span class="string">'function'</span>)&#123;</div><div class="line">                obj[i]=Publisher[i];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        obj.user=&#123;&#125;;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//发布者</span></div><div class="line">    <span class="keyword">var</span> rose=&#123;</div><div class="line">        <span class="attr">eat</span>:<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"我饿啦--rose"</span>);</div><div class="line">            <span class="keyword">this</span>.state(<span class="string">'eat'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    MakePublisher(rose);</div><div class="line">    <span class="comment">//观察者</span></div><div class="line">    <span class="keyword">var</span> tom=&#123;</div><div class="line">        <span class="attr">tom_eat</span>:<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"我陪你一起啊,rose--tom"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//注册观察者  第一个参数者观察者所做出反应 第二个指需要观察哪一个方法</span></div><div class="line">    rose.addUser(tom.tom_eat,<span class="string">'eat'</span>)</div><div class="line">    rose.eat(); <span class="comment">//我饿啦--rose   // 我陪你一起啊,rose--tom</span></div><div class="line"></div><div class="line">    rose.removeUser(tom.tom_eat,<span class="string">'eat'</span>);</div><div class="line">    rose.eat();  <span class="comment">//我饿啦--rose  tom 没有做出回应</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+        <h1 id="node"><a href="#node" class="headerlink" title="node"></a>node</h1><h2 id="下载安装node"><a href="#下载安装node" class="headerlink" title="下载安装node"></a>下载安装node</h2><p>安装node,官方中文网 <a href="http://nodejs.cn/" target="_blank" rel="external">http://nodejs.cn/</a> ,然后一直下一步下一步.<br><img src="/assets/blogImg/node-1.png" alt=""></p>
+<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>找到环境变量设置,然后点击新建<br><img src="/assets/blogImg/node-2.png" alt=""><br>创建变量名和变量值,如下图!<br><img src="/assets/blogImg/node-4.png" alt=""><br>变量值是你安装node路径,如下图!(找到你安装node的那个盘)<br><img src="/assets/blogImg/node-3.png" alt=""></p>
+<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><p>百度吧,操作方法和node的安装几乎一样!</p>
+<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>hexo官网 <a href="https://hexo.io/zh-tw/" target="_blank" rel="external">https://hexo.io/zh-tw/</a><br>在搜索栏输入node,这是win10,其他自行百度.<br><img src="/assets/blogImg/node-5.png" alt=""><br>选一个你喜欢的文件进入,比如我的 C:\Users\704664846,然后分别执行下面5条代码,傻瓜5步走.<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install </span>hexo-cli -g</div><div class="line">hexo init <span class="keyword">blog</span></div><div class="line">cd <span class="keyword">blog</span></div><div class="line">npm <span class="keyword">install</span></div><div class="line">hexo server</div></pre></td></tr></table></figure></p>
+<p>输入hexo server后可以看到以下代码,然后在浏览器访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>  显示以下页面 至于其他失败原因自行百度咯!<br><img src="/assets/blogImg/node-6.png" alt=""><br><img src="/assets/blogImg/node-7.png" alt=""></p>
+<h1 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h1><h2 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h2><p>注册什么的不说啦!登录你的github,然后在首页点这个<br><img src="/assets/blogImg/node-8.png" alt=""><br>修改这里,其他不用动 格式为 username.github.io(usename你自己写,当然要英文!后面不要动.)<br><img src="/assets/blogImg/node-9.png" alt=""></p>
+<h2 id="配置config"><a href="#配置config" class="headerlink" title="配置config"></a>配置config</h2><p>找到你安装hexo的那个文件,比如我的 C:\Users\704664846\blog<br>有如下内容,打开下面这个 config.yml<br><img src="/assets/blogImg/node-10.png" alt=""><br>在后面的位置加入这段话,注意格式 repo为你github创库的名字<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/carrotming/carrotming.github.io.git</span></div><div class="line">  <span class="attribute">branch</span>: master</div></pre></td></tr></table></figure></p>
+<p>修改框里面的,改成你自己的仓库名字<br><img src="/assets/blogImg/node-12.png" alt=""><br>比如这是我的仓库<br><img src="/assets/blogImg/node-11.png" alt=""></p>
+<h2 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h2><p>再次进入命令工具<br><img src="/assets/blogImg/node-4.png" alt=""><br>分别输入这2个命令<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></div><div class="line"></div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+<p>第一个条输入完后会这样<br><img src="/assets/blogImg/node-13.png" alt=""><br>第二条输入完后会这样<br><img src="/assets/blogImg/node-14.png" alt=""></p>
+<p>然后在浏览器输入<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">https:</span><span class="comment">//carrotming.github.io/</span></div></pre></td></tr></table></figure></p>
+<p>当然,上面是我的,换成你自己的仓库名字,就可以访问了</p>
 
       
     </div>
@@ -309,16 +331,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/29/js-单利模式/">
-                    js设计模式之单利模式
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/01/js-备忘模式/">
-                    js设计模式之备忘模式
+                <a href="/2016/01/04/webLayout-淘宝布局/">
+                    网页布局学习之淘宝官网
                 </a>
             </div>
         
@@ -326,6 +342,29 @@
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#node"><span class="toc-number">1.</span> <span class="toc-text">node</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装node"><span class="toc-number">1.1.</span> <span class="toc-text">下载安装node</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量配置"><span class="toc-number">1.2.</span> <span class="toc-text">环境变量配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">2.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo"><span class="toc-number">3.</span> <span class="toc-text">hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-number">3.1.</span> <span class="toc-text">安装hexo</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置github"><span class="toc-number">4.</span> <span class="toc-text">配置github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#仓库"><span class="toc-number">4.1.</span> <span class="toc-text">仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置config"><span class="toc-number">4.2.</span> <span class="toc-text">配置config</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关联"><span class="toc-number">4.3.</span> <span class="toc-text">关联</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -343,7 +382,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"js设计模式之观察者模式　| 劳柏明博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"hexo+github搭建个人博客　| 劳柏明博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -363,15 +402,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/29/js-单利模式/" title="上一篇: js设计模式之单利模式">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/02/01/js-备忘模式/" title="下一篇: js设计模式之备忘模式">
+            <a href="/2016/01/04/webLayout-淘宝布局/" title="下一篇: 网页布局学习之淘宝官网">
                 <i class="fa fa-angle-right"></i>
             </a>
         
