@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git的学习之旅 | &lt;(￣3￣)&gt;carrotming</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="管理代码的工具">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git的学习之旅">
+<meta property="og:url" content="//carrot.me/2016/06/02/git学习之旅/index.html">
+<meta property="og:site_name" content="<(￣3￣)>carrotming">
+<meta property="og:description" content="管理代码的工具">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-2.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-3.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-4.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-6.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-5.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-1.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-8.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-9.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-10.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-11.png">
+<meta property="og:image" content="//carrot.me/assets/blogImg/git-12.png">
+<meta property="og:updated_time" content="2017-04-24T14:20:00.128Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git的学习之旅">
+<meta name="twitter:description" content="管理代码的工具">
+<meta name="twitter:image" content="//carrot.me/assets/blogImg/git-2.png">
+  
+    <link rel="alternative" href="/atom.xml" title="&lt;(￣3￣)&gt;carrotming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/TiddlyWiki.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/fav.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">劳柏明</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">热爱前端的小白工程师</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Ajax/" style="font-size: 12px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 18px;">canvas</a> <a href="/tags/css3/" style="font-size: 12px;">css3</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/jquery/" style="font-size: 14px;">jquery</a> <a href="/tags/js基础/" style="font-size: 14px;">js基础</a> <a href="/tags/js炫酷特效/" style="font-size: 18px;">js炫酷特效</a> <a href="/tags/js设计模式/" style="font-size: 16px;">js设计模式</a> <a href="/tags/js面向对象/" style="font-size: 16px;">js面向对象</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/框架学习/" style="font-size: 20px;">框架学习</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/移动web/" style="font-size: 10px;">移动web</a> <a href="/tags/网页布局/" style="font-size: 14px;">网页布局</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">劳柏明</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/fav.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">劳柏明</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">热爱前端的小白工程师</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-git学习之旅" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/02/git学习之旅/" class="article-date">
+  	<time datetime="2016-06-02T09:33:00.000Z" itemprop="datePublished">2016-06-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git的学习之旅
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/git/">git</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>管理代码的工具<br><a id="more"></a></p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>git是基于linux的操作命令工具,主要作用是方便我们托管我们的代码,因为基于linux系统,所以必要的linux命令要懂,而且还要了解加密过程,管理模式等等.</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>下载git 官网:<a href="https://git-scm.com/" target="_blank" rel="external">https://git-scm.com/</a> 配置环境变量,打开bash即可!</p>
+<h1 id="bash的基础语法"><a href="#bash的基础语法" class="headerlink" title="bash的基础语法"></a>bash的基础语法</h1><p>git命令:<a href="http://yanhaijing.com/git/2014/11/01/my-git-note/" target="_blank" rel="external">http://yanhaijing.com/git/2014/11/01/my-git-note/</a><br>廖雪峰学习地址:<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a><br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">常见命令格式：命令 [-<span class="keyword">options</span>] [参数]</div><div class="line"><span class="keyword">pwd</span> (<span class="keyword">Print</span> Working Directory) 查看当前目录</div><div class="line"><span class="keyword">cd</span> (Change Directory) 切换目录，如 <span class="keyword">cd</span> /etc</div><div class="line"><span class="keyword">ls</span> (List) 查看当前目录下内容，如 <span class="keyword">ls</span> -<span class="keyword">al</span></div><div class="line"><span class="built_in">mkdir</span> (Make Directory) 创建目录，如 <span class="built_in">mkdir</span> blog</div><div class="line">touch 创建文件，如 touch <span class="built_in">index</span>.html</div><div class="line">wc (Word Count) 字数信息统计，如 wc <span class="built_in">index</span>.html</div><div class="line"><span class="keyword">cat</span> 查看文件全部内容，如 <span class="keyword">cat</span> <span class="built_in">index</span>.html</div><div class="line">more less 查看文件，如more /etc/passwd、less /etc/passwd</div><div class="line">rm (<span class="built_in">remove</span>) 删除文件，如 rm <span class="built_in">index</span>.html、rm -rf  blog</div><div class="line">rmdir (Remove Directory) 删除文件夹，只能删除空文件夹，不常用</div><div class="line">mv (<span class="keyword">move</span>) 移动文件或重命名，如 mv <span class="built_in">index</span>.html ./demo/<span class="built_in">index</span>.html</div><div class="line"><span class="keyword">cp</span> (<span class="keyword">copy</span>) 复制文件，<span class="keyword">cp</span> <span class="built_in">index</span>.html ./demo/<span class="built_in">index</span>.html</div><div class="line">head 查看文件前几行，如 head -<span class="number">5</span> <span class="built_in">index</span>.html</div><div class="line">tail 查看文件后几行 –n –<span class="keyword">f</span>，如 tail <span class="built_in">index</span>.html、tail -<span class="number">5</span> <span class="built_in">index</span>.html </div><div class="line"><span class="keyword">tab</span> 自动补全，连按两次会将所有匹配内容显示出来</div><div class="line"><span class="keyword">history</span> 查看操作历史</div><div class="line">ssh 远程登录，如ssh root@gitlab.study.<span class="keyword">com</span></div><div class="line">&gt; 和 &gt;&gt;重定向，如<span class="keyword">echo</span> hello world! &gt; README.md，&gt;覆盖 &gt;&gt;追加</div><div class="line">把原来输入的内容，自己指定到别的地方。</div><div class="line">把原本输出到屏幕上的内容，写入到指定的文件当中。如果文件不存在，会自动帮你创建文件。</div><div class="line">wget 下载，如wget http<span class="variable">s:</span>//nodejs.org/dist/v4.<span class="number">4.0</span>/node-v4.<span class="number">4.0</span>.tar.gz</div><div class="line">tar 解压缩，如tar zxvf node-v4.<span class="number">4.0</span>.tar.gz</div></pre></td></tr></table></figure></p>
+<h1 id="vi编辑器"><a href="#vi编辑器" class="headerlink" title="vi编辑器"></a>vi编辑器</h1><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">三种模式<span class="comment">(默认命令行模式)</span></div><div class="line"><span class="number">1.</span>命令行模式<span class="comment">(Esc)</span></div><div class="line"><span class="number">2.</span>输入模式<span class="comment">(输入i或者a,下面显示INSERT)</span></div><div class="line"><span class="number">3.</span>末行模式<span class="comment">(shift+: 下面显示: )</span></div></pre></td></tr></table></figure>
+<h2 id="命令行语法"><a href="#命令行语法" class="headerlink" title="命令行语法"></a>命令行语法</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ZZ（大写）保存并退出</div><div class="line">u辙销操作，可多次使用</div><div class="line">dd删除当前行</div><div class="line">yy复制当前行</div><div class="line"><span class="selector-tag">p</span> 粘贴内容</div><div class="line">ctrl+f向前翻页</div><div class="line">ctrl+b向后翻页</div><div class="line">i进入输入模式，当前光标处插入</div><div class="line">a进入输入模式，当前光标后插入</div><div class="line">A进入输入模式，光标移动到行尾</div><div class="line">o进入输入模式，当前行下面插入新行</div><div class="line">O进入输入模式，当前行上面插入新行</div></pre></td></tr></table></figure>
+<h2 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入你想要的内容即可</div></pre></td></tr></table></figure>
+<h2 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">w</span>保存，</div><div class="line"><span class="keyword">w</span> filenme另存为</div><div class="line">q退出</div><div class="line"><span class="keyword">wq</span>保存并退出</div><div class="line">e! 撤销更改，返回到上一次保存的状态</div><div class="line">q! 不保存强制退出</div><div class="line"><span class="keyword">set</span> <span class="keyword">nu</span> 设置行号</div></pre></td></tr></table></figure>
+<h1 id="SSH介绍"><a href="#SSH介绍" class="headerlink" title="SSH介绍"></a>SSH介绍</h1><p>SSH是一种网络协议，用于计算机之间的加密登录</p>
+<h2 id="对称加密原理"><a href="#对称加密原理" class="headerlink" title="对称加密原理"></a>对称加密原理</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">本地和服务器共有一个私钥,</div><div class="line">往服务器发送密钥根据私钥<span class="comment">(同一个私钥)</span>进行解密.</div><div class="line"><span class="comment">(私钥和密钥可能被拦截,存在安全问题)</span></div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-2.png" alt=""></p>
+<h2 id="非对称加密原理"><a href="#非对称加密原理" class="headerlink" title="非对称加密原理"></a>非对称加密原理</h2><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">命令<span class="symbol">:ssh-keygen-t</span> rsa(生成本地的私钥和公钥)</div><div class="line">只生成秘钥的电脑公钥才能解开对应的私钥</div><div class="line">①通过ssh root@服务器地址 链接服务器</div><div class="line">②服务器的公钥发送到本地地址</div><div class="line">③把输入的密码和服务器的公钥一起加密传给服务器,然后由服务器的私钥进行解密.</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-3.png" alt=""></p>
+<h2 id="免密码登录原理"><a href="#免密码登录原理" class="headerlink" title="免密码登录原理"></a>免密码登录原理</h2><figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">免密码登录(已经登录过一次)</div><div class="line">①把本地的公钥放到服务器</div><div class="line">②服务器的公钥和本地的私钥一起发送到服务器,服务器根据自己的私钥和之前放到服务器上本地公钥进行匹配.</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-4.png" alt=""></p>
+<h1 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h1><p>确保由不同人所编辑的同一档案都得到更新。</p>
+<h2 id="集中式管理"><a href="#集中式管理" class="headerlink" title="集中式管理"></a>集中式管理</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">①必须依赖服务器</div><div class="line">②所有文件都上传到该服务器上</div><div class="line">③本地电脑只有最新文件,没有旧版本的文件</div><div class="line">④开发者相互之间不能共享文件,只能通过服务器访问文件</div><div class="line">缺点:一旦服务器挂了,文件就不能访问了</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-6.png" alt=""></p>
+<h2 id="分布式管理"><a href="#分布式管理" class="headerlink" title="分布式管理"></a>分布式管理</h2><figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">分布式管理</div><div class="line">①不依赖服务器,也可以往服务器上传文件</div><div class="line">②每一台电脑都存在版本记录(历史记录),服务器也可以!</div><div class="line">③开发者互相共享代码,也可以往服务器传输和拿文件</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-5.png" alt=""></p>
+<h1 id="git工作原理"><a href="#git工作原理" class="headerlink" title="git工作原理"></a>git工作原理</h1><h2 id="三种状态"><a href="#三种状态" class="headerlink" title="三种状态"></a>三种状态</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.已提交（committed）</div><div class="line">2.已修改（modified）</div><div class="line">3.已暂存（staged）</div><div class="line">红色:已修改,绿色:已暂存,没有任何消息&gt;已提交</div></pre></td></tr></table></figure>
+<h2 id="三个工作区域"><a href="#三个工作区域" class="headerlink" title="三个工作区域"></a>三个工作区域</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>Git的工作目录<span class="comment">(仓库之外的文件或文件夹)</span></div><div class="line"><span class="number">2.</span>暂存区域<span class="comment">(是个简单的文件，一般都放在Git目录中。会把这个文件叫做索引文件 .index)</span></div><div class="line"><span class="number">3.</span>以及本地仓库<span class="comment">(是Git用来保存元数据和对象数据库的地方)</span></div></pre></td></tr></table></figure>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、在工作目录中修改文件。</div><div class="line"><span class="number">2</span>、暂存文件，将文件的快照放入暂存区域。</div><div class="line"><span class="number">3</span>、提交更新，找到暂存区域的文件，将快照永久性存储到Git仓库目录。</div></pre></td></tr></table></figure>
+<h2 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h2><p><img src="/assets/blogImg/git-1.png" alt=""><br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Workspace：工作区(工作目录)</div><div class="line"><span class="keyword">Index</span> / Stage：暂存区</div><div class="line">Repository：仓库区（或本地仓库）</div><div class="line">Remote：远程仓库</div></pre></td></tr></table></figure></p>
+<h1 id="git命令"><a href="#git命令" class="headerlink" title="git命令"></a>git命令</h1><h2 id="新建本地仓库"><a href="#新建本地仓库" class="headerlink" title="新建本地仓库"></a>新建本地仓库</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">在当前目录新建一个Git代码库</div><div class="line">$ git init</div><div class="line"></div><div class="line">新建一个目录，将其初始化为Git代码库</div><div class="line">$ git init [project-name]</div><div class="line"></div><div class="line">下载一个项目和它的整个代码历史</div><div class="line">$ git <span class="keyword">clone</span> <span class="title">[url</span>]</div></pre></td></tr></table></figure>
+<h2 id="共享仓库"><a href="#共享仓库" class="headerlink" title="共享仓库"></a>共享仓库</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">创建以.git结尾目录</div><div class="line">mkdir repo.git </div><div class="line"></div><div class="line">初始化一个共享仓库</div><div class="line">git init --bare</div><div class="line"></div><div class="line">将已有一个仓库导出成裸仓库</div><div class="line">git <span class="keyword">clone</span> <span class="title">--bare</span> [仓库地址] </div><div class="line"></div><div class="line">向共享仓库共享内容</div><div class="line">git push [仓库地址] </div><div class="line"></div><div class="line">从共享仓库里取出内容</div><div class="line">git <span class="keyword">clone</span> <span class="title">./repo</span>.git demo</div><div class="line">git pull ../repo.git <span class="literal">master</span></div></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">显示当前的Git配置</div><div class="line">$ git <span class="keyword">config</span> --list</div><div class="line"></div><div class="line">编辑Git配置文件</div><div class="line">$ git <span class="keyword">config</span> -e --<span class="keyword">global</span></div><div class="line"></div><div class="line">设置提交代码时的用户信息</div><div class="line">$ git <span class="keyword">config</span> --<span class="keyword">global</span> user<span class="variable">.name</span> <span class="string">"[name]"</span></div><div class="line">$ git <span class="keyword">config</span> --<span class="keyword">global</span> user<span class="variable">.email</span> <span class="string">"[email address]"</span></div><div class="line"></div><div class="line">获取帮助信息</div><div class="line">git help <span class="keyword">config</span> </div><div class="line"></div><div class="line">配置自动换行,提交到git是自动将换行符转换为lf</div><div class="line">git <span class="keyword">config</span> --<span class="keyword">global</span> core<span class="variable">.autocrlf</span> <span class="keyword">input</span></div><div class="line"></div><div class="line">生成密钥</div><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure>
+<h2 id="增加-删除文件"><a href="#增加-删除文件" class="headerlink" title="增加/删除文件"></a>增加/删除文件</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">添加指定文件到暂存区</div><div class="line">$ git <span class="keyword">add</span><span class="bash"> [file1] [file2] ...</span></div><div class="line"></div><div class="line">添加指定目录到暂存区，包括子目录</div><div class="line">$ git <span class="keyword">add</span><span class="bash"> [dir]</span></div><div class="line"></div><div class="line">添加当前目录的所有文件到暂存区</div><div class="line">$ git <span class="keyword">add</span><span class="bash"> .</span></div><div class="line"></div><div class="line">添加每个变化前，都会要求确认</div><div class="line">对于同一个文件的多处变化，可以实现分次提交</div><div class="line">$ git <span class="keyword">add</span><span class="bash"> -p</span></div><div class="line"></div><div class="line">删除工作区文件，并且将这次删除放入暂存区</div><div class="line">$ git rm [file1] [file2] ...</div><div class="line"></div><div class="line">停止追踪指定文件，但该文件会保留在工作区</div><div class="line">$ git rm --cached [file]</div><div class="line"></div><div class="line">改名文件，并且将这个改名放入暂存区</div><div class="line">$ git mv [file-original] [file-renamed]</div></pre></td></tr></table></figure>
+<h2 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">提交暂存区到仓库区</div><div class="line">$ git <span class="keyword">commit</span> -m [message]</div><div class="line"></div><div class="line">提交暂存区的指定文件到仓库区</div><div class="line">$ git <span class="keyword">commit</span> [file1] [file2] ... -m [message]</div><div class="line"></div><div class="line">提交工作区自上次<span class="keyword">commit</span>之后的变化，直接到仓库区</div><div class="line">$ git <span class="keyword">commit</span> -a</div><div class="line"></div><div class="line">提交时显示所有diff信息</div><div class="line">$ git <span class="keyword">commit</span> -v</div><div class="line"></div><div class="line">使用一次新的<span class="keyword">commit</span>，替代上一次提交</div><div class="line"># 如果代码没有任何新变化，则用来改写上一次<span class="keyword">commit</span>的提交信息</div><div class="line">$ git <span class="keyword">commit</span> <span class="comment">--amend -m [message]</span></div><div class="line"></div><div class="line">重做上一次<span class="keyword">commit</span>，并包括指定文件的新变化</div><div class="line">$ git <span class="keyword">commit</span> <span class="comment">--amend [file1] [file2] ...</span></div></pre></td></tr></table></figure>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">列出所有本地分支</div><div class="line">$ git <span class="keyword">branch</span></div><div class="line"></div><div class="line">列出所有远程分支</div><div class="line">$ git <span class="keyword">branch </span>-r</div><div class="line"></div><div class="line">列出所有本地分支和远程分支</div><div class="line">$ git <span class="keyword">branch </span>-a</div><div class="line"></div><div class="line">新建一个分支，但依然停留在当前分支</div><div class="line">$ git <span class="keyword">branch </span>[<span class="keyword">branch-name]</span></div><div class="line"></div><div class="line">新建一个分支，并切换到该分支</div><div class="line">$ git checkout -<span class="keyword">b </span>[<span class="keyword">branch]</span></div><div class="line"></div><div class="line">新建一个分支，指向指定commit</div><div class="line">$ git <span class="keyword">branch </span>[<span class="keyword">branch] </span>[commit]</div><div class="line"></div><div class="line">新建一个分支，与指定的远程分支建立追踪关系</div><div class="line">$ git <span class="keyword">branch </span>--track [<span class="keyword">branch] </span>[remote-<span class="keyword">branch]</span></div><div class="line"></div><div class="line">切换到指定分支，并更新工作区</div><div class="line">$ git checkout [<span class="keyword">branch-name]</span></div><div class="line"></div><div class="line">切换到上一个分支</div><div class="line">$ git checkout -</div><div class="line"></div><div class="line">建立追踪关系，在现有分支与指定的远程分支之间</div><div class="line">$ git <span class="keyword">branch </span>--set-upstream [<span class="keyword">branch] </span>[remote-<span class="keyword">branch]</span></div><div class="line"></div><div class="line">合并指定分支到当前分支</div><div class="line">$ git merge [<span class="keyword">branch]</span></div><div class="line"></div><div class="line">选择一个commit，合并进当前分支</div><div class="line">$ git cherry-pick [commit]</div><div class="line"></div><div class="line">删除分支</div><div class="line">$ git <span class="keyword">branch </span>-d [<span class="keyword">branch-name]</span></div><div class="line"></div><div class="line">删除远程分支</div><div class="line">$ git <span class="keyword">push </span>origin --delete [<span class="keyword">branch-name]</span></div><div class="line">$ git <span class="keyword">branch </span>-dr [remote/<span class="keyword">branch]</span></div></pre></td></tr></table></figure>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">列出所有<span class="keyword">tag</span></div><div class="line"><span class="title">$</span> git <span class="keyword">tag</span></div><div class="line"></div><div class="line"><span class="title">新建一个tag</span>在当前commit</div><div class="line">$ git <span class="keyword">tag</span> <span class="title">[tag</span>]</div><div class="line"></div><div class="line">新建一个<span class="keyword">tag</span>在指定commit</div><div class="line">$ git <span class="keyword">tag</span> <span class="title">[tag</span>] [commit]</div><div class="line"></div><div class="line">删除本地<span class="keyword">tag</span></div><div class="line"><span class="title">$</span> git <span class="keyword">tag</span> <span class="title">-d</span> [<span class="keyword">tag</span>]</div><div class="line"></div><div class="line">删除远程<span class="keyword">tag</span></div><div class="line"><span class="title">$</span> git push origin :refs/tags/[tagName]</div><div class="line"></div><div class="line">查看<span class="keyword">tag</span>信息</div><div class="line">$ git show [<span class="keyword">tag</span>]</div><div class="line"></div><div class="line">提交指定<span class="keyword">tag</span></div><div class="line"><span class="title">$</span> git push [remote] [<span class="keyword">tag</span>]</div><div class="line"></div><div class="line">提交所有<span class="keyword">tag</span></div><div class="line"><span class="title">$</span> git push [remote] --tags</div><div class="line"></div><div class="line">新建一个分支，指向某个<span class="keyword">tag</span></div><div class="line"><span class="title">$</span> git checkout -b [branch] [<span class="keyword">tag</span>]</div></pre></td></tr></table></figure>
+<h2 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">显示有变更的文件</div><div class="line">$ git status</div><div class="line"></div><div class="line">显示当前分支的版本历史</div><div class="line">$ git log</div><div class="line"></div><div class="line">显示<span class="keyword">commit</span>历史，以及每次<span class="keyword">commit</span>发生变更的文件</div><div class="line">$ git <span class="keyword">log</span> <span class="comment">--stat</span></div><div class="line"></div><div class="line">搜索提交历史，根据关键词</div><div class="line">$ git <span class="keyword">log</span> -S [keyword]</div><div class="line"></div><div class="line">显示某个<span class="keyword">commit</span>之后的所有变动，每个<span class="keyword">commit</span>占据一行</div><div class="line">$ git <span class="keyword">log</span> [tag] <span class="keyword">HEAD</span> <span class="comment">--pretty=format:%s</span></div><div class="line"></div><div class="line">显示某个<span class="keyword">commit</span>之后的所有变动，其<span class="string">"提交说明"</span>必须符合搜索条件</div><div class="line">$ git <span class="keyword">log</span> [tag] <span class="keyword">HEAD</span> <span class="comment">--grep feature</span></div><div class="line"></div><div class="line">显示某个文件的版本历史，包括文件改名</div><div class="line">$ git <span class="keyword">log</span> <span class="comment">--follow [file]</span></div><div class="line">$ git whatchanged [<span class="keyword">file</span>]</div><div class="line"></div><div class="line">显示指定文件相关的每一次diff</div><div class="line">$ git <span class="keyword">log</span> -p [<span class="keyword">file</span>]</div><div class="line"></div><div class="line">显示过去<span class="number">5</span>次提交</div><div class="line">$ git <span class="keyword">log</span> <span class="number">-5</span> <span class="comment">--pretty --oneline</span></div><div class="line"></div><div class="line">显示所有提交过的用户，按提交次数排序</div><div class="line">$ git shortlog -sn</div><div class="line"></div><div class="line">显示指定文件是什么人在什么时间修改过</div><div class="line">$ git blame [<span class="keyword">file</span>]</div><div class="line"></div><div class="line">显示暂存区和工作区的差异</div><div class="line">$ git diff</div><div class="line"></div><div class="line">显示暂存区和上一个<span class="keyword">commit</span>的差异</div><div class="line">$ git diff <span class="comment">--cached [file]</span></div><div class="line"></div><div class="line">显示工作区与当前分支最新<span class="keyword">commit</span>之间的差异</div><div class="line">$ git diff <span class="keyword">HEAD</span></div><div class="line"></div><div class="line">显示两次提交之间的差异</div><div class="line">$ git diff [<span class="keyword">first</span>-branch]...[<span class="keyword">second</span>-branch]</div><div class="line"></div><div class="line">显示今天你写了多少行代码</div><div class="line">$ git diff <span class="comment">--shortstat "@&#123;0 day ago&#125;"</span></div><div class="line"></div><div class="line">显示某次提交的元数据和内容变化</div><div class="line">$ git <span class="keyword">show</span> [<span class="keyword">commit</span>]</div><div class="line"></div><div class="line">显示某次提交发生变化的文件</div><div class="line">$ git <span class="keyword">show</span> <span class="comment">--name-only [commit]</span></div><div class="line"></div><div class="line">显示某次提交时，某个文件的内容</div><div class="line">$ git <span class="keyword">show</span> [<span class="keyword">commit</span>]:[filename]</div><div class="line"></div><div class="line">显示当前分支的最近几次提交</div><div class="line">$ git reflog</div></pre></td></tr></table></figure>
+<h2 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h2><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">下载远程仓库的所有变动</div><div class="line">$ git fetch <span class="string">[remote]</span></div><div class="line"></div><div class="line">显示所有远程仓库</div><div class="line">$ git remote -v</div><div class="line"></div><div class="line">显示某个远程仓库的信息</div><div class="line">$ git remote show <span class="string">[remote]</span></div><div class="line"></div><div class="line">增加一个新的远程仓库，并命名</div><div class="line">$ git remote add <span class="string">[shortname]</span> <span class="string">[url]</span></div><div class="line"></div><div class="line">取回远程仓库的变化，并与本地分支合并</div><div class="line">$ git pull <span class="string">[remote]</span> <span class="string">[branch]</span></div><div class="line"></div><div class="line">上传本地指定分支到远程仓库</div><div class="line">$ git push <span class="string">[remote]</span> <span class="string">[branch]</span></div><div class="line"></div><div class="line">强行推送当前分支到远程仓库，即使有冲突</div><div class="line">$ git push <span class="string">[remote]</span> --force</div><div class="line"></div><div class="line">推送所有分支到远程仓库</div><div class="line">$ git push <span class="string">[remote]</span> --all</div></pre></td></tr></table></figure>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">恢复暂存区的指定文件到工作区</div><div class="line">$ git checkout [file]</div><div class="line"></div><div class="line">恢复某个<span class="keyword">commit</span>的指定文件到暂存区和工作区</div><div class="line">$ git checkout [<span class="keyword">commit</span>] [<span class="keyword">file</span>]</div><div class="line"></div><div class="line">恢复暂存区的所有文件到工作区</div><div class="line">$ git checkout .</div><div class="line"></div><div class="line">重置暂存区的指定文件，与上一次<span class="keyword">commit</span>保持一致，但工作区不变</div><div class="line">$ git <span class="keyword">reset</span> [<span class="keyword">file</span>]</div><div class="line"></div><div class="line">重置暂存区与工作区，与上一次<span class="keyword">commit</span>保持一致</div><div class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard</span></div><div class="line"></div><div class="line">重置当前分支的指针为指定<span class="keyword">commit</span>，同时重置暂存区，但工作区不变</div><div class="line">$ git <span class="keyword">reset</span> [<span class="keyword">commit</span>]</div><div class="line"></div><div class="line">重置当前分支的<span class="keyword">HEAD</span>为指定<span class="keyword">commit</span>，同时重置暂存区和工作区，与指定<span class="keyword">commit</span>一致</div><div class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard [commit]</span></div><div class="line"></div><div class="line">重置当前<span class="keyword">HEAD</span>为指定<span class="keyword">commit</span>，但保持暂存区和工作区不变</div><div class="line">$ git <span class="keyword">reset</span> <span class="comment">--keep [commit]</span></div><div class="line"></div><div class="line">新建一个<span class="keyword">commit</span>，用来撤销指定<span class="keyword">commit</span></div><div class="line">后者的所有变化都将被前者抵消，并且应用到当前分支</div><div class="line">$ git revert [<span class="keyword">commit</span>]</div><div class="line"></div><div class="line">暂时将未提交的变化移除，稍后再移入</div><div class="line">$ git stash</div><div class="line">$ git stash pop</div></pre></td></tr></table></figure>
+<h1 id="工作流程-1"><a href="#工作流程-1" class="headerlink" title="工作流程"></a>工作流程</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">git init 创建本地仓库</div><div class="line">git diff 查看文件是否修改了</div><div class="line">git add  提交到暂存区</div><div class="line">git <span class="keyword">commit</span> -m<span class="string">"信息"</span> 提交到仓库</div><div class="line">git <span class="keyword">status</span> 查看文件状态</div><div class="line">git <span class="keyword">log</span> 查看显示从最近到最远的提交日志</div><div class="line">git <span class="keyword">log</span> <span class="comment">--pretty=oneline 单行显示</span></div><div class="line">git <span class="keyword">reset</span> <span class="comment">--hard [版本号] 退回到某个版本</span></div><div class="line">git reflog 列出版本号</div><div class="line">git checkout <span class="comment">-- [文本名] 撤销到之前的文件状态</span></div><div class="line">git rm [文件名] 从暂存区删除文件</div><div class="line">git <span class="keyword">clone</span> [远程仓库地址] 克隆远程仓库到本地</div><div class="line">git push -u origin [分支名称] 把本地仓库内容推送到远程仓库</div><div class="line">git checkout -b feature1 创建分支并进入</div><div class="line">git checkout [分支名称] 切换分支</div><div class="line">git <span class="keyword">merge</span> [分支名称] 合并分支</div><div class="line">git branch -d [分支名称] 删除分支名称</div><div class="line">git branch 查看分支</div><div class="line">git branch [分支名称] 创建分支</div><div class="line">ssh-keygen -t rsa 配置本地的公钥和私钥</div><div class="line">git pull origin [分支名称] 从远处仓库推送到本地仓库</div></pre></td></tr></table></figure>
+<h2 id="分支图解"><a href="#分支图解" class="headerlink" title="分支图解"></a>分支图解</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即<span class="literal">master</span>分支。HEAD严格来说不是指向提交，而是指向<span class="literal">master</span>，<span class="literal">master</span>才是指向提交的，所以，HEAD指向的就是当前分支。</div><div class="line">一开始的时候，<span class="literal">master</span>分支是一条线，Git用<span class="literal">master</span>指向最新的提交，再用HEAD指向<span class="literal">master</span>，就能确定当前分支，以及当前分支的提交点：</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-8.png" alt=""></p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">每次提交，master分支都会向前移动一步，这样，随着你不断提交，master分支的线也越来越长,当我们创建新的分支，例如<span class="built_in">dev</span>时，Git新建了一个指针叫<span class="built_in">dev</span>，指向master相同的提交，再把HEAD指向<span class="built_in">dev</span>，就表示当前分支在<span class="built_in">dev</span>上：</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-9.png" alt=""></p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git创建一个分支很快，因为除了增加一个<span class="built_in">dev</span>指针，改改HEAD的指向，工作区的文件都没有任何变化！</div><div class="line">不过，从现在开始，对工作区的修改和提交就是针对<span class="built_in">dev</span>分支了，比如新提交一次后，<span class="built_in">dev</span>指针往前移动一步，而master指针不变,</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-10.png" alt=""></p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">假如我们在<span class="built_in">dev</span>上的工作完成了，就可以把<span class="built_in">dev</span>合并到master上。Git怎么合并呢？最简单的方法，就是直接把master指向<span class="built_in">dev</span>的当前提交，就完成了合并</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-11.png" alt=""></p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">所以Git合并分支也很快！就改改指针，工作区内容也不变！</div><div class="line"></div><div class="line">合并完分支后，甚至可以删除<span class="built_in">dev</span>分支。删除<span class="built_in">dev</span>分支就是把<span class="built_in">dev</span>指针给删掉，删掉后，我们就剩下了一条master分支</div></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/git-12.png" alt=""></p>
+<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">两个人同时修改了同一个文件的同一部分代码。</div><div class="line">并且，两人都在本地做了提交。</div><div class="line">如果一个用户，早一此提前到共享仓库当中。</div><div class="line">另外一个用户，提交代码代码时，要求先去更新一下代码 git pull</div><div class="line">在pull过程当中会产生冲突。 哪个文件冲突，会有提示。手动找到冲突的文件。手动打开该文件,打开时，会看到如下代码：</div><div class="line">&lt;&lt;&lt;&lt;&lt; HEAD</div><div class="line"><span class="section">是自己写的代码</span></div><div class="line">======</div><div class="line">别人写的代码</div><div class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;0f68f3c80b954</div><div class="line">手动把&lt;&lt;&lt;&lt;&lt; ====  HEAD 删除掉。保留自己想要的代码</div><div class="line">之后，需要再提交到本地</div><div class="line">然后，再去push到共享仓库当中。</div></pre></td></tr></table></figure>
+<h2 id="BUG分支"><a href="#BUG分支" class="headerlink" title="BUG分支"></a>BUG分支</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">需要我们创建分支,然后回到上一个版本去解决<span class="keyword">BUG,在切回主分支合并分支即可,删除分支,继续做主分支原有的工作.</span></div><div class="line">例如</div><div class="line"><span class="symbol">git</span> checkout -<span class="keyword">b </span>[分支名称] 创建分支并进入</div><div class="line"><span class="symbol">git</span> reset --hard [上一个版本号] 回到上一个版本</div><div class="line">解决<span class="keyword">BUG</span></div><div class="line"><span class="symbol">git</span> checkout master 切回主分支</div><div class="line"><span class="symbol">git</span> merge [分支名称] 合并分支</div><div class="line"><span class="symbol">git</span> <span class="keyword">branch </span>-d 分支名称  删除分支</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/08/zepto学习之旅/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          zepto学习之旅
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/08/css3-综合运用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css3模仿QQ浏览器</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 劳柏明
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
