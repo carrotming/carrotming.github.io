@@ -1,263 +1,200 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
+  <meta charset="utf-8">
+  
+  <title>移动web学习之模仿京东M站 | &lt;(￣3￣)&gt;carrotming</title>
 
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
+  <!-- keywords -->
+  
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="劳柏明" />
-
-
-
-<meta name="description" content="移动端的web网页">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="移动端的web网页">
 <meta name="keywords" content="移动web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动web学习之模仿京东M站">
 <meta property="og:url" content="//carrot.me/2016/03/10/mobile-移动web开发/index.html">
-<meta property="og:site_name" content="劳柏明博客">
+<meta property="og:site_name" content="<(￣3￣)>carrotming">
 <meta property="og:description" content="移动端的web网页">
 <meta property="og:image" content="//carrot.me/assets/blogImg/mb-1.png">
 <meta property="og:image" content="//carrot.me/assets/blogImg/mb-2.png">
+<meta property="og:updated_time" content="2017-04-23T17:18:03.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动web学习之模仿京东M站">
 <meta name="twitter:description" content="移动端的web网页">
 <meta name="twitter:image" content="//carrot.me/assets/blogImg/mb-1.png">
-
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
-
-
-    <link rel="alternate" href="/atom.xml" title="劳柏明博客" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/img/TiddlyWiki.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>移动web学习之模仿京东M站 | 劳柏明博客</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
+  
+    <link rel="alternative" href="/atom.xml" title="&lt;(￣3￣)&gt;carrotming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/TiddlyWiki.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
 <script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: false,
-        isPost: true,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
-    }
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
 </script>
 
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
-    </script>
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 
-    <script> yiliaConfig.rootUrl = "\/";</script>
-
-
-
-
-
-
+  
 </head>
 <body>
   <div id="container">
+    <div id="particles-js"></div>
     <div class="left-col">
     <div class="overlay"></div>
 <div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            <img src="/img/fav.jpg" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">劳柏明</a></h1>
-        </hgroup>
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/fav.jpg" class="js-avatar">
+			
+		</a>
 
-        
-        <p class="header-subtitle">热爱前端的小白工程师</p>
-        
+		<hgroup>
+		  <h1 class="header-author"><a href="/">劳柏明</a></h1>
+		</hgroup>
 
-        
+		
+		<p class="header-subtitle">热爱前端的小白工程师</p>
+		
 
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
 
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                    </ul>
-                </div>
-            </div>
-        
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Ajax/" style="font-size: 12px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 18px;">canvas</a> <a href="/tags/css3/" style="font-size: 12px;">css3</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/jquery/" style="font-size: 14px;">jquery</a> <a href="/tags/js基础/" style="font-size: 14px;">js基础</a> <a href="/tags/js炫酷特效/" style="font-size: 18px;">js炫酷特效</a> <a href="/tags/js设计模式/" style="font-size: 16px;">js设计模式</a> <a href="/tags/js面向对象/" style="font-size: 16px;">js面向对象</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/框架学习/" style="font-size: 20px;">框架学习</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/移动web/" style="font-size: 10px;">移动web</a> <a href="/tags/网页布局/" style="font-size: 14px;">网页布局</a>
+					</div>
+				</section>
+				
+				
+				
 
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">主页</a></li>
-                        
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="/email/" title="Email"></a>
-                            
-                                <a class="fa QQ" href="/QQ/" title="QQ"></a>
-                            
-                                <a class="fa 微信" href="/wechat/" title="微信"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js炫酷特效/">js炫酷特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js设计模式/">js设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js面向对象/">js面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/心情/">心情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架学习/">框架学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动web/">移动web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页布局/">网页布局</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-            </div>
-        </div>
-    </header>                
+				
+			</div>
+		</div>
+	</header>				
 </div>
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">劳柏明</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                <img src="/img/fav.jpg" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">劳柏明</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">热爱前端的小白工程师</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">主页</a></li>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="/email/" title="Email"></a>
-                            
-                                <a class="fa QQ" target="_blank" href="/QQ/" title="QQ"></a>
-                            
-                                <a class="fa 微信" target="_blank" href="/wechat/" title="微信"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">劳柏明</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/fav.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">劳柏明</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">热爱前端的小白工程师</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
 </nav>
       <div class="body-wrap"><article id="post-mobile-移动web开发" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/03/10/mobile-移动web开发/" class="article-date">
-      <time datetime="2016-03-10T12:15:00.000Z" itemprop="datePublished">2016-03-10</time>
+  	<time datetime="2016-03-10T12:15:00.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
-
-
     </div>
   
   <div class="article-inner">
@@ -270,6 +207,7 @@
   
     <h1 class="article-title" itemprop="name">
       移动web学习之模仿京东M站
+      
     </h1>
   
 
@@ -277,24 +215,24 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/移动web/">移动web</a>
-    </div>
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动web/">移动web</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动web/">移动web</a>
+	</div>
 
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动web/">移动web</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
-          
-        <p>好久没更新了,因为又去学习新的东西啦.学习完才能够更新顺便复习一下嘛.最近学什么呢,就是大家手上的手机啦,对于移动web来说,虽然很多人都是用APP的,但是也有很大一部分人是用web网页去浏览的.虽然这一部分的难度并不是很大,但是也是很重要,所以我也花了一点时间去学习,然后模仿了一下京东M站,当然知识简单的模仿啦.不过已经基本袭击了一些很基本的逻辑,这里说一下,我用的是原生js和原生CSS布局,没有用现在比较火的框架,当然啦,移动端比较火的框架后面我也会写上总结,不过能用好原生的话,想信去学习任何一门框架也是很快上手的.布局方面就不多做介绍了,主要过程分为布局和js代码实现<br>css布局主要的重点就是,所有元素的宽高都是不能写死的,除了最外层的盒子,里面所有的宽度都是由百分比来完成.这也是移动web的核心把.里面内容会随着屏幕宽度的变化而变化<br>js主要分为两个,一个是轮播图,一个是分类选项卡<br>因为移动端所有基本不用考虑兼容性的问题,所以所有动画都是用css3去完成的.轮播的原理主要是让ul动起来,通过c3的过渡动画和形变属性来让ul走起来,因为是移动端,所以我们不用左右点击,取而带之的是手指的滑动,所以我们需要用移动端的事情去出来,用到了touchstart,touchmove,touchend3个事件去实现我们拖拽图片的功能,具逻辑看代码<br>分类选项卡的功能基本和轮播图差不多,就是多了一个点击功能,移动端我们不用click事件,而是tap事件,但是js不支持这个事件,我们通过自己封装的方法来实现tap事件.当然也可以拖动,具体逻辑看代码</p>
+        <p>移动端的web网页<br><a id="more"></a><br>好久没更新了,因为又去学习新的东西啦.学习完才能够更新顺便复习一下嘛.最近学什么呢,就是大家手上的手机啦,对于移动web来说,虽然很多人都是用APP的,但是也有很大一部分人是用web网页去浏览的.虽然这一部分的难度并不是很大,但是也是很重要,所以我也花了一点时间去学习,然后模仿了一下京东M站,当然知识简单的模仿啦.不过已经基本袭击了一些很基本的逻辑,这里说一下,我用的是原生js和原生CSS布局,没有用现在比较火的框架,当然啦,移动端比较火的框架后面我也会写上总结,不过能用好原生的话,想信去学习任何一门框架也是很快上手的.布局方面就不多做介绍了,主要过程分为布局和js代码实现<br>css布局主要的重点就是,所有元素的宽高都是不能写死的,除了最外层的盒子,里面所有的宽度都是由百分比来完成.这也是移动web的核心把.里面内容会随着屏幕宽度的变化而变化<br>js主要分为两个,一个是轮播图,一个是分类选项卡<br>因为移动端所有基本不用考虑兼容性的问题,所以所有动画都是用css3去完成的.轮播的原理主要是让ul动起来,通过c3的过渡动画和形变属性来让ul走起来,因为是移动端,所以我们不用左右点击,取而带之的是手指的滑动,所以我们需要用移动端的事情去出来,用到了touchstart,touchmove,touchend3个事件去实现我们拖拽图片的功能,具逻辑看代码<br>分类选项卡的功能基本和轮播图差不多,就是多了一个点击功能,移动端我们不用click事件,而是tap事件,但是js不支持这个事件,我们通过自己封装的方法来实现tap事件.当然也可以拖动,具体逻辑看代码</p>
 <h1 id="轮播图的实现功能"><a href="#轮播图的实现功能" class="headerlink" title="轮播图的实现功能"></a>轮播图的实现功能</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    changeColor();</div><div class="line">    bannerMove();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * 顶部改变颜色</div><div class="line"> * */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//找到顶部的节点</span></div><div class="line">    <span class="keyword">var</span> header_c = <span class="built_in">document</span>.querySelector(<span class="string">'.header_c'</span>)</div><div class="line">    <span class="comment">//找到轮播图banner</span></div><div class="line">    <span class="keyword">var</span> banner = <span class="built_in">document</span>.querySelector(<span class="string">'#banner'</span>);</div><div class="line">    <span class="comment">//轮播图的高</span></div><div class="line">    <span class="keyword">var</span> bannerH = banner.offsetHeight;</div><div class="line">    <span class="comment">//记录透明度</span></div><div class="line">    <span class="keyword">var</span> opt = <span class="number">0</span>;</div><div class="line">    <span class="comment">//监听滚动</span></div><div class="line">    <span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">//获取滚动高度</span></div><div class="line">        <span class="keyword">var</span> scrollT = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</div><div class="line">        <span class="comment">//判断滚动高度与轮播图高度关系</span></div><div class="line">        <span class="keyword">if</span> (scrollT &lt; bannerH) &#123;</div><div class="line">            <span class="comment">//滚动高度小于轮播图高度 透明度为一个比例值</span></div><div class="line">            opt = scrollT / bannerH * <span class="number">0.85</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">//滚动高度大于轮播图高度 透明度为0.85</span></div><div class="line">            opt = <span class="number">0.85</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//改变顶部的背景颜色</span></div><div class="line">        header_c.style.background = <span class="string">'rgba(210,30,85,'</span> + opt + <span class="string">')'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line"> * 轮播图动起来</div><div class="line"> * */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bannerMove</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="comment">//     找到轮播图banner</span></div><div class="line">    <span class="keyword">var</span> banner = <span class="built_in">document</span>.querySelector(<span class="string">'#banner'</span>);</div><div class="line"><span class="comment">//    轮播图里面的ul</span></div><div class="line">    <span class="keyword">var</span> oUl = banner.getElementsByTagName(<span class="string">'ul'</span>)[<span class="number">0</span>];</div><div class="line"><span class="comment">//   轮播图里面的ol</span></div><div class="line">    <span class="keyword">var</span> oOl = banner.getElementsByTagName(<span class="string">'ol'</span>)[<span class="number">0</span>];</div><div class="line">    <span class="comment">//轮播里面ol的li小圆点</span></div><div class="line">    <span class="keyword">var</span> oLi = oOl.children;</div><div class="line"><span class="comment">//    轮播图索引</span></div><div class="line">    <span class="keyword">var</span> index = <span class="number">1</span>;</div><div class="line"><span class="comment">//    定时器</span></div><div class="line">    <span class="keyword">var</span> timer = <span class="literal">null</span>;</div><div class="line"><span class="comment">//    轮播图一张图片宽度</span></div><div class="line">    <span class="keyword">var</span> bannerW = banner.offsetWidth;</div><div class="line"></div><div class="line"><span class="comment">// 设置定时器</span></div><div class="line">    timer = setInterval(timerMove, <span class="number">1000</span>);</div><div class="line">    <span class="comment">//定时器匿名函数具体执行的方法都放里面</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">timerMove</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">//索引++;</span></div><div class="line">        index++;</div><div class="line">        <span class="comment">//调用过渡动画</span></div><div class="line">        oUlTransition();</div><div class="line">        <span class="comment">//调用让ul动起来 每次移动-index*一个banner宽度</span></div><div class="line">        oUlTranslateX(-index * bannerW);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">//    让ul动起来的方法</span></div><div class="line">    <span class="keyword">var</span> oUlTranslateX = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">        oUl.style.transform = <span class="string">'translateX('</span> + x + <span class="string">'px)'</span>;</div><div class="line">        <span class="comment">//兼容写法</span></div><div class="line">        oUl.style.webkitTransform = <span class="string">'translateX('</span> + x + <span class="string">'px)'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//ul动起来的过渡动画</span></div><div class="line">    <span class="keyword">var</span> oUlTransition = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        oUl.style.transition = <span class="string">'all 0.2s ease'</span>;</div><div class="line">        <span class="comment">//兼容写法</span></div><div class="line">        oUl.style.webkitTransition = <span class="string">'all 0.2s ease'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//每一次轮播图过渡动画结束方法</span></div><div class="line">    mjd.transitionEnd(oUl, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">//    判断索引的越界问题</span></div><div class="line">        <span class="keyword">if</span> (index &gt;= <span class="number">9</span>) &#123;</div><div class="line">            index = <span class="number">1</span></div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index &lt;= <span class="number">0</span>) &#123;</div><div class="line">            index = <span class="number">8</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 每一次结束都清除上一次的过渡动画</span></div><div class="line">        removeOulTransition() ;</div><div class="line">        <span class="comment">//  再次让ul移动</span></div><div class="line">        oUlTranslateX(-index * bannerW);</div><div class="line">        <span class="comment">//每次动画结束让小圆动动气</span></div><div class="line">        oLiMove();</div><div class="line">    &#125;);</div><div class="line"><span class="comment">//    清除过渡动画方法</span></div><div class="line">    <span class="keyword">var</span> removeOulTransition = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        oUl.style.transition = <span class="string">'none'</span>;</div><div class="line">        <span class="comment">//兼容写法</span></div><div class="line">        oUl.style.webkitTransition = <span class="string">'none'</span>;</div><div class="line">    &#125;</div><div class="line"><span class="comment">//    小圆点动起来的方法</span></div><div class="line">    <span class="keyword">var</span> oLiMove = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">//    控制小圆点的索引</span></div><div class="line">        <span class="keyword">var</span> OliIndex = index;</div><div class="line">        <span class="comment">//    判断小圆点越界问题</span></div><div class="line">        <span class="keyword">if</span> (index &gt;= <span class="number">9</span>) &#123;</div><div class="line">            OliIndex = <span class="number">1</span></div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index &lt;= <span class="number">0</span>) &#123;</div><div class="line">            OliIndex = <span class="number">8</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//    排他清除所有小圆点类名</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oLi.length; i++) &#123;</div><div class="line">            <span class="keyword">var</span> obj = oLi[i];</div><div class="line">            obj.className = <span class="string">''</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//   当前的小圆点添加类名</span></div><div class="line">        oLi[OliIndex - <span class="number">1</span>].className = <span class="string">'active'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//触摸的X位置</span></div><div class="line">    <span class="keyword">var</span> startX = <span class="number">0</span>;</div><div class="line">    <span class="comment">//移动后X位置</span></div><div class="line">    <span class="keyword">var</span> endX = <span class="number">0</span>;</div><div class="line">    <span class="comment">//移动后与移动前的差值</span></div><div class="line">    <span class="keyword">var</span> disX = <span class="number">0</span>;</div><div class="line"><span class="comment">//   触摸让轮播图停下来,并记录触摸的位置</span></div><div class="line">    oUl.addEventListener(<span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">//关闭定时器</span></div><div class="line">        clearInterval(timer)</div><div class="line">        <span class="comment">//记录触摸X位置</span></div><div class="line">        startX = e.touches[<span class="number">0</span>].clientX;</div><div class="line">    &#125;)</div><div class="line">    <span class="comment">//滑动让轮播图动起来</span></div><div class="line">    oUl.addEventListener(<span class="string">'touchmove'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">//阻止默认事件</span></div><div class="line">        e.preventDefault();</div><div class="line">        <span class="comment">//记录移动X位置</span></div><div class="line">        endX = e.touches[<span class="number">0</span>].clientX;</div><div class="line">        <span class="comment">//求移动后与移动前的差值</span></div><div class="line">        disX = startX - endX;</div><div class="line">        <span class="comment">//清除轮播图的过渡效果</span></div><div class="line">        removeOulTransition();</div><div class="line">        <span class="comment">//滑动让轮播图动起来</span></div><div class="line">        oUlTranslateX(-index * bannerW - disX);</div><div class="line">    &#125;);</div><div class="line">    <span class="comment">//离开屏幕方法</span></div><div class="line">    oUl.addEventListener(<span class="string">'touchend'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">//判断拖动图片的距离是否大于一个图片1/3宽度 是的话根据移动方向让index改变</span></div><div class="line">        <span class="comment">//并且已经拖动过了</span></div><div class="line">        <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(disX) &gt; bannerW / <span class="number">3</span> &amp;&amp; endX != <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (disX &gt; <span class="number">0</span>) &#123;</div><div class="line">                index++;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                index--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//添加过渡动画</span></div><div class="line">        oUlTransition();</div><div class="line">        <span class="comment">//让ul动起来</span></div><div class="line">        oUlTranslateX(-index * bannerW);</div><div class="line">        <span class="comment">//指针动起来</span></div><div class="line">        oLiMove();</div><div class="line">        <span class="comment">//初始化数据</span></div><div class="line">        startX = <span class="number">0</span>;</div><div class="line">        endX = <span class="number">0</span>;</div><div class="line">        disX = <span class="number">0</span>;</div><div class="line">        <span class="comment">//重新开启定时器</span></div><div class="line">        timer = setInterval(timerMove, <span class="number">1000</span>);</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="tap事件和上下拉动功能"><a href="#tap事件和上下拉动功能" class="headerlink" title="tap事件和上下拉动功能"></a>tap事件和上下拉动功能</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> box=<span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</div><div class="line">  <span class="keyword">var</span> ul=box.getElementsByTagName(<span class="string">'ul'</span>)[<span class="number">0</span>];</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">addTransition</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      ul.style.transition=<span class="string">'all 0.2s ease'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">removeTransiton</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      ul.style.transition=<span class="string">'none'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">translateY</span>(<span class="params">y</span>) </span>&#123;</div><div class="line">      ul.style.transform=<span class="string">'translateY('</span>+y+<span class="string">'px)'</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> ulH=ul.offsetHeight,boxH=box.offsetHeight;</div><div class="line">  <span class="keyword">var</span> startY=<span class="number">0</span>,endY=<span class="number">0</span>,disY=<span class="number">0</span>,curY=<span class="number">0</span>,maxY=<span class="number">0</span>,minY=-(ulH-boxH),buff=<span class="number">150</span>;</div><div class="line"></div><div class="line"></div><div class="line">  ul.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      startY=e.touches[<span class="number">0</span>].clientY;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  ul.addEventListener(<span class="string">'touchmove'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      e.preventDefault();</div><div class="line">      endY=e.touches[<span class="number">0</span>].clientY;</div><div class="line">      disY=startY-endY;</div><div class="line">       <span class="keyword">if</span>((curY-disY)&lt;(maxY+buff)&amp;&amp;(curY-disY)&gt;(minY-buff))&#123;</div><div class="line">           removeTransiton()</div><div class="line">           translateY(curY-disY);</div><div class="line">       &#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">       &#125;</div><div class="line">  &#125;);</div><div class="line">  ul.addEventListener(<span class="string">'touchend'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span>((curY-disY)&gt;maxY)&#123;</div><div class="line">          curY=maxY;</div><div class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span>((curY-disY)&lt;minY)&#123;</div><div class="line">          curY=minY;</div><div class="line">      &#125; <span class="keyword">else</span>&#123;</div><div class="line">          curY=curY-disY;</div><div class="line">      &#125;</div><div class="line">      addTransition();</div><div class="line">      translateY(curY);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ul.children.length; i++) &#123;</div><div class="line">      <span class="keyword">var</span> oLi = ul.children[i];</div><div class="line">      oLi.index=i;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">  mjd.tap(ul,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">     <span class="keyword">var</span> li=e.target.parentNode;</div><div class="line">     <span class="keyword">var</span> liH=li.offsetHeight;</div><div class="line">      <span class="keyword">var</span> count=<span class="built_in">Math</span>.abs(<span class="built_in">Math</span>.floor(minY/liH));</div><div class="line">      <span class="built_in">console</span>.log(count);</div><div class="line">      <span class="keyword">if</span>(-liH*li.index&gt;minY&amp;&amp;li.index&lt;=count)&#123;</div><div class="line">         addTransition();</div><div class="line">         translateY(-liH*li.index);</div><div class="line">         curY=-liH*li.index;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">else</span>&#123;</div><div class="line">         translateY(minY);</div><div class="line">          curY=minY;</div><div class="line">     &#125;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ul.children.length; i++) &#123;</div><div class="line">          <span class="keyword">var</span> oLi = ul.children[i];</div><div class="line">          oLi.className=<span class="string">''</span>;</div><div class="line">      &#125;</div><div class="line">      li.className=<span class="string">'active'</span>;</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
 <h1 id="tap事件封装"><a href="#tap事件封装" class="headerlink" title="tap事件封装"></a>tap事件封装</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">* 封装移动端tap方法</div><div class="line">*  条件,必须存在touchstart和touchend事件</div><div class="line"> *  两者的时间&lt;250</div><div class="line"> *  没有滑动</div><div class="line">* */</div><div class="line">mjd.tap=<span class="function"><span class="keyword">function</span> (<span class="params">obj,callBack</span>) </span>&#123;</div><div class="line">    <span class="comment">//    判断传入的obj是否是对象  假如不是对象就结束程序</span></div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> obj!=<span class="string">'object'</span>) <span class="keyword">return</span> ;</div><div class="line">    <span class="comment">//开始触摸的时间</span></div><div class="line">    <span class="keyword">var</span> startTime=<span class="number">0</span>;</div><div class="line">    <span class="comment">//离开屏幕的时间</span></div><div class="line">    <span class="keyword">var</span> endTime=<span class="number">0</span>;</div><div class="line">    <span class="comment">//两者时间差</span></div><div class="line">    <span class="keyword">var</span> disT=<span class="number">0</span>;</div><div class="line">    <span class="comment">//记录是否滑动了</span></div><div class="line">    <span class="keyword">var</span> isMove=<span class="literal">false</span>;</div><div class="line">    <span class="comment">//触摸事件</span></div><div class="line">    obj.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">       <span class="comment">//求出触摸的时间</span></div><div class="line">        startTime=<span class="built_in">Date</span>.now();</div><div class="line">    &#125;);</div><div class="line">    <span class="comment">//不能滑动</span></div><div class="line">   obj.addEventListener(<span class="string">'touchemove'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">       <span class="comment">//滑动改变标志</span></div><div class="line">       isMove=<span class="literal">true</span>;</div><div class="line">   &#125;)</div><div class="line">    <span class="comment">//离开屏幕</span></div><div class="line">    obj.addEventListener(<span class="string">'touchend'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">//求出离开屏幕的时间</span></div><div class="line">        endTime=<span class="built_in">Date</span>.now();</div><div class="line">        <span class="comment">//求出时间差</span></div><div class="line">        disT=endTime-startTime;</div><div class="line">        <span class="comment">//根据tap事件的要求进行判断</span></div><div class="line">        <span class="keyword">if</span>(disT&lt;<span class="number">250</span>&amp;&amp;!isMove)&#123;</div><div class="line">            <span class="comment">//执行tap事件的操作</span></div><div class="line">            callBack&amp;&amp;callBack(e);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">//不满足条件</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'不满足tap时间的条件'</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//初始化数据</span></div><div class="line">        startTime=<span class="number">0</span>;</div><div class="line">        endTime=<span class="number">0</span>;</div><div class="line">        disT=<span class="number">0</span>;</div><div class="line">        isMove=<span class="literal">false</span>;</div><div class="line">    &#125;)</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
@@ -307,156 +245,88 @@
   </div>
   
     
-
-
-    <nav id="article-nav">
+<nav id="article-nav">
+  
+    <a href="/2016/02/12/Ajax-跨域和缓存/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/12/Ajax-跨域和缓存/">
-                    Ajax学习之跨域和缓存
-                </a>
-            </div>
+          Ajax学习之跨域和缓存
         
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/04/Bootstarp-Bootstarp学习/">
-                    Bootstrap入门学习
-                </a>
-            </div>
-        
-    </nav>
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/01/less学习之旅/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">less学习之旅</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
 
   
 </article>
 
 
 
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"移动web学习之模仿京东M站　| 劳柏明博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
 
 
 
-
-
-
-
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2016/02/12/Ajax-跨域和缓存/" title="上一篇: Ajax学习之跨域和缓存">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2016/04/04/Bootstarp-Bootstarp学习/" title="下一篇: Bootstrap入门学习">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/20/webLayout-布局技巧/">网页布局之布局技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/js-内存管理/">js之内存管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/11/js-正则表达式/">js之正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/06/Bootstarp-应用布局(二)详解/">Bootstrap应用布局(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/Bootstarp-应用布局(一)/">Bootstrap应用布局(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/04/Bootstarp-Bootstarp学习/">Bootstrap入门学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/mobile-移动web开发/">移动web学习之模仿京东M站</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/Ajax-跨域和缓存/">Ajax学习之跨域和缓存</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/11/Ajax-评论功能/">Ajax学习之评论功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/Ajax-原生js封装/">Ajax学习之原生js封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/canvas-笨鸟飞/">canvas学习之笨鸟飞游戏</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/canvas-knova应用二/">canvas学习之konva框架旋转中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/07/canvas-knova应用一/">canvas学习之konva框架饼状图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/06/canvas-红包图片效果/">canvas学习之图片效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/canvas-倒计时效果/">canvas学习之倒计时效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/canvas-放大镜效果/">canvas学习之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/canvas-绘制时钟/">canvas学习之绘制时钟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/js-命名空间模式/">js设计模式之命名空间模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/js-备忘模式/">js设计模式之备忘模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/30/js-观察者模式/">js设计模式之观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/js-单利模式/">js设计模式之单利模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/js-工厂模式/">js设计模式之工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-Object的静态成员/">js面向对象之Object的静态成员</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-原型链总结/">js面向对象之原型链总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-面向对象总结三/">js面向对象总结三</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/js-面向对象总结二/">js面向对象总结二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/25/js-面向对象总结一/">js面向对象总结一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-入口原理分析/">jquery进价之原理分析(入口,节点,样式,属性)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-总结/">jquery学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/23/jquery-备忘提醒功能/">jquery入门之备忘录提醒功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/jquery-瀑布流/">jquery入门之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/js-绚丽小球/">js特效之滑动绚丽小球</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/js-3D图片切换/">js特效之有3D感图片切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/js-瀑布流布局/">js特效之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/18/js-放大镜效果/">js特效之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/js-满天星星/">js特效之满天星星</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/js-轮播切换/">js特效之轮播图切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/js-九宫格思想/">js特效之九宫格思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/14/js-基础总结/">js学习之总结js基础部分</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/js-运动框架封装/">js学习之运动框架封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-选择分享功能/">js学习之简单的应用二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-节点操作/">js学习之简单的应用一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/css3-云层动画/">css3学习之云层效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/css3-3D音乐播放器/">css3学习之3d音乐界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/webLayout-绿色食品网布局/">网页布局学习之绿色食品网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/webLayout-京东布局/">网页布局学习之京东官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/webLayout-淘宝布局/">网页布局学习之淘宝官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/01/第一篇博客/">第一篇博客</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-                2016-2017 劳柏明
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 劳柏明
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
         </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
     </div>
+  </div>
 </footer>
     </div>
     
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
 <script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-            
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
 </script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
   </div>
 </body>
 </html>
