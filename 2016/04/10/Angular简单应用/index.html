@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular简单应用 | &lt;(￣3￣)&gt;carrotming</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="利用豆瓣api实现的简单电影搜索功能">
+<meta name="keywords" content="框架学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular简单应用">
+<meta property="og:url" content="//carrot.me/2016/04/10/Angular简单应用/index.html">
+<meta property="og:site_name" content="<(￣3￣)>carrotming">
+<meta property="og:description" content="利用豆瓣api实现的简单电影搜索功能">
+<meta property="og:image" content="//carrot.me/assets/blogImg/angular-2.gif">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular简单应用">
+<meta name="twitter:description" content="利用豆瓣api实现的简单电影搜索功能">
+<meta name="twitter:image" content="//carrot.me/assets/blogImg/angular-2.gif">
+  
+    <link rel="alternative" href="/atom.xml" title="&lt;(￣3￣)&gt;carrotming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/TiddlyWiki.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/fav.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">劳柏明</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">热爱前端的小白工程师</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Ajax/" style="font-size: 12px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 18px;">canvas</a> <a href="/tags/css3/" style="font-size: 12px;">css3</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/jquery/" style="font-size: 16px;">jquery</a> <a href="/tags/js基础/" style="font-size: 14px;">js基础</a> <a href="/tags/js炫酷特效/" style="font-size: 18px;">js炫酷特效</a> <a href="/tags/js设计模式/" style="font-size: 16px;">js设计模式</a> <a href="/tags/js面向对象/" style="font-size: 16px;">js面向对象</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/框架学习/" style="font-size: 20px;">框架学习</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/移动web/" style="font-size: 10px;">移动web</a> <a href="/tags/网页布局/" style="font-size: 14px;">网页布局</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">劳柏明</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/fav.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">劳柏明</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">热爱前端的小白工程师</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Angular简单应用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/10/Angular简单应用/" class="article-date">
+  	<time datetime="2016-04-10T06:11:00.000Z" itemprop="datePublished">2016-04-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular简单应用
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架学习/">框架学习</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/框架学习/">框架学习</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>利用豆瓣api实现的简单电影搜索功能<br><a id="more"></a></p>
+<h1 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h1><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div></pre></td><td class="code"><pre><div class="line">第一步:先把整体的样式搭建好,创立一个假数据测试,然后就可以准备从服务器拿数据</div><div class="line">第二步:我们可以把angular中每一部分的指令都独立出来一个文件,方便管理.</div><div class="line">      angular1<span class="number">.6</span>.js</div><div class="line">      angular-route.js</div><div class="line">      config.js</div><div class="line">      controller.js</div><div class="line">      directive.js</div><div class="line">      index.js</div><div class="line">      jquery<span class="number">-3.1</span><span class="number">.1</span>.js</div><div class="line">      service.js</div><div class="line">第三步:在index.js创建好模块化的名字以及依赖路由,所有js文件都通过;()()闭包方式来进行,保证内部的变量不受外界干扰</div><div class="line">     ;(function (angular) &#123;</div><div class="line">    <span class="comment">//创建模块,依赖路由服务</span></div><div class="line">    var app=angular.module(<span class="string">'app'</span>,[<span class="string">'ngRoute'</span>]);</div><div class="line">     &#125;)(angular,document);</div><div class="line">	</div><div class="line">第四步:配置路由,根据豆瓣api提供的接口来进行参数的设置	,在config文件进行</div><div class="line">    ;(function (angular) &#123;</div><div class="line">    <span class="comment">//配置路由</span></div><div class="line">    angular.module(<span class="string">'app'</span>).config([<span class="string">'$routeProvider'</span>, function (<span class="symbol">$</span>routeProvider) &#123;</div><div class="line">        <span class="comment">//监听哈希值变化</span></div><div class="line">        <span class="symbol">$</span>routeProvider.when(<span class="string">'/movie/:name'</span>, &#123;</div><div class="line">            <span class="comment">//模板地址</span></div><div class="line">            templateUrl: <span class="string">'content.html'</span>,</div><div class="line">            <span class="comment">//控制器名字</span></div><div class="line">            controller: <span class="string">'movieController'</span></div><div class="line">            <span class="comment">//点击出现详情</span></div><div class="line">        &#125;).when(<span class="string">'/details/:id'</span>, &#123;</div><div class="line">            <span class="comment">//模板地址</span></div><div class="line">            templateUrl: <span class="string">'movie_detail_tpl.html'</span>,</div><div class="line">            <span class="comment">//控制器名字</span></div><div class="line">            controller: <span class="string">'detailsController'</span></div><div class="line">        &#125;).otherwise(&#123;</div><div class="line">            <span class="comment">//找不到对应的参数默认显示</span></div><div class="line">            redirectTo: <span class="string">'/movie/in_theaters'</span></div><div class="line">        &#125;);</div><div class="line">        <span class="comment">//设置白名单</span></div><div class="line">    &#125;]).config([<span class="string">'$sceDelegateProvider'</span>, function (<span class="symbol">$</span>sceDelegateProvider) &#123;</div><div class="line">        <span class="symbol">$</span>sceDelegateProvider.resourceUrlWhitelist([</div><div class="line">            <span class="string">'self'</span>,</div><div class="line">            <span class="string">'https://api.douban.com/**'</span></div><div class="line">        ]);</div><div class="line">    &#125;]);</div><div class="line">&#125;)(angular);</div><div class="line"></div><div class="line">第五步:因为豆瓣api接收回调不允许出现.语法,而原生的angualr回调函数会出现.,所以需要自己手动封装一个jsonp,原理是随机自定义一个函数,然后绑定在window上,通过回调执行.传入url,参数,对参数进行格式处理拼接到url上,最后创建script标签设置src地址即可.</div><div class="line"></div><div class="line">     ;(function (angular, document) &#123;</div><div class="line">    <span class="comment">//自定义服务</span></div><div class="line">    angular.module(<span class="string">'app'</span>).service(<span class="string">'$myHttp'</span>, [<span class="string">'$window'</span>, function (<span class="symbol">$</span>window) &#123;</div><div class="line"></div><div class="line">        <span class="comment">/**</span></div><div class="line">         * 定义jsonp方法用来跨域请求数据</div><div class="line">         * @param url       传入跨域的地址</div><div class="line">         * @param params    传入需要的参数</div><div class="line">         * @param callBack  回调操作</div><div class="line">         */</div><div class="line">        this.jsonp = function (url, params, callBack) &#123;</div><div class="line">            <span class="comment">//随机一个函数名,用来给服务器接收进行回调拿到数据  </span></div><div class="line">            var callBackName = <span class="string">'carrotming'</span> + Math.random().toString().slice(<span class="number">2</span>);</div><div class="line">            <span class="comment">//定义一个全局函数,调用回调函数</span></div><div class="line">            <span class="symbol">$</span>window[callBackName] = function (data) &#123;</div><div class="line">                callBack &amp;&amp; callBack(data);</div><div class="line">            &#125;;</div><div class="line">            <span class="comment">//对传入的参数进行处理 拼接到url后面</span></div><div class="line">            <span class="comment">//格式 url?key=value&amp;...</span></div><div class="line">            var newParams = <span class="string">''</span>;</div><div class="line">            <span class="keyword">for</span> (var key in params) &#123;</div><div class="line">                newParams += key + <span class="string">'='</span> + encodeURI(params[key]) + <span class="string">'&amp;'</span>;</div><div class="line">            &#125;</div><div class="line">            url += <span class="string">'?'</span> + newParams + <span class="string">'callback='</span> + callBackName;</div><div class="line">            <span class="comment">//动态创建script标签</span></div><div class="line">            var oScript = document.createElement(<span class="string">'script'</span>);</div><div class="line">            <span class="comment">//添加src</span></div><div class="line">            oScript.src = url;</div><div class="line">            <span class="comment">//插入到body标签里面</span></div><div class="line">            document.body.appendChild(oScript);</div><div class="line">        &#125;;</div><div class="line">        <span class="comment">//配置apikey服务</span></div><div class="line">    &#125;]).value(<span class="string">'apikey'</span>, <span class="string">'0b2bdeda43b5688921839c8ecb20399b'</span>)</div><div class="line">        <span class="comment">//配置url</span></div><div class="line">        .value(<span class="string">'url'</span>, <span class="string">'https://api.douban.com/v2/movie/'</span>);</div><div class="line">&#125;)(angular, document);</div><div class="line"></div><div class="line">第<span class="number">6</span>步:在控制器执行跨域访问,只需要调用之前封装的jsonp来进行跨域,并且查询豆瓣api来进行参数设置,最后添加上一页下一页的方法,即可完成跨域获取数据,需要强调的是,因为跨域存在延迟,而angular的机制是通过脏值检测来控制dom元素的展示,所以我们需要手动调用<span class="symbol">$</span>apply的方法来触发脏值检测,才能正确的展示数据</div><div class="line">    ;(function (angular) &#123;</div><div class="line">    angular.module(<span class="string">'app'</span>)</div><div class="line">    <span class="comment">//电影控制器</span></div><div class="line">        .controller(<span class="string">'movieController'</span>, [<span class="string">'$scope'</span>, <span class="string">'$myHttp'</span>, <span class="string">'$routeParams'</span>, <span class="string">'apikey'</span>, <span class="string">'url'</span>, <span class="string">'$timeout'</span>,function (<span class="symbol">$</span>scope, <span class="symbol">$</span>myHttp, <span class="symbol">$</span>routeParams, apikey, url) &#123;</div><div class="line">            <span class="comment">//路由参数,对应标签的值</span></div><div class="line">            var name = <span class="symbol">$</span>routeParams.name;</div><div class="line">            <span class="comment">// api密钥</span></div><div class="line">            var apikey = apikey;</div><div class="line">            <span class="comment">// 跨域的地址</span></div><div class="line">            var url = url + name;</div><div class="line">            <span class="comment">//跨域参数</span></div><div class="line">            <span class="comment">//索引</span></div><div class="line">             <span class="symbol">$</span>scope.index = <span class="number">1</span>;</div><div class="line"></div><div class="line">            <span class="symbol">$</span>scope.count = <span class="number">5</span>;</div><div class="line"></div><div class="line">            <span class="symbol">$</span>scope.totalCount=<span class="string">''</span>;</div><div class="line"></div><div class="line">            var movieParams = &#123;</div><div class="line">                <span class="string">'apikey'</span>: apikey,</div><div class="line">                <span class="string">'count'</span>: <span class="number">5</span>,</div><div class="line">                <span class="string">'start'</span>: <span class="number">0</span>,</div><div class="line">                <span class="string">'city'</span>: <span class="string">'中山'</span></div><div class="line">            &#125;;</div><div class="line"></div><div class="line">            <span class="symbol">$</span>scope.flag = true ;</div><div class="line"></div><div class="line">            <span class="symbol">$</span>myHttp.jsonp(url, movieParams, function (data) &#123;</div><div class="line">                <span class="symbol">$</span>scope.flag = false ;</div><div class="line">                <span class="comment">//接收数据</span></div><div class="line">                <span class="symbol">$</span>scope.data = data;</div><div class="line"></div><div class="line">                <span class="symbol">$</span>scope.totalCount=Math.<span class="built-in">floor</span>(data.total/data.count);</div><div class="line"></div><div class="line">                <span class="comment">//触发脏值检测</span></div><div class="line">                <span class="symbol">$</span>scope.<span class="symbol">$</span>apply();</div><div class="line">            &#125;);</div><div class="line"></div><div class="line">            <span class="symbol">$</span>scope.search=function (text) &#123;</div><div class="line">                  <span class="symbol">$</span>scope.info = text ;</div><div class="line">              &#125;;</div><div class="line">            <span class="symbol">$</span>scope.<span class="keyword">all</span>=function () &#123;</div><div class="line">                <span class="symbol">$</span>scope.info = <span class="string">''</span> ;</div><div class="line">            &#125;;</div><div class="line"></div><div class="line">            <span class="symbol">$</span>scope.prev=function () &#123;</div><div class="line">                <span class="symbol">$</span>scope.flag = true ;</div><div class="line">                <span class="symbol">$</span>scope.index --;</div><div class="line">                var start=( <span class="symbol">$</span>scope.index - <span class="number">1</span>) *  <span class="symbol">$</span>scope.count;</div><div class="line">                var movieParams = &#123;</div><div class="line">                    <span class="string">'apikey'</span>: apikey,</div><div class="line">                    <span class="string">'count'</span>:  <span class="symbol">$</span>scope.count,</div><div class="line">                    <span class="string">'start'</span>: start,</div><div class="line">                    <span class="string">'city'</span>: <span class="string">'中山'</span></div><div class="line">                &#125;;</div><div class="line">                <span class="symbol">$</span>myHttp.jsonp(url, movieParams, function (data) &#123;</div><div class="line">                    <span class="symbol">$</span>scope.flag = false ;</div><div class="line">                    <span class="comment">//接收数据</span></div><div class="line">                    <span class="symbol">$</span>scope.data = data;</div><div class="line">                    <span class="comment">//触发脏值检测</span></div><div class="line">                    <span class="symbol">$</span>scope.<span class="symbol">$</span>apply();</div><div class="line">                &#125;);</div><div class="line">            &#125;;</div><div class="line">            <span class="symbol">$</span>scope.next=function () &#123;</div><div class="line">                <span class="symbol">$</span>scope.flag = true ;</div><div class="line">                <span class="symbol">$</span>scope.index ++;</div><div class="line">                var start=( <span class="symbol">$</span>scope.index - <span class="number">1</span>) *  <span class="symbol">$</span>scope.count;</div><div class="line">                var movieParams = &#123;</div><div class="line">                    <span class="string">'apikey'</span>: apikey,</div><div class="line">                    <span class="string">'count'</span>:  <span class="symbol">$</span>scope.count,</div><div class="line">                    <span class="string">'start'</span>: start,</div><div class="line">                    <span class="string">'city'</span>: <span class="string">'中山'</span></div><div class="line">                &#125;;</div><div class="line">                <span class="symbol">$</span>myHttp.jsonp(url, movieParams, function (data) &#123;</div><div class="line">                    <span class="symbol">$</span>scope.flag = false ;</div><div class="line">                    <span class="comment">//接收数据</span></div><div class="line">                    <span class="symbol">$</span>scope.data = data;</div><div class="line">                    <span class="comment">//触发脏值检测</span></div><div class="line">                    <span class="symbol">$</span>scope.<span class="symbol">$</span>apply();</div><div class="line">                &#125;);</div><div class="line">            &#125;;</div><div class="line"></div><div class="line">            <span class="comment">//详情控制器</span></div><div class="line">        &#125;]).controller(<span class="string">'detailsController'</span>, [<span class="string">'$scope'</span>, <span class="string">'$myHttp'</span>, <span class="string">'$routeParams'</span>, <span class="string">'apikey'</span>, <span class="string">'url'</span>, function (<span class="symbol">$</span>scope, <span class="symbol">$</span>myHttp, <span class="symbol">$</span>routeParams, apikey, url) &#123;</div><div class="line">        <span class="symbol">$</span>scope.flag = true ;</div><div class="line">        <span class="comment">//发送请求,重新获取数据</span></div><div class="line">        var url = url + <span class="symbol">$</span>routeParams.id;</div><div class="line">        var detailsParams = &#123;<span class="string">'apikey'</span>: apikey&#125;;</div><div class="line">        <span class="symbol">$</span>myHttp.jsonp(url, detailsParams, function (data) &#123;</div><div class="line">            <span class="symbol">$</span>scope.flag = false ;</div><div class="line">            <span class="comment">//接收数据</span></div><div class="line">            <span class="symbol">$</span>scope.data = data;</div><div class="line">            <span class="comment">//触发脏值检测</span></div><div class="line">            <span class="symbol">$</span>scope.<span class="symbol">$</span>apply();</div><div class="line">        &#125;);</div><div class="line">    &#125;])</div><div class="line">&#125;)(angular,document);</div><div class="line"></div><div class="line">第<span class="number">7</span>步:我们设置自定义指令控制点击样式改变,重点是监听hash值得变化,把<span class="symbol">$</span>location的服务绑定在<span class="symbol">$</span>scope中,那样<span class="symbol">$</span>location就会存放<span class="symbol">$</span>watchlist队列中,然后脏值检测就能一个监听<span class="symbol">$</span>location的变化,包括hash值,这里要操作元素,需要使用到link的参数,该方法会把绑定了指令的元素转化成jquery对象,能够使用基本的jquery方法,我们要做的就是判断该元素身上绑定a标签的href值与hash值是否相等即可改变样式</div><div class="line">     ;(function (angular) &#123;</div><div class="line">    <span class="comment">//自定义指令</span></div><div class="line">    angular.module(<span class="string">'app'</span>).directive(<span class="string">'ngactive'</span>, [<span class="string">'$location'</span>, function (<span class="symbol">$</span>location) &#123;</div><div class="line">        return &#123;</div><div class="line">            restrict: <span class="string">'A'</span>,</div><div class="line">            link: function (<span class="symbol">$</span>scope, ele, attr) &#123;</div><div class="line">                <span class="comment">//把location服务绑定到$scope中</span></div><div class="line">                <span class="symbol">$</span>scope.<span class="symbol">$</span>location = <span class="symbol">$</span>location;</div><div class="line">                <span class="comment">//监听</span></div><div class="line">                <span class="symbol">$</span>scope.<span class="symbol">$</span>watch(<span class="string">'$location.url()'</span>, function (newVal) &#123;</div><div class="line">                    <span class="comment">//当点击的hash值等于当前的哈希值时候,添加样式,其余删除样式</span></div><div class="line">                    var href = ele.find(<span class="string">'a'</span>).attr(<span class="string">'href'</span>).slice(<span class="number">2</span>);</div><div class="line">                    <span class="keyword">if</span> (newVal == href) &#123;</div><div class="line">                        ele.addClass(attr.ngactive).siblings(<span class="string">'li'</span>).removeClass(attr.ngactive);</div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;])</div><div class="line">&#125;)(angular);</div><div class="line"></div><div class="line">第<span class="number">8</span>步:把获取到数据展示到页面中,只需要观察豆瓣api文档和观察返回的数据,然后进行数据传送即可把数据展示到是视图中</div><div class="line">     &lt;<span class="built-in">div</span> ng-show=<span class="string">"flag"</span> style=<span class="string">"text-align: center"</span>&gt;</div><div class="line">    &lt;img ng-src=<span class="string">"loading.gif"</span> alt=<span class="string">""</span> &gt;</div><div class="line">&lt;/<span class="built-in">div</span>&gt;</div><div class="line"></div><div class="line">&lt;<span class="built-in">div</span> ng-hide=<span class="string">"flag"</span>&gt;</div><div class="line"></div><div class="line">    &lt;!--绑定标题--&gt;</div><div class="line">    &lt;h1 ng-bind=<span class="string">"data.title"</span>&gt;&lt;/h1&gt;</div><div class="line">    &lt;<span class="built-in">div</span> class=<span class="string">"list"</span> ng-<span class="keyword">repeat</span>=<span class="string">"movie in data.subjects | filter: info "</span>&gt;</div><div class="line">        &lt;!--遍历data.subjects数据--&gt;</div><div class="line">        &lt;a href=<span class="string">"#!/details/&#123;&#123;movie.id&#125;&#125;"</span> &gt;</div><div class="line">            &lt;dl&gt;</div><div class="line">                &lt;!--绑定图片--&gt;</div><div class="line">                &lt;dt&gt;&lt;img src=<span class="string">"&#123;&#123;movie.images.small&#125;&#125;"</span> alt=<span class="string">""</span>&gt;&lt;/dt&gt;</div><div class="line">                &lt;dd&gt;</div><div class="line">                    &lt;!--绑定电影名字--&gt;</div><div class="line">                    &lt;h4 ng-bind=<span class="string">"movie.title"</span>&gt;&lt;/h4&gt;</div><div class="line">                    &lt;!--绑定类型--&gt;</div><div class="line">                    &lt;p&gt;类型:&lt;span ng-<span class="keyword">repeat</span>=<span class="string">"genres in movie.genres"</span> ng-bind=<span class="string">"genres+','"</span>&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line">                    &lt;!--电影导演--&gt;</div><div class="line">                    &lt;p &gt;导演:&lt;span ng-bind=<span class="string">"movie.directors[0].name"</span>&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line">                    &lt;!--主演--&gt;</div><div class="line">                    &lt;p&gt;主演:&lt;span ng-<span class="keyword">repeat</span>=<span class="string">"casts in movie.casts"</span> ng-bind=<span class="string">"casts.name+','"</span>&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line">                    &lt;!--地区--&gt;</div><div class="line">                    &lt;p&gt;上演时间:&lt;span ng-<span class="keyword">repeat</span>=<span class="string">"pubdates in movie.pubdates"</span> ng-bind=<span class="string">"pubdates+','"</span>&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line">                    &lt;p&gt;时长:&lt;span ng-bind=<span class="string">"movie.durations[0]"</span>&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line">                &lt;/dd&gt;</div><div class="line">                &lt;span class=<span class="string">"score"</span> ng-bind=<span class="string">"movie.rating.average"</span>&gt;&lt;/span&gt;</div><div class="line">            &lt;/dl&gt;</div><div class="line">        &lt;/a&gt;</div><div class="line">    &lt;/<span class="built-in">div</span>&gt;</div><div class="line">    &lt;<span class="built-in">div</span> class=<span class="string">"page"</span>&gt;</div><div class="line">        &lt;a  ng-click=<span class="string">"prev()"</span>&gt;上一页&lt;/a&gt;</div><div class="line">        &lt;a  ng-click=<span class="string">"next()"</span>&gt;下一页&lt;/a&gt;</div><div class="line">    &lt;/<span class="built-in">div</span>&gt;</div><div class="line"></div><div class="line">&lt;/<span class="built-in">div</span>&gt;</div><div class="line"></div><div class="line">  &lt;<span class="built-in">div</span> ng-show=<span class="string">"flag"</span> style=<span class="string">"text-align: center"</span>&gt;</div><div class="line">    &lt;img ng-src=<span class="string">"loading.gif"</span> alt=<span class="string">""</span> &gt;</div><div class="line">&lt;/<span class="built-in">div</span>&gt;</div><div class="line"></div><div class="line">&lt;<span class="built-in">div</span> ng-hide=<span class="string">"flag"</span>&gt;</div><div class="line"></div><div class="line">    &lt;h1 ng-bind=<span class="string">"data.alt_title"</span>&gt;&lt;/h1&gt;</div><div class="line"></div><div class="line">    &lt;<span class="built-in">div</span> class=<span class="string">"detail_content"</span>&gt;</div><div class="line">        &lt;dl class=<span class="string">"detail_dl"</span>&gt;</div><div class="line">            &lt;dt&gt;&lt;img ng-src=<span class="string">"&#123;&#123;data.image&#125;&#125;"</span> width=<span class="string">"300px"</span> height=<span class="string">"400px"</span>&gt;&lt;/dt&gt;</div><div class="line">            &lt;dd&gt;</div><div class="line">                &lt;p&gt;类型: &lt;span ng-<span class="keyword">repeat</span>=<span class="string">"type in data.attrs.movie_type"</span> ng-bind=<span class="string">"type+','"</span>&gt;&lt;/span&gt;&lt;/p&gt;</div><div class="line">                &lt;p&gt;导演: &lt;span ng-<span class="keyword">repeat</span>=<span class="string">"author in data.author"</span> ng-bind=<span class="string">"author.name"</span>&gt;&lt;/span&gt; &lt;/p&gt;</div><div class="line">            &lt;/dd&gt;</div><div class="line">        &lt;/dl&gt;</div><div class="line">    &lt;/<span class="built-in">div</span>&gt;</div><div class="line">    &lt;<span class="built-in">div</span> ng-bind=<span class="string">"data.summary"</span>&gt;&lt;/<span class="built-in">div</span>&gt;</div><div class="line">&lt;/<span class="built-in">div</span>&gt;</div><div class="line">总结:angular是一个模块化的开发过程,我们把不同的需求放到不同的模块来实现功能,并且我们全程无需操作dom元素.都是通过数据进行传送,虽然是一个简单的应用,但也很好的把angualr当中几个很重要的功能结合到一起,像内置命令,依赖注入,服务,控制器,配置等等,把核心的功能结合到一起.对加深angular的理解又更进一步了.</div></pre></td></tr></table></figure>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="/assets/blogImg/angular-2.gif" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/08/Angular学习之旅/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Angular学习之旅
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/11/js-正则表达式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js之正则表达式</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 劳柏明
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
