@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular总结 | &lt;(￣3￣)&gt;carrotming</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="angular关键核心点进行总结">
+<meta name="keywords" content="框架学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular总结">
+<meta property="og:url" content="//carrot.me/2016/04/11/Angular问题总结/index.html">
+<meta property="og:site_name" content="<(￣3￣)>carrotming">
+<meta property="og:description" content="angular关键核心点进行总结">
+<meta property="og:updated_time" content="2017-05-11T08:42:01.968Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular总结">
+<meta name="twitter:description" content="angular关键核心点进行总结">
+  
+    <link rel="alternative" href="/atom.xml" title="&lt;(￣3￣)&gt;carrotming" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/TiddlyWiki.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/fav.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">劳柏明</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">热爱前端的小白工程师</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about/">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Ajax/" style="font-size: 12px;">Ajax</a> <a href="/tags/canvas/" style="font-size: 18px;">canvas</a> <a href="/tags/css3/" style="font-size: 12px;">css3</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/jquery/" style="font-size: 16px;">jquery</a> <a href="/tags/js基础/" style="font-size: 14px;">js基础</a> <a href="/tags/js炫酷特效/" style="font-size: 18px;">js炫酷特效</a> <a href="/tags/js设计模式/" style="font-size: 16px;">js设计模式</a> <a href="/tags/js面向对象/" style="font-size: 16px;">js面向对象</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/框架学习/" style="font-size: 20px;">框架学习</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/移动web/" style="font-size: 10px;">移动web</a> <a href="/tags/网页布局/" style="font-size: 14px;">网页布局</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">劳柏明</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/fav.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">劳柏明</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">热爱前端的小白工程师</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about/">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Angular问题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/11/Angular问题总结/" class="article-date">
+  	<time datetime="2016-04-11T06:11:00.000Z" itemprop="datePublished">2016-04-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular总结
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架学习/">框架学习</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/框架学习/">框架学习</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>angular关键核心点进行总结<br><a id="more"></a></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">angular中有很多知识点需要学习,学习成本是很大的,我通过平常开发中把一些</div><div class="line">很重要知识点总结下来,不管是以后拿来用,或者跳槽面试需要,我都感觉是很有帮助的!</div></pre></td></tr></table></figure>
+<h1 id="angular的缺点"><a href="#angular的缺点" class="headerlink" title="angular的缺点"></a>angular的缺点</h1><figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">本身它是比较笨重的,源码就有<span class="number">3</span>w多行,并且替我封装了很多的方法,所以它的性能是比较差的.</div><div class="line">所以我们在用的时候,就要尽最多程度保证性能了.</div><div class="line">第一个:不要过多在$Scope.$watch方法,因为这个方法会一直执行,如果我们不去手动关闭,</div><div class="line">这个方法会一直监听绑定的属性,所以是非常耗性能的.</div><div class="line">减少不必要的数据展示,因为进行视图的展示,会触发脏值检测,如果一些不必要的数据展示到视图</div><div class="line">中,就会耗性能了</div></pre></td></tr></table></figure>
+<h1 id="ng-if-ng-show-ng-hide-区别"><a href="#ng-if-ng-show-ng-hide-区别" class="headerlink" title="ng-if ,ng-show ,ng-hide 区别"></a>ng-if ,ng-show ,ng-hide 区别</h1><figure class="highlight nsis"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">这三者虽然很类似,但是还是不同</div><div class="line">首先是共同点:它们三者都可以起到隐藏显示元素的作用</div><div class="line">不同点:ng-if的隐藏是把dom元素直接删除,而<span class="literal">show</span>和<span class="literal">hide</span>只是类似使用display:<span class="literal">none</span>的方法</div><div class="line">第二个不同点使用场景不一样,ng-if一般用在单次显示隐藏的时候,比如页面一上来就出现的广告</div><div class="line">信息,关闭之后就不会在显示,而<span class="literal">show</span> <span class="literal">hide</span>一般是配套使用用来控制一些元素显示隐藏,</div><div class="line">多次使用,比如头部的返回和底部的tabbar,它们是相反的,通过<span class="literal">show</span>和<span class="literal">hide</span>方法就能用</div><div class="line">一个变量控制它们的显示和隐藏</div></pre></td></tr></table></figure>
+<h1 id="ng-repeat迭代数据出现数据相同处理"><a href="#ng-repeat迭代数据出现数据相同处理" class="headerlink" title="ng-repeat迭代数据出现数据相同处理"></a>ng-repeat迭代数据出现数据相同处理</h1><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">平常使用ng-<span class="keyword">repeat</span>时候,遍历数据可能会出现数据相同情况,这时候就会报错,如何解决这个</div><div class="line">问题呢?其实很简单,只需要在后面加上 track-<span class="keyword">by</span>=<span class="string">'索引'</span> 里面传入一个不同的值,就能解决</div><div class="line">数据一样的情况了</div></pre></td></tr></table></figure>
+<h1 id="ng-事件绑定-能否使用原生js对象方法"><a href="#ng-事件绑定-能否使用原生js对象方法" class="headerlink" title="ng-事件绑定,能否使用原生js对象方法"></a>ng-事件绑定,能否使用原生js对象方法</h1><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">我们在事件绑定时候,是不允许使用原生js对象的方法的,因为angualr不允许我们这样做,如何</div><div class="line">使用这些方法,angular为我们封装了属于自己的对象,在原生对象的前面加一个<span class="variable">$,</span>例如<span class="variable">$window</span>,</div><div class="line"><span class="variable">$timeout</span>.<span class="variable">$interval</span> 都是angular为我们封装,我们需要使用的使用,在依赖注入服务的时候</div><div class="line">把这些服务也一同注入进来,就能使用这样对象,它们的实现的功能和原生js对象是一样的,只不过用法</div><div class="line">稍微不同而尔!</div></pre></td></tr></table></figure>
+<h1 id="factory、service-和-provider-区别"><a href="#factory、service-和-provider-区别" class="headerlink" title="factory、service 和 provider 区别"></a>factory、service 和 provider 区别</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">在平常的开发中,需要用到很多自定义服务,而它们三者之间的共同点就是用来自定义服务的,它们的本质都是创建对象返回一个方法.</div><div class="line">而它们之间的不同就在于定义的方式不一样</div><div class="line">factory自定义服务:我们需要在内部返回一个一个对象,先通过function getData() 定义函数</div><div class="line">然后通过返回一个对象 <span class="keyword">return</span> &#123;getDate:getData&#125;的方式,我们需要使用的时候通过服务名称</div><div class="line">.对象的key 例如上面的例子,服务名称.getDate()就能调用服务的方法了</div><div class="line"></div><div class="line">service服务:我们通过<span class="keyword">this</span>来创建函数,例如,<span class="keyword">this</span>.getData=function() 然后通过服务名称.</div><div class="line">getData() 就能调用服务里面的方法了</div><div class="line"></div><div class="line">provider服务:我们需要通过<span class="keyword">this</span>调用 $<span class="keyword">get</span>方法 <span class="keyword">this</span>.$<span class="keyword">get</span>(&#123;<span class="keyword">return</span>｛｝&#125;)　方法里面返回一个</div><div class="line">对象，然后对象接收一个方法，我们通过服务名称.对象名称就能调用服务的方法了</div><div class="line"></div><div class="line">内置服务都会提供一个provider来进行配置,通过配置文件config方法,然后注入对应服务的名称</div><div class="line">例如 <span class="comment">//开启和禁用 调用config方法</span></div><div class="line">app.config([<span class="string">'$logProvider'</span>,function ($logProvider) &#123;</div><div class="line">            $logProvider.debugEnabled(<span class="literal">false</span>);</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h1 id="angular当中数据绑定的机制和原理-digest-apply"><a href="#angular当中数据绑定的机制和原理-digest-apply" class="headerlink" title="angular当中数据绑定的机制和原理 $digest $apply"></a>angular当中数据绑定的机制和原理 $digest $apply</h1><figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">angular中是通过脏值检测的方式来进行数据展示到视图的</div><div class="line">每次在视图中绑定数据的时候,都会把这个数据添加到一个$watchlist数组当中,里面的属性会被</div><div class="line">$watch监听,只要有事件的方式,就会触发$degist事件,它第一次会遍历$watchlist数组,</div><div class="line">询问每一个属性是否有更改,然后回再次遍历一次$scope上面的属性,是否有更新,如果有,会再次遍历</div><div class="line">数组,如果没有就会触发$apply方法,把数据展示到视图中</div></pre></td></tr></table></figure>
+<h1 id="定时器的取消和-watch的停止"><a href="#定时器的取消和-watch的停止" class="headerlink" title="定时器的取消和$watch的停止"></a>定时器的取消和$watch的停止</h1><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">当我们项目需要用到定时器时候,我们肯定需要关闭定时,原生js通过clearInterval来关闭</div><div class="line">而angular中通过 <span class="variable">$interval</span>.cancel(<span class="keyword">timer</span>)来关闭 先用一个变量接收<span class="keyword">var</span> <span class="keyword">timer</span>=<span class="variable">$interval</span>();</div><div class="line"></div><div class="line"><span class="variable">$watch</span>方法调用的时候会返回一个函数,如果我们想要停止某个监听,在定义时候接收一下</div><div class="line"><span class="keyword">var</span> stopWatch = <span class="variable">$scope</span>.<span class="variable">$watch</span>('监听的值',回调)  ,再次调用该方法即可关闭监听 </div><div class="line">stopWatch();</div></pre></td></tr></table></figure>
+<h1 id="angualr中指令以及里面的常用方法"><a href="#angualr中指令以及里面的常用方法" class="headerlink" title="angualr中指令以及里面的常用方法"></a>angualr中指令以及里面的常用方法</h1><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">自定义指令是可以以哪种方式进行展示的,</div><div class="line">通过 restrict 来定义 </div><div class="line">里面具体的值 为 E==&gt;元素  <span class="params">&lt;nav&gt;</span><span class="params">&lt;/nav&gt;</span></div><div class="line">              A==&gt;属性   <span class="params">&lt;div nav&gt;</span><span class="params">&lt;/div&gt;</span></div><div class="line">              C==&gt;类     <span class="params">&lt;div class='nav'&gt;</span><span class="params">&lt;/div&gt;</span></div><div class="line">              M==&gt;注释   不建议使用</div><div class="line"><span class="symbol"></span></div><div class="line">template:模板,可以直接写html结构 并且里面的标签必须有一个父级包着,要不会报错.</div><div class="line"><span class="symbol">templateUrl:</span>模板地址 写一个路径</div><div class="line"><span class="symbol">replace:</span>true  设置为true会替换原来的标签</div><div class="line"><span class="symbol">transculde:</span>true  该方法之适用外链模板 会保留标签里面的元素  在需要保留的元素添加</div><div class="line">                 <span class="params">&lt;div transculde&gt;</span><span class="params">&lt;/div&gt;</span></div><div class="line"><span class="symbol">link:</span>里面接收三个参数,分别是scope,ele,attr,</div><div class="line">它们分别是scope服务,ele为模板的元素,它会默认转换成jQ对象,attr为元素身上的属性</div><div class="line"></div><div class="line">scope修饰符:</div><div class="line">  里面有三个选项 该方法作用用于外界传值使用</div><div class="line"> </div><div class="line">  第一种：自定义名称:<span class="string">'@'</span> 通过<span class="params">&lt;xmg content="&#123;&#123;content&#125;&#125;""&gt;</span><span class="params">&lt;/xmg&gt;</span></div><div class="line">   的插值语法获取值,该修饰符特点:外界数据修改,内部数据会一起修改,内部修改外部不修改,</div><div class="line">   并且如果指令本身具有该属性,外界同名的属性会覆盖</div><div class="line"></div><div class="line">  第二种:自定义名称:<span class="string">'='</span> <span class="params">&lt;xmg content="content"&gt;</span><span class="params">&lt;/xmg&gt;</span> 通过这中语法获取值</div><div class="line">  该修饰符特点:外界数据和内部数据会互相更改,并且内部同名的属性会被外部同名的属性覆盖</div><div class="line"></div><div class="line">  第三种 自定义名称:<span class="string">'&amp;'</span>  <span class="params">&lt;xmg content="content()"&gt;</span><span class="params">&lt;/xmg&gt;</span> 外界传入的是一个函数</div></pre></td></tr></table></figure>
+<h1 id="angular常用的路由和它们之间的区别"><a href="#angular常用的路由和它们之间的区别" class="headerlink" title="angular常用的路由和它们之间的区别"></a>angular常用的路由和它们之间的区别</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">angular</span>当中常用路由是原生<span class="selector-tag">ngRoute</span> 和 <span class="selector-tag">ui</span><span class="selector-class">.router</span></div><div class="line">并且<span class="selector-tag">ui</span><span class="selector-class">.router</span>是依赖<span class="selector-tag">angualr</span>的</div><div class="line">它们的共同点都是用来进行设置单页面(<span class="selector-tag">spa</span>)</div><div class="line">不同的是,原生<span class="selector-tag">angular</span>的路由只支持单视图展示,也就是说视图与视图不能嵌套,用法上受到很大的</div><div class="line">限制.</div><div class="line">而<span class="selector-tag">ui</span><span class="selector-class">.router</span>方法弥补了原生路由的不足,它不仅可以设置多视图的展示,还可以设置子路由的概念,</div><div class="line">就是同一个页面存在多个路由</div></pre></td></tr></table></figure>
+<h1 id="angular依赖注入的原理"><a href="#angular依赖注入的原理" class="headerlink" title="angular依赖注入的原理"></a>angular依赖注入的原理</h1><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">我们知道依赖注入是<span class="selector-tag">angualr</span>的核心之一,我们通过注入服务的方式,达到不同功能之间的相互联系,</div><div class="line"><span class="selector-tag">angualr</span>当中有<span class="selector-tag">2</span>种注入方式,一种是行内是注入,即我们帮注入的名称放到<span class="selector-attr">[]</span>中</div><div class="line">例如 <span class="selector-tag">app</span><span class="selector-class">.controller</span>(<span class="string">'控制器名称'</span>,[$scope,funtion($scope)&#123;&#125;]) </div><div class="line">另外一种是推断式注入 <span class="selector-tag">app</span><span class="selector-class">.controller</span>(<span class="string">'控制器名称'</span>,funtion($scope)&#123;&#125;]) 不写<span class="selector-attr">[]</span>,直接跟</div><div class="line">一个函数,它的缺点是很明显的,我们的项目都是需要经过压缩的,压缩会把一些形参转换成一些简单</div><div class="line">的字母,这时候<span class="selector-tag">anular</span>就不能通过形参的值来判断需要哪一个服务,就会报错,所以这种方式不建议使用..</div></pre></td></tr></table></figure>
+<h1 id="rootScope-和-scope-区别"><a href="#rootScope-和-scope-区别" class="headerlink" title="$rootScope 和$scope 区别"></a>$rootScope 和$scope 区别</h1><figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">它们的共同点都是作业域.只不过$rootScope是作为根作用域,$scope的作用域和原生js的作用域链</div><div class="line">类似,都是由底层往上找,上面不能往下找,所以在$rootScope中定义的数据,在任何地方都能被使用,</div><div class="line">它就是一个数的根节点, $scope就像它的分支,一层层的往下分,形成一个树状分支.</div></pre></td></tr></table></figure>
+<h1 id="数据绑定出现闪烁处理"><a href="#数据绑定出现闪烁处理" class="headerlink" title="数据绑定出现闪烁处理"></a>数据绑定出现闪烁处理</h1><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">当我们使用插值语法进行数据绑定的时候,会出现闪烁.</div><div class="line">解决办法第一种是ng-<span class="keyword">bind</span>的方法或者ng-<span class="keyword">bind</span>-template 方法</div><div class="line">第二个是绑定一个类ng-cloak 添加 display:<span class="keyword">none</span>的方法</div></pre></td></tr></table></figure>
+<h1 id="angular-mvc和mvvm"><a href="#angular-mvc和mvvm" class="headerlink" title="angular mvc和mvvm"></a>angular mvc和mvvm</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">简单的来说,angular是属于mvc和mvvm</div><div class="line">mvc指视 视图模型控制器</div><div class="line">mvvm值 数据的双向绑定</div></pre></td></tr></table></figure>
+<h1 id="控制器之间的通讯"><a href="#控制器之间的通讯" class="headerlink" title="控制器之间的通讯"></a>控制器之间的通讯</h1><figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">想要实现控制器的通讯,先清楚作用域之间的关系,父控制器想要传输数据到子控制器,通过</div><div class="line">$scope.$broadcast 方法发送一个广播给子控制器,里面绑定一个通讯名称key 后面带上参数</div><div class="line">子空控制器通过$scope.$on 方法接收 传入key名称和一个回调.</div><div class="line">如果是子向父传数据,通过$scope.$emit方法发送,父级也是通过 $scope.$on方法来接收数据</div><div class="line">另外需要注意,一定要等指令加载完毕才去发送广播!</div></pre></td></tr></table></figure>
+<h1 id="单页面应用的优缺点"><a href="#单页面应用的优缺点" class="headerlink" title="单页面应用的优缺点"></a>单页面应用的优缺点</h1><figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">spa应用,优缺点还是很明显的优点是性能高,始终只有一个页面,不需要跳转页面,减轻了服务器的压力.让用户的体验更加好.</div><div class="line">缺点就是不利于seo,对搜索引擎不友好.另外就是没有新窗口的跳转,对应习惯新窗口的用户来说可能</div><div class="line">造成不适应!!!</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/10/Angular综合应用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Angular综合应用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/11/js-正则表达式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js之正则表达式</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2016 劳柏明
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">carrotming</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
