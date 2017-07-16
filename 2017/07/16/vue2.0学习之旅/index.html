@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="劳柏明" />
+
+
+
+<meta name="description" content="vue2.0学习之旅">
+<meta name="keywords" content="wechat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue2.0学习之旅">
+<meta property="og:url" content="//carrot.me/2017/07/16/vue2.0学习之旅/index.html">
+<meta property="og:site_name" content="<(￣3￣)>carrotming">
+<meta property="og:description" content="vue2.0学习之旅">
+<meta property="og:updated_time" content="2017-07-16T13:46:40.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue2.0学习之旅">
+<meta name="twitter:description" content="vue2.0学习之旅">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="&lt;(￣3￣)&gt;carrotming" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/TiddlyWiki.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>vue2.0学习之旅 | &lt;(￣3￣)&gt;carrotming</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/fav.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">劳柏明</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">热爱前端的小白工程师</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js炫酷特效/">js炫酷特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js设计模式/">js设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js面向对象/">js面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架学习/">框架学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动web/">移动web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页布局/">网页布局</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">劳柏明</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/fav.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">劳柏明</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">热爱前端的小白工程师</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-vue2.0学习之旅" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/16/vue2.0学习之旅/" class="article-date">
+      <time datetime="2017-07-16T09:33:00.000Z" itemprop="datePublished">2017-07-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue2.0学习之旅
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/wechat/">wechat</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>vue2.0,尤雨溪华人的杰作<br><a id="more"></a></p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>vue2.0是在vue1.0之上进行的升级,虽然剔除了某些功能,但是使得整一个框架大小变得更加轻盈</p>
+<h1 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h1><h2 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">vue和angular的区别还是有,看看vue的基本结构</div><div class="line"> js代码</div><div class="line"> <span class="keyword">new</span> Vue(&#123; <span class="comment">//  创建的控制器</span></div><div class="line">        el:<span class="string">'#box1'</span>,  <span class="comment">// 创建的Vue对象作用范围是多大  el：后面跟上先择器。</span></div><div class="line">        data:&#123;  <span class="comment">//模型</span></div><div class="line">            msg:<span class="string">'hello world'</span>,</div><div class="line">            name:<span class="string">'xmg'</span></div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">new</span> Vue(&#123;</div><div class="line">        el:<span class="string">'.box2'</span>,</div><div class="line">        data:&#123;</div><div class="line">            msg:<span class="string">"box2Data"</span></div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">new</span> Vue(&#123; <span class="comment">//这一种写法不建议，在2.0已经不允许直接选择body</span></div><div class="line">        el:<span class="string">'body'</span>,</div><div class="line">        data:&#123;</div><div class="line">            msg:<span class="string">"body msg"</span></div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">html结构</div><div class="line">&lt;<span class="keyword">div</span> id=<span class="string">"box1"</span>&gt;</div><div class="line">    &lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;<span class="keyword">div</span> <span class="class"><span class="keyword">class</span>="<span class="title">box2</span>"&gt;</span></div><div class="line">    &lt;<span class="title">p</span>&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">通过<span class="keyword">new</span> Vue 创建一个vue的实例对象</div><div class="line">通过el属性 绑定元素</div><div class="line">通过data属性 来设置数据,</div></pre></td></tr></table></figure>
+<h2 id="数据双向绑定"><a href="#数据双向绑定" class="headerlink" title="数据双向绑定"></a>数据双向绑定</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"msg"</span>&gt;</span><span class="comment">&lt;!--双向绑定时，属性必须得要初始化--&gt;</span></div><div class="line">和angular中的ng-model用法一样,实现原理不同,以后会介绍</div></pre></td></tr></table></figure>
+<h2 id="内置指令"><a href="#内置指令" class="headerlink" title="内置指令"></a>内置指令</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">v-<span class="built_in">text</span>=<span class="string">"msg"</span>      解析非html的数据</div><div class="line">v-html=<span class="string">"content"</span>  解析html的结构</div><div class="line">v-show  是否显示</div><div class="line">v-<span class="keyword">if</span>    是否隐藏</div><div class="line">v-<span class="keyword">for</span>=<span class="string">"(key,value) in stuList"</span>&gt;   循环遍历 <span class="number">2.0</span>不支持自带$index</div><div class="line">v-pre   不去解析里面内容</div><div class="line">&#123;&#123;*msg&#125;&#125;  仅仅绑定一次 <span class="number">2.0</span>使用v-once</div><div class="line">v-<span class="keyword">on</span>:事件类型=<span class="string">"事件方法"</span>  没参数可以不带();</div><div class="line">@click=<span class="string">"show"</span>  绑定事件简写</div><div class="line">&#123;&#123;msg | uppercase |lowercase&#125;&#125; 过滤器,通过管道符  从<span class="number">2.0</span>开始，删除了所有的内置过滤器</div></pre></td></tr></table></figure>
+<h2 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">/*通过全局对象Vue来自定义过滤器*/</span></div><div class="line">    Vue.filter(<span class="string">'Currency'</span>,<span class="function"><span class="keyword">function</span> <span class="params">(input,a,b)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"$"</span>+input+a+b</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">使用 &#123;&#123;msg | Currency <span class="string">'#'</span> <span class="string">'$'</span>&#125;&#125; </div><div class="line">  Currency(<span class="string">'#'</span>,<span class="string">'$'</span>) 这种方式就是<span class="number">2.0</span>传参</div></pre></td></tr></table></figure>
+<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/**</span></div><div class="line">         * el: 指令所绑定的元素，可以用来直接操作DOM。</div><div class="line"></div><div class="line">         binding:  一个对象，包含指令的很多信息。</div><div class="line"></div><div class="line">         vnode: Vue编译生成的虚拟节点。</div><div class="line"> */</div><div class="line">Vue.direvtive(<span class="string">'carromting'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">el,binding,vnode</span>)</span>&#123;</div><div class="line">	el.style = <span class="string">'color:'</span> + binding.value;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">使用</div><div class="line">&lt;!--绑定自定义指令--&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">v-carrotming</span>=<span class="string">"color"</span> <span class="attr">v-text</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">color为data里的color	</div><div class="line">data:&#123;</div><div class="line">     <span class="attr">msg</span>:<span class="number">10</span>,</div><div class="line">    <span class="attr">color</span>:<span class="string">'blue'</span></div><div class="line"> &#125;,	</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">         * 自定义指令的生命周期</div><div class="line">         *</div><div class="line">         * bind: 指令被绑定了</div><div class="line">         *</div><div class="line">         * inserted: 指令绑定到节点上了</div><div class="line">         *</div><div class="line">         * update: 组件更新</div><div class="line">         *</div><div class="line">         * componentUpdated:组件更新完成了</div><div class="line">         *</div><div class="line">         * unbind:解除绑定 调用$destroy 方法</div><div class="line">         */</div><div class="line"></div><div class="line">        Vue.directive(<span class="string">'carrotming'</span>,&#123;</div><div class="line">            <span class="attr">bind</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//被绑定</span></div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'1 - bind'</span>);</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">inserted</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//绑定到节点</span></div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'2 - inserted'</span>);</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">update</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//组件更新</span></div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'3 - update'</span>);</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">componentUpdated</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//组件更新完成</span></div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'4 - componentUpdated'</span>);</div><div class="line">            &#125;,</div><div class="line">            <span class="attr">unbind</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//解绑</span></div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'1 - bind'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
+<h2 id="extend扩展实例构造器"><a href="#extend扩展实例构造器" class="headerlink" title="extend扩展实例构造器"></a>extend扩展实例构造器</h2><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//扩展实例构造器</span></div><div class="line">        <span class="comment">/**</span></div><div class="line">         * template:模板的地址或内容</div><div class="line">         *</div><div class="line">         * data:这里的data需要是一个函数,在函数里面返回数据</div><div class="line">         *</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="built_in">var</span> carrotExtend = Vue.extend(&#123;</div><div class="line">           <span class="comment">//模板</span></div><div class="line">            template: <span class="string">"&lt;p&gt;&lt;a :href='carrotUrl'&gt;&#123;&#123;carrotName&#125;&#125;&lt;/a&gt;&lt;/p&gt;"</span>,</div><div class="line">            <span class="built_in">data</span>()&#123;</div><div class="line">                <span class="keyword">return</span> &#123;</div><div class="line">                    carrotName:<span class="string">'萝卜名'</span>,</div><div class="line">                    carrotUrl:<span class="string">'http://carrotming.cn'</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        <span class="comment">//挂载 $mount() 传入你想定义标签名称</span></div><div class="line">        <span class="literal">new</span> carrotExtend().$mount(<span class="string">'carrot'</span>);</div></pre></td></tr></table></figure>
+<h2 id="watch监控数据"><a href="#watch监控数据" class="headerlink" title="watch监控数据"></a>watch监控数据</h2><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">     有些时候我们会用实例属性的形式来写watch监控。</div><div class="line">     也就是把我们watch卸载构造器的外部，这样的好处就是降低我们程序的耦合度，使程序变的灵活。</div><div class="line">     temperature 被监听的数据</div><div class="line">     * */</div><div class="line">    app.$watch(<span class="string">'temperature'</span>,<span class="function"><span class="keyword">function</span></span>(<span class="keyword">new</span><span class="type">Val</span>,oldVal)&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">new</span><span class="type">Val</span>&gt;=<span class="number">26</span>)&#123;</div><div class="line">            <span class="built_in">this</span>.suggestion=suggestion[<span class="number">0</span>];</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">new</span><span class="type">Val</span>&lt;<span class="number">26</span> &amp;&amp; <span class="keyword">new</span><span class="type">Val</span> &gt;=<span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">this</span>.suggestion=suggestion[<span class="number">1</span>];</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="built_in">this</span>.suggestion=suggestion[<span class="number">2</span>];</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">	也可以直接在<span class="keyword">new</span> <span class="type">Vue</span>上绑定watch方法</div></pre></td></tr></table></figure>
+<h2 id="slot内置组件"><a href="#slot内置组件" class="headerlink" title="slot内置组件"></a>slot内置组件</h2><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="xml">/*</span></div><div class="line">     slot是标签的内容扩展，也就是说你用slot就可以在自定义组件时传递给组件内容，组件接收内容并输出。</div><div class="line">     slot的使用需要两步</div><div class="line">     在HTML的组件中用slot属性传递值。</div><div class="line">     在组件模板中用<span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span>标签接收值</div><div class="line">    * */</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>博客地址：<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"bolgUrl"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>网名：<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"netName"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>技术类型：<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"skill"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"bolgUrl"</span>&gt;</span><span class="template-variable">&#123;&#123;jsData.bolgUrl&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"netName"</span>&gt;</span><span class="template-variable">&#123;&#123;jsgData.netName&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"skill"</span>&gt;</span><span class="template-variable">&#123;&#123;jsData.skill&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h2 id="propsData传递数据"><a href="#propsData传递数据" class="headerlink" title="propsData传递数据"></a>propsData传递数据</h2><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"> /*</div><div class="line">     propsData 不是和属性有关，他用在全局扩展时进行传递数据,在全局扩展的挂载</div><div class="line">     过程中传入数据</div><div class="line">     我们用propsData三步解决传值：</div><div class="line"></div><div class="line">     <span class="number">1</span>、在全局扩展里加入props进行接收。propsData:&#123;a:<span class="number">1</span>&#125;</div><div class="line"></div><div class="line">     <span class="number">2</span>、传递时用propsData进行传递。props:[‘a’]</div><div class="line"></div><div class="line">     <span class="number">3</span>、用插值的形式写入模板。&#123;&#123; a &#125;&#125;</div><div class="line">    * */</div><div class="line"></div><div class="line">var carrot = Vue.extend(&#123;</div><div class="line">        template:`&lt;p&gt;&#123;&#123;msg&#125;&#125; --- &#123;&#123;a&#125;&#125;&lt;/p&gt;`,</div><div class="line">        data()&#123;</div><div class="line">            return&#123;</div><div class="line">                msg:<span class="string">'我是萝卜名'</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        props:[<span class="string">'a'</span>]</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    new carrot(&#123;propsData:&#123;a:<span class="number">1</span>&#125;&#125;).$mount(<span class="string">'carrot'</span>);</div></pre></td></tr></table></figure>
+<h2 id="Mixins混入"><a href="#Mixins混入" class="headerlink" title="Mixins混入"></a>Mixins混入</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">     Mixins一般有两种用途：</div><div class="line">     1、在你已经写好了构造器后，需要增加方法或者临时的活动时使用的方法，这时用混入会减少源代码的污染。</div><div class="line">     2、很多地方都会用到的公用方法，用混入的方法可以减少代码量，实现代码重用。</div><div class="line">    Mixins基本用法,</div><div class="line">    当混入方法和构造器的方法重名时，混入的方法无法展现，也就是不起作用。</div><div class="line">     全局混入的执行顺序要前于混入和构造器里的方法。</div><div class="line">    * */</div><div class="line"></div><div class="line"> <span class="comment">/*全局混合*/</span></div><div class="line">    Vue.mixin(&#123;</div><div class="line">        <span class="attr">updated</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'我是全局被混入的'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line"><span class="keyword">var</span> addLog = &#123;</div><div class="line">        updated()&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"数据放生变化,变化成"</span>+<span class="keyword">this</span>.num+<span class="string">"."</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue里面</div><div class="line"> <span class="comment">/*</span></div><div class="line">        混入</div><div class="line">        * */</div><div class="line">        mixins:[addLog],</div><div class="line">        <span class="comment">/*</span></div><div class="line">        先执行混合的方法,在执行构造器</div><div class="line">        * */</div><div class="line">        updated()&#123;</div><div class="line">       <span class="built_in">console</span>.log(<span class="string">"构造器里的updated方法。"</span>)</div></pre></td></tr></table></figure>
+<h2 id="methods方法"><a href="#methods方法" class="headerlink" title="methods方法"></a>methods方法</h2><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="xml">/*</span></div><div class="line">         ①methods中参数的传递</div><div class="line">         ②methods中$enent参数 包含了大部分鼠标事件的属性。</div><div class="line">         ③native  给组件绑定构造器里的原生事件。</div><div class="line">         在实际开发中经常需要把某个按钮封装成组件，</div><div class="line">         然后反复使用，如何让组件调用构造器里的方法，而不是组件里的方法。</div><div class="line">         就需要用到我们的native修饰器了。</div><div class="line">         ④作用域外部调用构造器里的方法</div><div class="line">        * */</div><div class="line">        * </div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="template-variable">&#123;&#123;a&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">    <span class="comment">&lt;!--参数传递--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"add(2,$event)"</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--绑定native使用构造器的方法--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">btn</span> @<span class="attr">click.native</span>=<span class="string">"add(3)"</span>&gt;</span><span class="tag">&lt;/<span class="name">btn</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  var btn = &#123;</div><div class="line">     template:`<span class="tag">&lt;<span class="name">button</span>&gt;</span>组件Add<span class="tag">&lt;/<span class="name">button</span>&gt;</span>`</div><div class="line">   &#125;;</div><div class="line">	//组件化</div><div class="line">  components:&#123;</div><div class="line">     "btn":btn</div><div class="line">   &#125;</div><div class="line"><span class="comment">&lt;!--作用域外调用--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"app.add(4)"</span> &gt;</span>外部调用构造器里的方法<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="extends扩展选项"><a href="#extends扩展选项" class="headerlink" title="extends扩展选项"></a>extends扩展选项</h2><figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">     通过外部增加对象的形式，对构造器进行扩展。它和混入非常的类似</div><div class="line">     如果构造器没有的方法,会到扩展的methods去寻找,如果有就使用,反之,就使用构造器的方法</div><div class="line">    * */</div><div class="line"></div><div class="line"><span class="built_in">var</span> method = &#123;</div><div class="line">        created()&#123;</div><div class="line">            console.<span class="keyword">log</span>(<span class="string">"我是被扩展出来的"</span>);</div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">            add()&#123;</div><div class="line">                console.<span class="keyword">log</span>(<span class="string">'我是被扩展出来的方法！'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line"><span class="built_in">var</span> app  =  <span class="literal">new</span> Vue(&#123;</div><div class="line">        <span class="built_in">data</span>:&#123;</div><div class="line">            message:<span class="string">'萝卜名'</span></div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">            add()&#123;</div><div class="line">                console.<span class="keyword">log</span>(<span class="string">'我是原生方法'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="comment">/*</span></div><div class="line">        扩展</div><div class="line">        * */</div><div class="line">        extends:method</div><div class="line"></div><div class="line">    &#125;).$mount(<span class="string">'#app'</span>);</div></pre></td></tr></table></figure>
+<h2 id="delimiters选项"><a href="#delimiters选项" class="headerlink" title="delimiters选项"></a>delimiters选项</h2><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">     delimiters的作用是改变我们插值的符号。</div><div class="line">     Vue默认的插值是双大括号&#123;&#123;&#125;&#125;。但有时我们会有需求更改这个插值的形式。</div><div class="line">    * */</div><div class="line"></div><div class="line"> /*</div><div class="line">        默认插值语法&#123;&#123;&#125;&#125;</div><div class="line">        更改为$&#123;&#125;</div><div class="line">        * */</div><div class="line">        delimiters:[<span class="string">'$&#123;'</span>,<span class="string">'&#125;'</span>]</div><div class="line"> &lt;div&gt;$&#123;msg&#125;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="component标签"><a href="#component标签" class="headerlink" title="component标签"></a>component标签</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> /*</div><div class="line">     <span class="tag">&lt;<span class="name">component</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span>标签是Vue框架自定义的标签，</div><div class="line">     它的用途就是可以动态绑定我们的组件，根据数据的不同更换不同的组件。</div><div class="line">    * */</div><div class="line"></div><div class="line"><span class="comment">&lt;!--根据who的值不同，调用不同的组件--&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">component</span> <span class="attr">v-bind:is</span>=<span class="string">"who"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="component组件"><a href="#component组件" class="headerlink" title="component组件"></a>component组件</h2><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="xml"> /*</span></div><div class="line">    全局化组件</div><div class="line">    * */</div><div class="line">    Vue.component('carrot',&#123;</div><div class="line">        template:`<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span>我是全局萝卜名组件<span class="tag">&lt;/<span class="name">div</span>&gt;</span>`</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">/*</div><div class="line">    外部组件</div><div class="line">    * */</div><div class="line">    var carrot = &#123;</div><div class="line">        template:`<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span>我是外部组件<span class="tag">&lt;/<span class="name">div</span>&gt;</span>`,</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">/*</div><div class="line">        外部组件引用</div><div class="line">        * */</div><div class="line">        /*components:&#123;</div><div class="line">            "carrot":carrot</div><div class="line">        &#125;*/</div><div class="line"></div><div class="line"> /*</div><div class="line">    父子组件的嵌套</div><div class="line">    * */</div><div class="line"></div><div class="line">    var child = &#123;</div><div class="line">        template:`<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span>我是子组件<span class="tag">&lt;/<span class="name">div</span>&gt;</span>`,</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    var parent = &#123;</div><div class="line">        template: `<span class="tag">&lt;<span class="name">div</span>&gt;</span>我是父组件嵌套<span class="tag">&lt;<span class="name">child</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>`,</div><div class="line">        components:&#123;</div><div class="line">            "child":child</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">	</div><div class="line">/*</div><div class="line">        父组件</div><div class="line">        * */</div><div class="line">        components:&#123;</div><div class="line">            "parent":parent</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">/*</div><div class="line">         局部注册的组件只能在组件注册的作用域里进行使用，其他作用域使用无效。</div><div class="line">         下面的carrot即为组件名称,props选项就是设置和获取标签上的属性值的</div><div class="line">        * */</div><div class="line">        /*components:&#123;</div><div class="line">            "carrot":&#123;</div><div class="line">                template:`<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span>我是局部<span class="template-variable">&#123;&#123;here&#125;&#125;</span><span class="xml">组件<span class="tag">&lt;/<span class="name">div</span>&gt;</span>`,</span></div><div class="line">                props:['here']</div><div class="line">            &#125;</div><div class="line">        &#125;*/</div><div class="line"></div><div class="line">html结构</div><div class="line"><span class="comment">&lt;!--对应props的属性值,把数据传递到模板中--&gt;</span></div><div class="line">    <span class="comment">&lt;!--&lt;carrot here="萝卜名here"&gt;&lt;/carrot&gt;--&gt;</span></div><div class="line">    <span class="comment">&lt;!--构造器往组件传值--&gt;</span></div><div class="line">    <span class="comment">&lt;!--&lt;carrot v-bind:here="name"&gt;&lt;/carrot&gt;--&gt;</span></div><div class="line">    <span class="comment">&lt;!--外部组件方式--&gt;</span></div><div class="line">    <span class="comment">&lt;!--&lt;carrot&gt;&lt;/carrot&gt;--&gt;</span></div><div class="line">    <span class="comment">&lt;!--父组件嵌套子组件--&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">parent</span>&gt;</span><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="computed计算选项"><a href="#computed计算选项" class="headerlink" title="computed计算选项"></a>computed计算选项</h2><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="xml"> /*</span></div><div class="line">     computed 的作用主要是对原数据进行改造输出。</div><div class="line">     改造输出：包括格式的编辑，大小写转换，顺序重排，添加符号……。</div><div class="line">  * */</div><div class="line"></div><div class="line"> computed:&#123;</div><div class="line">            /*价格重新计算*/</div><div class="line">            newPrice()&#123;</div><div class="line">                return this.price='￥' + this.price + '元';</div><div class="line">            &#125;,</div><div class="line">            /*数组的排序*/</div><div class="line">            reverseNews()&#123;</div><div class="line">                return this.newsList.reverse();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!--写上computed的 函数名--&gt;</span></div><div class="line">        <span class="template-variable">&#123;&#123;newPrice&#125;&#125;</span><span class="xml"></span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--写上computed的 函数名--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">" (item,index) in reverseNews"</span>&gt;</span><span class="template-variable">&#123;&#123;item.date&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h2 id="set设置数据"><a href="#set设置数据" class="headerlink" title="set设置数据"></a>set设置数据</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">//vue.set 作用,改变外部的数据变化,并且可以自动更新</span></div><div class="line"><span class="keyword">var</span> outData = &#123;</div><div class="line">        arr:[<span class="string">'aaa'</span>,<span class="string">'bbb'</span>,<span class="string">'ccc'</span>]</div><div class="line">   &#125;;</div><div class="line"><span class="comment">//第一个参数为数据源,第二个为索引,第三个为修改成什么值</span></div><div class="line"> Vue.<span class="keyword">set</span>(app.arr,<span class="number">1</span>,<span class="string">'ddd'</span>);</div></pre></td></tr></table></figure>
+<h2 id="模板的制作"><a href="#模板的制作" class="headerlink" title="模板的制作"></a>模板的制作</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">  //第一种模板的制作方式</div><div class="line">//        template:`<span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>我是选项模板<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>`</div><div class="line">        //第二种方式</div><div class="line">//        template:'#demo2'</div><div class="line">        //第三种方式</div><div class="line">        template:'#demo3'</div><div class="line"></div><div class="line">第二种</div><div class="line"><span class="comment">&lt;!--通过template标签定义模板--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"demo2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>我是第二种选项模板<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!--第三种方式--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"x-template"</span> <span class="attr">id</span>=<span class="string">"demo3"</span>&gt;</span><span class="handlebars"><span class="xml"></span></span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>我是script标签模板<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  <span class="variable">$mount</span>方法</div><div class="line">   用<span class="variable">$mount</span>的方法把XXX挂载到DOM上,生产一个Vue的实例</div><div class="line">   <span class="variable">$destroy</span>() 卸载方法</div><div class="line">   用<span class="variable">$destroy</span>()进行卸载。</div><div class="line">   <span class="variable">$forceUpdate</span>() 更新方法</div><div class="line">   <span class="variable">$nextTick</span>() 数据修改方法</div><div class="line">   当Vue构造器里的<span class="keyword">data</span>值被修改完成后会调用这个方法</div><div class="line">  * */</div></pre></td></tr></table></figure>
+<h2 id="实例事件"><a href="#实例事件" class="headerlink" title="实例事件"></a>实例事件</h2><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">     实例事件就是在构造器外部写一个调用构造器内部的方法。这样写</div><div class="line">     的好处是可以通过这种写法在构造器外部调用构造器内部的数据。</div><div class="line">    * */</div><div class="line"></div><div class="line">  <span class="comment">/*</span></div><div class="line">     $on  在构造器外部添加事件。</div><div class="line">    第一个参数为调用事件的名称，第二个为执行的函数</div><div class="line">    * */</div><div class="line">    app.$<span class="keyword">on</span>(<span class="string">'reduce'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'执行了reduce()'</span>);</div><div class="line">        <span class="keyword">this</span>.num--;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">    外部调用构造器的事件 $emit</div><div class="line">    * */</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">reduce</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        app.$emit(<span class="string">'reduce'</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"> <span class="comment">/*</span></div><div class="line">     $once执行一次的事件</div><div class="line">    * */</div><div class="line">    app.$once(<span class="string">'reduceOnce'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'只执行一次的方法'</span>);</div><div class="line">        <span class="keyword">this</span>.num--;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">	<span class="comment">/*</span></div><div class="line">     $off关闭事件</div><div class="line">    * */</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">off</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        app.$off(<span class="string">'reduce'</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="实例属性"><a href="#实例属性" class="headerlink" title="实例属性"></a>实例属性</h2><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">*</span></div><div class="line">     实例就是在构造器外部操作构造器内部的属性选项或者方法，就叫做实例</div><div class="line">     实例的作用就是给原生的或者其他javascript框架一个融合的接口或者说是机会，让</div><div class="line">     Vue和其他框架一起使用。</div><div class="line">     实例可以调用自定义方法</div><div class="line">     * */</div><div class="line"></div><div class="line"> <span class="comment">/*</span></div><div class="line">        挂载,渲染完成</div><div class="line">        * */</div><div class="line">        mounted()&#123;</div><div class="line">            <span class="symbol">$</span>(<span class="string">'#app'</span>).html(<span class="string">'我是jQuery!'</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line"> <span class="comment">/*</span></div><div class="line">    实例调用构造器的方法</div><div class="line">    * */</div><div class="line">    app.add();</div></pre></td></tr></table></figure>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">    生命周期官方图流程</div><div class="line">    new Vue的实例之后进入beforeCreate过程,之后会</div><div class="line">    Observe Data(观察数据),初始化事件 init Events</div><div class="line">    然后才到created过程,判断是否有el这个选项,</div><div class="line">    没有的话需要等函数$mount执行才进行下一步,有的话会判断</div><div class="line">    有没有模板选项, 编译模板进行渲染.然后来到挂载之前,beforeMount</div><div class="line">    创建元素并且插入元素,然后挂载上去,mounted,当有数据更新的时候,更新之前,beforeUpdate,</div><div class="line">    进行虚拟dom的重新渲染和修补,最后会更新,这是一个循环过程</div><div class="line">    当方法$destory()被执行时候,销毁之前,beforeDestroy,会拆卸监听者watchers,子组件,事件监听者,最后到最后一步</div><div class="line">    destroyed</div><div class="line">     * */</div><div class="line"></div><div class="line"><span class="number">7</span>和<span class="number">8</span>是在路由中用到的,也是vue2<span class="number">.0</span>的</div><div class="line"></div><div class="line"><span class="keyword">var</span> app=<span class="keyword">new</span> Vue(&#123;</div><div class="line">        <span class="attr">el</span>:<span class="string">'#app'</span>,</div><div class="line">        <span class="attr">data</span>:&#123;</div><div class="line">            <span class="attr">message</span>:<span class="number">1</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">methods</span>:&#123;</div><div class="line">            <span class="attr">jia</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="keyword">this</span>.message ++;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">beforeCreate</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'1-beforeCreate 初始化之后'</span>);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">created</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'2-created 创建完成'</span>);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">beforeMount</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'3-beforeMount 挂载之前'</span>);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">mounted</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'4-mounted 被创建'</span>);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">beforeUpdate</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'5-beforeUpdate 数据更新前'</span>);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">updated</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'6-updated 被更新后'</span>);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">activated</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'7-activated'</span>);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">deactivated</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'8-deactivated'</span>);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">beforeDestroy</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'9-beforeDestroy 销毁之前'</span>);</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">destroyed</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'10-destroyed 销毁之后'</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/06/21/微信小程序的坑和注意点/">
+                    微信小程序的坑和注意点
+                </a>
+            </div>
+        
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基础部分"><span class="toc-number">2.</span> <span class="toc-text">基础部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本结构"><span class="toc-number">2.1.</span> <span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据双向绑定"><span class="toc-number">2.2.</span> <span class="toc-text">数据双向绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内置指令"><span class="toc-number">2.3.</span> <span class="toc-text">内置指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义过滤器"><span class="toc-number">2.4.</span> <span class="toc-text">自定义过滤器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义指令"><span class="toc-number">2.5.</span> <span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#extend扩展实例构造器"><span class="toc-number">2.6.</span> <span class="toc-text">extend扩展实例构造器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#watch监控数据"><span class="toc-number">2.7.</span> <span class="toc-text">watch监控数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#slot内置组件"><span class="toc-number">2.8.</span> <span class="toc-text">slot内置组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#propsData传递数据"><span class="toc-number">2.9.</span> <span class="toc-text">propsData传递数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mixins混入"><span class="toc-number">2.10.</span> <span class="toc-text">Mixins混入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#methods方法"><span class="toc-number">2.11.</span> <span class="toc-text">methods方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#extends扩展选项"><span class="toc-number">2.12.</span> <span class="toc-text">extends扩展选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#delimiters选项"><span class="toc-number">2.13.</span> <span class="toc-text">delimiters选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#component标签"><span class="toc-number">2.14.</span> <span class="toc-text">component标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#component组件"><span class="toc-number">2.15.</span> <span class="toc-text">component组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#computed计算选项"><span class="toc-number">2.16.</span> <span class="toc-text">computed计算选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set设置数据"><span class="toc-number">2.17.</span> <span class="toc-text">set设置数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板的制作"><span class="toc-number">2.18.</span> <span class="toc-text">模板的制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例方法"><span class="toc-number">2.19.</span> <span class="toc-text">实例方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例事件"><span class="toc-number">2.20.</span> <span class="toc-text">实例事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例属性"><span class="toc-number">2.21.</span> <span class="toc-text">实例属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生命周期"><span class="toc-number">2.22.</span> <span class="toc-text">生命周期</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"vue2.0学习之旅　| <(￣3￣)>carrotming　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/06/21/微信小程序的坑和注意点/" title="上一篇: 微信小程序的坑和注意点">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/16/vue2.0学习之旅/">vue2.0学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/微信小程序的坑和注意点/">微信小程序的坑和注意点</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/微信小程序学习之旅/">微信小程序学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/08/css3-综合运用/">css3模仿QQ浏览器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/06/jquery-插件制作/">jquery插件的制作方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/02/git学习之旅/">git的学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/zepto学习之旅/">zepto学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/05/swiper学习之旅/">swiper学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/01/scrollReveal学习之旅/">scrollReveal学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/29/WoW学习之旅/">WoW学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/25/AnimationCss/">Animate.css学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/20/webLayout-布局技巧/">网页布局之布局技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/js-内存管理/">js之内存管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/11/js-正则表达式/">js之正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/11/Angular问题总结/">Angular总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/10/Angular综合应用/">Angular综合应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/Angular简单应用/">Angular简单应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/Angular学习之旅/">Angular学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/06/Bootstarp-应用布局(二)详解/">Bootstrap应用布局(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/Bootstarp-应用布局(一)/">Bootstrap应用布局(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/04/Bootstarp-Bootstarp学习/">Bootstrap学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/less学习之旅/">less学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/mobile-移动web开发/">移动web学习之模仿京东M站</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/Ajax-跨域和缓存/">Ajax学习之跨域和缓存</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/11/Ajax-评论功能/">Ajax学习之评论功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/Ajax-原生js封装/">Ajax学习之原生js封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/canvas-笨鸟飞/">canvas学习之笨鸟飞游戏</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/canvas-knova应用二/">canvas学习之konva框架旋转中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/07/canvas-knova应用一/">canvas学习之konva框架饼状图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/06/canvas-红包图片效果/">canvas学习之图片效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/canvas-倒计时效果/">canvas学习之倒计时效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/canvas-放大镜效果/">canvas学习之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/canvas-绘制时钟/">canvas学习之绘制时钟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/js-命名空间模式/">js设计模式之命名空间模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/js-备忘模式/">js设计模式之备忘模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/30/js-观察者模式/">js设计模式之观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/js-单利模式/">js设计模式之单利模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/js-工厂模式/">js设计模式之工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-Object的静态成员/">js面向对象之Object的静态成员</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-原型链总结/">js面向对象之原型链总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-面向对象总结三/">js面向对象总结三</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/js-面向对象总结二/">js面向对象总结二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/25/js-面向对象总结一/">js面向对象总结一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-入口原理分析/">jquery进价之原理分析(入口,节点,样式,属性)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-总结/">jquery学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/23/jquery-备忘提醒功能/">jquery入门之备忘录提醒功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/jquery-瀑布流/">jquery入门之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/js-绚丽小球/">js特效之滑动绚丽小球</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/js-3D图片切换/">js特效之有3D感图片切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/js-瀑布流布局/">js特效之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/18/js-放大镜效果/">js特效之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/js-满天星星/">js特效之满天星星</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/js-轮播切换/">js特效之轮播图切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/js-九宫格思想/">js特效之九宫格思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/14/js-基础总结/">js学习之总结js基础部分</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/js-运动框架封装/">js学习之运动框架封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-选择分享功能/">js学习之简单的应用二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-节点操作/">js学习之简单的应用一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/css3-云层动画/">css3学习之云层效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/css3-3D音乐播放器/">css3学习之3d音乐界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/webLayout-绿色食品网布局/">网页布局学习之绿色食品网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/webLayout-京东布局/">网页布局学习之京东官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/webLayout-淘宝布局/">网页布局学习之淘宝官网</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 劳柏明
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
