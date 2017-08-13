@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="劳柏明" />
+
+
+
+<meta name="description" content="vue2.0全家桶综合运用">
+<meta name="keywords" content="vue2.0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue2.0全家桶综合运用">
+<meta property="og:url" content="//carrot.me/2017/08/13/vue2.0综合应用/index.html">
+<meta property="og:site_name" content="<(￣3￣)>carrotming">
+<meta property="og:description" content="vue2.0全家桶综合运用">
+<meta property="og:image" content="//carrot.me/assets/blogImg/vue2.gif">
+<meta property="og:updated_time" content="2017-08-13T05:25:09.767Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue2.0全家桶综合运用">
+<meta name="twitter:description" content="vue2.0全家桶综合运用">
+<meta name="twitter:image" content="//carrot.me/assets/blogImg/vue2.gif">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="&lt;(￣3￣)&gt;carrotming" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/TiddlyWiki.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>vue2.0全家桶综合运用 | &lt;(￣3￣)&gt;carrotming</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/fav.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">劳柏明</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">热爱前端的小白工程师</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js基础/">js基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js炫酷特效/">js炫酷特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js设计模式/">js设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js面向对象/">js面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue2-0/">vue2.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架学习/">框架学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动web/">移动web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网页布局/">网页布局</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">劳柏明</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/fav.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">劳柏明</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">热爱前端的小白工程师</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/email/" title="Email"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="/QQ/" title="QQ"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/wechat/" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-vue2.0综合应用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/13/vue2.0综合应用/" class="article-date">
+      <time datetime="2017-08-13T11:52:00.000Z" itemprop="datePublished">2017-08-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue2.0全家桶综合运用
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/vue2-0/">vue2.0</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue2-0/">vue2.0</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>主要使用vue2.0全家桶的一个小案例,可以让自己快速上手,当然想用在实际开发还需要锻炼<br><a id="more"></a></p>
+<h1 id="字体图标的引入"><a href="#字体图标的引入" class="headerlink" title="字体图标的引入"></a>字体图标的引入</h1><figure class="highlight flix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">在开发中我们可能用到各种字体图标,大家可以搜索字体图标就能找到自己想要,</div><div class="line">在<span class="keyword">index</span>.html中引入字体图标的路径 </div><div class="line">&lt;link <span class="keyword">rel</span>=<span class="string">"stylesheet"</span> href=<span class="string">"//at.alicdn.com/t/font_efxolx9usxtro1or.css"</span>&gt;</div></pre></td></tr></table></figure>
+<h1 id="element-UI的使用"><a href="#element-UI的使用" class="headerlink" title="element UI的使用"></a>element UI的使用</h1><figure class="highlight xl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">在开发中我们不可能自己手写各种好用的效果,通过ui框架解决,这里使用了饿了么这一套ui框架,</div><div class="line">具体安装通过npm安装,安装完后在main.js中这样引入</div><div class="line"><span class="keyword">import</span> ElementUI from 'element-ui'</div><div class="line"><span class="keyword">import</span> 'element-ui/lib/<span class="built_in">theme</span>-default/index.css'</div><div class="line"><span class="keyword">import</span> '../<span class="built_in">theme</span>/index.css'</div><div class="line">(<span class="keyword">import</span> '../<span class="built_in">theme</span>/index.css'这一句如果是默认主题不需要,这是自定义主题才需要,如何自定义主题可以上官方文档查找)</div><div class="line">记得调用这一句话</div><div class="line">Vue.use(ElementUI);</div></pre></td></tr></table></figure>
+<h1 id="左侧nav制作"><a href="#左侧nav制作" class="headerlink" title="左侧nav制作"></a>左侧nav制作</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">这里使用组件化开发进行左侧nav开发</div><div class="line">新建一个<span class="selector-tag">nav</span>.vue的文件</div><div class="line">写好html和css样式</div></pre></td></tr></table></figure>
+<h2 id="左侧nav-html样式"><a href="#左侧nav-html样式" class="headerlink" title="左侧nav html样式"></a>左侧nav html样式</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left_nav"</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"icon iconfont icon-icon-test"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">div</span>&gt;</span>白痴<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">           <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"icon iconfont icon-icon-test1"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">div</span>&gt;</span>痴线<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">           <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"icon iconfont icon-icon-test2"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">div</span>&gt;</span>冇脑<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">           <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"icon iconfont icon-icon-test3"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">div</span>&gt;</span>弱智<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">           <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"icon iconfont icon-icon-test4"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="name">div</span>&gt;</span>神经病<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">           <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line">icon就是字体图标</div></pre></td></tr></table></figure>
+<h2 id="引入组件"><a href="#引入组件" class="headerlink" title="引入组件"></a>引入组件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">在App.vue的文件下,在script这样引入</div><div class="line"><span class="keyword">import</span> leftSide <span class="keyword">from</span> <span class="string">'@/components/communal/leftSide'</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'app'</span>,</div><div class="line">  <span class="attr">components</span>:&#123;</div><div class="line">    leftSide</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">使用只需要写leftSide的标签就可以了</div><div class="line">&lt;leftSide&gt;<span class="xml"><span class="tag">&lt;/<span class="name">leftSide</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h1 id="主页面的制作"><a href="#主页面的制作" class="headerlink" title="主页面的制作"></a>主页面的制作</h1><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">使用路由的方式把页面导出去,具体结构就不细说,介绍这个elemen ui的使用</div><div class="line"><span class="symbol">&lt;el-row&gt;</span></div><div class="line"> <span class="symbol">&lt;el-rol&gt;</span>&lt;/<span class="keyword">el</span>-rol&gt;</div><div class="line">&lt;/<span class="keyword">el</span>-row&gt; </div><div class="line"></div><div class="line">类似bootstrap的功能,element规定一行<span class="number">24</span>个</div><div class="line">通过  :span =<span class="string">'xx'</span> 指定所占的比例</div><div class="line"></div><div class="line"><span class="keyword">el</span>-<span class="keyword">tabs</span></div><div class="line">这是导航的标签</div><div class="line">里面包一层</div><div class="line"><span class="keyword">el</span>-<span class="keyword">tab</span>-pane指定具体标签 通过label绑定名字</div><div class="line"></div><div class="line"><span class="keyword">el</span>-table </div><div class="line">表格标签 通过:data = <span class="string">'xx'</span> 传入数据</div><div class="line">里面包</div><div class="line"><span class="keyword">el</span>-table-column指定列 通过prop传入属性数据 label绑定名字</div><div class="line"></div><div class="line">scope=<span class="string">'scope'</span> 属性  scope.row拿到当前点击列的数据</div></pre></td></tr></table></figure>
+<h1 id="主要方法"><a href="#主要方法" class="headerlink" title="主要方法"></a>主要方法</h1><h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">发送请求,vue通过axios发送请求,先用npm安装</div><div class="line">这样引入 <span class="keyword">import</span> axios from <span class="string">'axios'</span>;</div><div class="line">axios.<span class="keyword">get</span>(<span class="string">'http://jspang.com/DemoApi/oftenGoods.php'</span>)</div><div class="line">            .then(rsp =&gt; &#123;</div><div class="line">                <span class="keyword">this</span>.oftenGoods = rsp.<span class="keyword">data</span>;</div><div class="line">            &#125;)</div><div class="line">            .<span class="keyword">catch</span>(error =&gt; &#123;</div><div class="line"></div><div class="line">            &#125;);</div><div class="line"></div><div class="line">        axios.<span class="keyword">get</span>(<span class="string">'http://jspang.com/DemoApi/typeGoods.php'</span>)</div><div class="line">            .then(rsp =&gt; &#123;</div><div class="line">                <span class="keyword">this</span>.type0Goods = rsp.<span class="keyword">data</span>[<span class="number">0</span>];</div><div class="line">                <span class="keyword">this</span>.type1Goods = rsp.<span class="keyword">data</span>[<span class="number">1</span>];</div><div class="line">                <span class="keyword">this</span>.type2Goods = rsp.<span class="keyword">data</span>[<span class="number">2</span>];</div><div class="line">                <span class="keyword">this</span>.type3Goods = rsp.<span class="keyword">data</span>[<span class="number">3</span>];</div><div class="line">            &#125;)</div><div class="line">            .<span class="keyword">catch</span>(error =&gt; &#123;</div><div class="line"></div><div class="line">            &#125;);</div><div class="line">这样去方式请求</div></pre></td></tr></table></figure>
+<h2 id="creater钩子"><a href="#creater钩子" class="headerlink" title="creater钩子"></a>creater钩子</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在页面创建的时候调用,我们可以在这个函数里面获取数据然后展示</div></pre></td></tr></table></figure>
+<h2 id="mounted钩子"><a href="#mounted钩子" class="headerlink" title="mounted钩子"></a>mounted钩子</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在dom元素构建完成的时候会执行,所以要操作dom元素需要在这个函数内操作</div></pre></td></tr></table></figure>
+<h2 id="过滤器使用"><a href="#过滤器使用" class="headerlink" title="过滤器使用"></a>过滤器使用</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let arr = this<span class="selector-class">.tableData</span><span class="selector-class">.filter</span>(o =&gt; o<span class="selector-class">.goodsId</span> == goods.goodsId)</div><div class="line">通过这样的过滤器快速拿到当前点击的元素</div></pre></td></tr></table></figure>
+<h2 id="提示框"><a href="#提示框" class="headerlink" title="提示框"></a>提示框</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">通过 <span class="keyword">this</span>.$message(&#123;</div><div class="line">                    message: <span class="string">'结账成功,吃唔死你算我输'</span>,</div><div class="line">                    type: <span class="string">'success'</span></div><div class="line">                &#125;)</div><div class="line">如果是失败样式直接这样<span class="keyword">this</span>.$message.error(<span class="string">'不要调皮啦,没有东西尼玛结什么账'</span>)</div></pre></td></tr></table></figure>
+<h1 id="主页面路由配置"><a href="#主页面路由配置" class="headerlink" title="主页面路由配置"></a>主页面路由配置</h1><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">在router文件下的<span class="built_in">index</span>.js这样配置</div><div class="line">import carrot from <span class="string">'@/components/page/carrot'</span></div><div class="line"> route<span class="variable">s:</span> [&#123;</div><div class="line">        path: <span class="string">'/'</span>,</div><div class="line">        name: <span class="string">'carrot'</span>,</div><div class="line">        componen<span class="variable">t:</span> carrot</div><div class="line">    &#125;]</div><div class="line"></div><div class="line">在App.vue这样使用</div><div class="line"><span class="symbol">&lt;router-view&gt;</span>&lt;/router-<span class="keyword">view</span>&gt;</div></pre></td></tr></table></figure>
+<h1 id="主页面html和js结构"><a href="#主页面html和js结构" class="headerlink" title="主页面html和js结构"></a>主页面html和js结构</h1><h2 id="html结构"><a href="#html结构" class="headerlink" title="html结构"></a>html结构</h2><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"carrot"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!--element组件--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">el-row</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">'10'</span> <span class="attr">class</span>=<span class="string">'carrot_order'</span> <span class="attr">id</span>=<span class="string">'carrot_order'</span>&gt;</span></div><div class="line">                <span class="comment">&lt;!--tab标签--&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">el-tabs</span>&gt;</span></div><div class="line">                    <span class="comment">&lt;!--label名字--&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">el-tab-pane</span> <span class="attr">label</span>=<span class="string">"点餐"</span>&gt;</span></div><div class="line">                        <span class="comment">&lt;!--表格--&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">el-table</span> <span class="attr">border</span> <span class="attr">style</span>=<span class="string">"width:100%;"</span> <span class="attr">:data</span>=<span class="string">'tableData'</span> <span class="attr">class</span>=<span class="string">"elTable"</span>&gt;</span></div><div class="line">                            <span class="comment">&lt;!--列--&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"goodsName"</span> <span class="attr">label</span>=<span class="string">"商品名称"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"count"</span> <span class="attr">label</span>=<span class="string">"数量"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"price"</span> <span class="attr">label</span>=<span class="string">"金额"</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">label</span>=<span class="string">"操作"</span> <span class="attr">fixed</span>=<span class="string">"right"</span>&gt;</span></div><div class="line">                                <span class="comment">&lt;!--模板 scope.row获取点击的数据  --&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">template</span> <span class="attr">scope</span>=<span class="string">'scope'</span>&gt;</span></div><div class="line">                                    <span class="comment">&lt;!--按钮--&gt;</span></div><div class="line">                                    <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">'text'</span> <span class="attr">size</span>=<span class="string">'small'</span> @<span class="attr">click</span>=<span class="string">"addOrderList(scope.row,false)"</span>&gt;</span>减少<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></div><div class="line">                                    <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">'text'</span> <span class="attr">size</span>=<span class="string">'small'</span> @<span class="attr">click</span>=<span class="string">"delSingleGoods(scope.row)"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></div><div class="line">                                    <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">'text'</span> <span class="attr">size</span>=<span class="string">'small'</span> @<span class="attr">click</span>=<span class="string">"addOrderList(scope.row,true)"</span>&gt;</span>增加<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">                                </div><div class="line">                            <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></div><div class="line">    </div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"totalDiv"</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">small</span>&gt;</span>数量:<span class="tag">&lt;/<span class="name">small</span>&gt;</span><span class="template-variable">&#123;&#123;totalCount&#125;&#125;</span><span class="xml"> &amp;nbsp; &amp;nbsp;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">small</span>&gt;</span>金额:<span class="tag">&lt;/<span class="name">small</span>&gt;</span><span class="template-variable">&#123;&#123;totalMoney&#125;&#125;</span><span class="xml">元</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    </div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div_btn"</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">'warning'</span> @<span class="attr">click</span>=<span class="string">"entryOrders"</span>&gt;</span>挂单<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">'danger'</span> @<span class="attr">click</span>=<span class="string">"dellAllGoods"</span>&gt;</span>删除全部<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">'success'</span> @<span class="attr">click</span>=<span class="string">"checkout"</span>&gt;</span>结账<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    </div><div class="line">                    <span class="tag">&lt;/<span class="name">el-tab-pane</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">el-tab-pane</span> <span class="attr">label</span>=<span class="string">"挂单"</span>&gt;</span></div><div class="line">    </div><div class="line">                    <span class="tag">&lt;/<span class="name">el-tab-pane</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">el-tab-pane</span> <span class="attr">label</span>=<span class="string">"外卖"</span>&gt;</span></div><div class="line">    </div><div class="line">                    <span class="tag">&lt;/<span class="name">el-tab-pane</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">el-tabs</span>&gt;</span></div><div class="line">    </div><div class="line">            <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></div><div class="line">    </div><div class="line">            <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">'14'</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"often_goods"</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>常用商品<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"goods_list"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"goods in oftenGoods"</span> @<span class="attr">click</span>=<span class="string">"addOrderList(goods,true)"</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="template-variable">&#123;&#123;goods.goodsName&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"blue"</span>&gt;</span>¥<span class="template-variable">&#123;&#123;goods.price&#125;&#125;</span><span class="xml">元<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    </div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"goods_type"</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">el-tabs</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">el-tab-pane</span> <span class="attr">label</span>=<span class="string">"汉堡"</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"cookList"</span>&gt;</span></div><div class="line">                                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"goods in type0Goods"</span> @<span class="attr">click</span>=<span class="string">"addOrderList(goods,true)"</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodImg"</span>&gt;</span></div><div class="line">                                            <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"goods.goodsImg"</span> <span class="attr">width</span>=<span class="string">"100%"</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodName"</span>&gt;</span><span class="template-variable">&#123;&#123;goods.goodsName&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodPrice"</span>&gt;</span>￥<span class="template-variable">&#123;&#123;goods.price&#125;&#125;</span><span class="xml">元<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">el-tab-pane</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">el-tab-pane</span> <span class="attr">label</span>=<span class="string">"小食"</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"cookList"</span>&gt;</span></div><div class="line">                                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"goods in type1Goods"</span> @<span class="attr">click</span>=<span class="string">"addOrderList(goods,true)"</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodImg"</span>&gt;</span></div><div class="line">                                            <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"goods.goodsImg"</span> <span class="attr">width</span>=<span class="string">"100%"</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodName"</span>&gt;</span><span class="template-variable">&#123;&#123;goods.goodsName&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodPrice"</span>&gt;</span>￥<span class="template-variable">&#123;&#123;goods.price&#125;&#125;</span><span class="xml">元<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">el-tab-pane</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">el-tab-pane</span> <span class="attr">label</span>=<span class="string">"饮料"</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"cookList"</span>&gt;</span></div><div class="line">                                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"goods in type2Goods"</span> @<span class="attr">click</span>=<span class="string">"addOrderList(goods,true)"</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodImg"</span>&gt;</span></div><div class="line">                                            <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"goods.goodsImg"</span> <span class="attr">width</span>=<span class="string">"100%"</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodName"</span>&gt;</span><span class="template-variable">&#123;&#123;goods.goodsName&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodPrice"</span>&gt;</span>￥<span class="template-variable">&#123;&#123;goods.price&#125;&#125;</span><span class="xml">元<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">el-tab-pane</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">el-tab-pane</span> <span class="attr">label</span>=<span class="string">"套餐"</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"cookList"</span>&gt;</span></div><div class="line">                                    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"goods in type3Goods"</span> @<span class="attr">click</span>=<span class="string">"addOrderList(goods,true)"</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodImg"</span>&gt;</span></div><div class="line">                                            <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"goods.goodsImg"</span> <span class="attr">width</span>=<span class="string">"100%"</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodName"</span>&gt;</span><span class="template-variable">&#123;&#123;goods.goodsName&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"foodPrice"</span>&gt;</span>￥<span class="template-variable">&#123;&#123;goods.price&#125;&#125;</span><span class="xml">元<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></div><div class="line">                                    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">el-tab-pane</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="name">el-tabs</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    </div><div class="line">            <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">el-row</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="js结构"><a href="#js结构" class="headerlink" title="js结构"></a>js结构</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div></pre></td><td class="code"><pre><div class="line"> name: <span class="string">'carrot'</span>,</div><div class="line">    <span class="comment">// 创建时候</span></div><div class="line">    created() &#123;</div><div class="line">        <span class="keyword">var</span> storage = localStorage;</div><div class="line">            <span class="keyword">var</span> tabelData = JSON.parse(storage.getItem(<span class="string">'tableData'</span>));</div><div class="line">        <span class="keyword">if</span>(tabelData)&#123;</div><div class="line">            <span class="keyword">this</span>.tableData = tabelData;</div><div class="line">            <span class="keyword">this</span>.getSum();</div><div class="line">        &#125;</div><div class="line">        axios.<span class="keyword">get</span>(<span class="string">'http://jspang.com/DemoApi/oftenGoods.php'</span>)</div><div class="line">            .then(rsp =&gt; &#123;</div><div class="line">                <span class="keyword">this</span>.oftenGoods = rsp.<span class="keyword">data</span>;</div><div class="line">            &#125;)</div><div class="line">            .<span class="keyword">catch</span>(error =&gt; &#123;</div><div class="line"></div><div class="line">            &#125;);</div><div class="line"></div><div class="line">        axios.<span class="keyword">get</span>(<span class="string">'http://jspang.com/DemoApi/typeGoods.php'</span>)</div><div class="line">            .then(rsp =&gt; &#123;</div><div class="line">                <span class="keyword">this</span>.type0Goods = rsp.<span class="keyword">data</span>[<span class="number">0</span>];</div><div class="line">                <span class="keyword">this</span>.type1Goods = rsp.<span class="keyword">data</span>[<span class="number">1</span>];</div><div class="line">                <span class="keyword">this</span>.type2Goods = rsp.<span class="keyword">data</span>[<span class="number">2</span>];</div><div class="line">                <span class="keyword">this</span>.type3Goods = rsp.<span class="keyword">data</span>[<span class="number">3</span>];</div><div class="line">            &#125;)</div><div class="line">            .<span class="keyword">catch</span>(error =&gt; &#123;</div><div class="line"></div><div class="line">            &#125;);</div><div class="line"></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 所有虚拟dom加载完后</span></div><div class="line">    mounted() &#123;</div><div class="line">        <span class="comment">//原生获取屏幕高度</span></div><div class="line">        <span class="keyword">var</span> orderHeight = document.body.clientHeight,</div><div class="line">            carrot_order = document.getElementById(<span class="string">'carrot_order'</span>);</div><div class="line">        carrot_order.style.height = orderHeight + <span class="string">'px'</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="keyword">data</span>() &#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            tableData: [</div><div class="line">            ],</div><div class="line">            oftenGoods: [</div><div class="line"></div><div class="line">            ],</div><div class="line">            type0Goods: [</div><div class="line"></div><div class="line">            ],</div><div class="line">            type1Goods: [</div><div class="line"></div><div class="line">            ],</div><div class="line">            type2Goods: [</div><div class="line"></div><div class="line">            ],</div><div class="line">            type3Goods: [</div><div class="line"></div><div class="line">            ],</div><div class="line">            totalMoney: <span class="number">0</span>,</div><div class="line">            totalCount: <span class="number">0</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">        addOrderList(goods, flag) &#123;</div><div class="line">            let isHave = <span class="literal">false</span>;</div><div class="line">            <span class="keyword">for</span> (let i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.tableData.length; i++) &#123;</div><div class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.tableData[i].goodsId == goods.goodsId) &#123;</div><div class="line">                    isHave = <span class="literal">true</span>;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (isHave) &#123;</div><div class="line">                let arr = <span class="keyword">this</span>.tableData.filter(o =&gt; o.goodsId == goods.goodsId)</div><div class="line">                <span class="keyword">if</span> (flag) &#123;</div><div class="line">                    arr[<span class="number">0</span>].count++;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    arr[<span class="number">0</span>].count--;</div><div class="line">                    <span class="keyword">if</span> (arr[<span class="number">0</span>].count == <span class="number">0</span>) &#123;</div><div class="line">                        <span class="keyword">this</span>.delSingleGoods(goods);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                let newGoods = &#123; goodsId: goods.goodsId, goodsName: goods.goodsName, price: goods.price, count: <span class="number">1</span> &#125;;</div><div class="line">                <span class="keyword">this</span>.tableData.push(newGoods);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">this</span>.getSum();</div><div class="line">        &#125;,</div><div class="line">        delSingleGoods(goods) &#123;</div><div class="line">            <span class="keyword">this</span>.tableData = <span class="keyword">this</span>.tableData.filter(o =&gt; o.goodsId != goods.goodsId);</div><div class="line">             <span class="keyword">var</span> storage = localStorage;</div><div class="line">            storage.removeItem(<span class="string">'tableData'</span>);</div><div class="line">            <span class="keyword">this</span>.getSum();</div><div class="line">        &#125;,</div><div class="line">        dellAllGoods() &#123;</div><div class="line">            <span class="keyword">this</span>.tableData = [];</div><div class="line">            <span class="keyword">this</span>.totalCount = <span class="number">0</span>;</div><div class="line">            <span class="keyword">this</span>.totalMoney = <span class="number">0</span>;</div><div class="line">            <span class="keyword">var</span> storage = localStorage;</div><div class="line">            storage.removeItem(<span class="string">'tableData'</span>);</div><div class="line">            <span class="keyword">this</span>.$message(&#123;</div><div class="line">                    message: <span class="string">'删除成功,删尼玛啊!'</span>,</div><div class="line">                    type: <span class="string">'success'</span></div><div class="line">                &#125;)</div><div class="line">        &#125;,</div><div class="line">        getSum() &#123;</div><div class="line">            <span class="keyword">this</span>.totalMoney = <span class="number">0</span>;</div><div class="line">            <span class="keyword">this</span>.totalCount = <span class="number">0</span>;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.tableData) &#123;</div><div class="line">                <span class="keyword">this</span>.tableData.forEach((obj) =&gt; &#123;</div><div class="line">                    <span class="keyword">this</span>.totalCount += obj.count;</div><div class="line">                    <span class="keyword">this</span>.totalMoney = <span class="keyword">this</span>.totalMoney + (obj.price * obj.count);</div><div class="line">                &#125;)</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        checkout() &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.totalCount != <span class="number">0</span>) &#123;</div><div class="line">                <span class="comment">// 发送数据到后台啦 省略...</span></div><div class="line"></div><div class="line">                <span class="keyword">this</span>.dellAllGoods();</div><div class="line">                <span class="comment">// 提示组件</span></div><div class="line">                <span class="keyword">this</span>.$message(&#123;</div><div class="line">                    message: <span class="string">'结账成功,吃唔死你算我输'</span>,</div><div class="line">                    type: <span class="string">'success'</span></div><div class="line">                &#125;)</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">this</span>.$message.error(<span class="string">'不要调皮啦,没有东西尼玛结什么账'</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        entryOrders() &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.totalCount != <span class="number">0</span>) &#123;</div><div class="line">                 <span class="keyword">this</span>.$message(&#123;</div><div class="line">                    message: <span class="string">'挂单成功,等着吃草吧'</span>,</div><div class="line">                    type: <span class="string">'success'</span></div><div class="line">                &#125;)</div><div class="line">                <span class="keyword">var</span> storage = localStorage;</div><div class="line">                <span class="keyword">var</span> tabelData = []</div><div class="line">                tabelData = JSON.stringify(<span class="keyword">this</span>.tableData);</div><div class="line">                storage.setItem(<span class="string">'tableData'</span>, tabelData);</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">this</span>.$message.error(<span class="string">'你知道什么是挂单吗?乱按尼玛啊'</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h1><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">在<span class="built_in">config</span>文件下的index.js中</div><div class="line">配置 <span class="comment">// ./ 相对路劲</span></div><div class="line">        assetsPublicPath: <span class="string">'./'</span>,</div><div class="line">然后在命令行输入命令</div><div class="line">npm <span class="built_in">run</span> build </div><div class="line">就会自动生成dist的目录</div></pre></td></tr></table></figure>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p><img src="/assets/blogImg/vue2.gif" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/08/13/微信小程序的坑和注意点/">
+                    微信小程序的坑和注意点
+                </a>
+            </div>
+        
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#字体图标的引入"><span class="toc-number">1.</span> <span class="toc-text">字体图标的引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#element-UI的使用"><span class="toc-number">2.</span> <span class="toc-text">element UI的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#左侧nav制作"><span class="toc-number">3.</span> <span class="toc-text">左侧nav制作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#左侧nav-html样式"><span class="toc-number">3.1.</span> <span class="toc-text">左侧nav html样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引入组件"><span class="toc-number">3.2.</span> <span class="toc-text">引入组件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主页面的制作"><span class="toc-number">4.</span> <span class="toc-text">主页面的制作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主要方法"><span class="toc-number">5.</span> <span class="toc-text">主要方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#axios"><span class="toc-number">5.1.</span> <span class="toc-text">axios</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#creater钩子"><span class="toc-number">5.2.</span> <span class="toc-text">creater钩子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mounted钩子"><span class="toc-number">5.3.</span> <span class="toc-text">mounted钩子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过滤器使用"><span class="toc-number">5.4.</span> <span class="toc-text">过滤器使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提示框"><span class="toc-number">5.5.</span> <span class="toc-text">提示框</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主页面路由配置"><span class="toc-number">6.</span> <span class="toc-text">主页面路由配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主页面html和js结构"><span class="toc-number">7.</span> <span class="toc-text">主页面html和js结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#html结构"><span class="toc-number">7.1.</span> <span class="toc-text">html结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js结构"><span class="toc-number">7.2.</span> <span class="toc-text">js结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打包"><span class="toc-number">8.</span> <span class="toc-text">打包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#效果展示"><span class="toc-number">9.</span> <span class="toc-text">效果展示</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"vue2.0全家桶综合运用　| <(￣3￣)>carrotming　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/08/13/微信小程序的坑和注意点/" title="上一篇: 微信小程序的坑和注意点">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/13/vue2.0综合应用/">vue2.0全家桶综合运用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/13/微信小程序的坑和注意点/">微信小程序的坑和注意点</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/vuex学习之旅/">vuex学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/vue-cli学习之旅/">vue-cli学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/vue-router学习之旅/">vue路由学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/16/vue2.0学习之旅/">vue2.0学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/20/微信小程序学习之旅/">微信小程序学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/08/css3-综合运用/">css3模仿QQ浏览器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/06/jquery-插件制作/">jquery插件的制作方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/02/git学习之旅/">git的学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/08/zepto学习之旅/">zepto学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/05/swiper学习之旅/">swiper学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/01/scrollReveal学习之旅/">scrollReveal学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/29/WoW学习之旅/">WoW学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/25/AnimationCss/">Animate.css学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/20/webLayout-布局技巧/">网页布局之布局技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/js-内存管理/">js之内存管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/11/js-正则表达式/">js之正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/11/Angular问题总结/">Angular总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/10/Angular综合应用/">Angular综合应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/Angular简单应用/">Angular简单应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/Angular学习之旅/">Angular学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/06/Bootstarp-应用布局(二)详解/">Bootstrap应用布局(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/Bootstarp-应用布局(一)/">Bootstrap应用布局(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/04/Bootstarp-Bootstarp学习/">Bootstrap学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/less学习之旅/">less学习之旅</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/mobile-移动web开发/">移动web学习之模仿京东M站</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/Ajax-跨域和缓存/">Ajax学习之跨域和缓存</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/11/Ajax-评论功能/">Ajax学习之评论功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/Ajax-原生js封装/">Ajax学习之原生js封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/canvas-笨鸟飞/">canvas学习之笨鸟飞游戏</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/08/canvas-knova应用二/">canvas学习之konva框架旋转中心</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/07/canvas-knova应用一/">canvas学习之konva框架饼状图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/06/canvas-红包图片效果/">canvas学习之图片效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/canvas-倒计时效果/">canvas学习之倒计时效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/04/canvas-放大镜效果/">canvas学习之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/canvas-绘制时钟/">canvas学习之绘制时钟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/js-命名空间模式/">js设计模式之命名空间模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/js-备忘模式/">js设计模式之备忘模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/30/js-观察者模式/">js设计模式之观察者模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/js-单利模式/">js设计模式之单利模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/js-工厂模式/">js设计模式之工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-Object的静态成员/">js面向对象之Object的静态成员</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-原型链总结/">js面向对象之原型链总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/js-面向对象总结三/">js面向对象总结三</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/js-面向对象总结二/">js面向对象总结二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/25/js-面向对象总结一/">js面向对象总结一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-入口原理分析/">jquery进价之原理分析(入口,节点,样式,属性)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/24/jquery-总结/">jquery学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/23/jquery-备忘提醒功能/">jquery入门之备忘录提醒功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/22/jquery-瀑布流/">jquery入门之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/21/js-绚丽小球/">js特效之滑动绚丽小球</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/js-3D图片切换/">js特效之有3D感图片切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/19/js-瀑布流布局/">js特效之瀑布流布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/18/js-放大镜效果/">js特效之放大镜效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/js-满天星星/">js特效之满天星星</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/16/js-轮播切换/">js特效之轮播图切换</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/js-九宫格思想/">js特效之九宫格思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/14/js-基础总结/">js学习之总结js基础部分</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/js-运动框架封装/">js学习之运动框架封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-选择分享功能/">js学习之简单的应用二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/js-节点操作/">js学习之简单的应用一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/css3-云层动画/">css3学习之云层效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/css3-3D音乐播放器/">css3学习之3d音乐界面</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/webLayout-绿色食品网布局/">网页布局学习之绿色食品网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/webLayout-京东布局/">网页布局学习之京东官网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/webLayout-淘宝布局/">网页布局学习之淘宝官网</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 劳柏明
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

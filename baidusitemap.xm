@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>//carrot.me/2017/08/13/vue2.0%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/</loc>
+    <lastmod>2017-08-13T05:25:09.767Z</lastmod>
+    <data>
+        <display>
+        <title>vue2.0全家桶综合运用</title>
+        <pubTime>2017-08-13T11:52:00.000Z</pubTime>
+        
+        <tag>vue2.0</tag>
+         
+         
+           
+             
+              <breadCrumb title="vue2.0" url="//carrot.me/categories/vue2-0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>//carrot.me/2017/08/13/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9D%91%E5%92%8C%E6%B3%A8%E6%84%8F%E7%82%B9/</loc>
+    <lastmod>2017-08-13T04:41:10.902Z</lastmod>
+    <data>
+        <display>
+        <title>微信小程序的坑和注意点</title>
+        <pubTime>2017-08-13T09:33:00.000Z</pubTime>
+        
+        <tag>wechat</tag>
+         
+         
+           
+             
+              <breadCrumb title="wechat" url="//carrot.me/categories/wechat/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//carrot.me/2017/08/06/vuex%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/</loc>
     <lastmod>2017-08-06T12:39:52.897Z</lastmod>
     <data>
@@ -77,26 +117,6 @@
            
              
               <breadCrumb title="vue2.0" url="//carrot.me/categories/vue2-0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>//carrot.me/2017/07/15/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9D%91%E5%92%8C%E6%B3%A8%E6%84%8F%E7%82%B9/</loc>
-    <lastmod>2017-07-16T14:06:19.995Z</lastmod>
-    <data>
-        <display>
-        <title>微信小程序的坑和注意点</title>
-        <pubTime>2017-07-15T09:33:00.000Z</pubTime>
-        
-        <tag>wechat</tag>
-         
-         
-           
-             
-              <breadCrumb title="wechat" url="//carrot.me/categories/wechat/"/>
           
         </display>
     </data>
