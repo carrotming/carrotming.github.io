@@ -138,10 +138,10 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
                     </ul>
@@ -248,7 +248,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap"><article id="post-Angular综合应用" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -339,7 +339,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
+        <strong class="toc-title">文章目录</strong>
         
             <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#手机端适配"><span class="toc-number">1.</span> <span class="toc-text">手机端适配</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模块化入口"><span class="toc-number">2.</span> <span class="toc-text">模块化入口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#顶部nav自定义指令"><span class="toc-number">3.</span> <span class="toc-text">顶部nav自定义指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#底部tabbar的自定义指令"><span class="toc-number">4.</span> <span class="toc-text">底部tabbar的自定义指令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#点击底部实现头部文字的改变"><span class="toc-number">5.</span> <span class="toc-text">点击底部实现头部文字的改变</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置路由"><span class="toc-number">6.</span> <span class="toc-text">配置路由</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自定义请求服务"><span class="toc-number">7.</span> <span class="toc-text">自定义请求服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主页控制器发送请求拿数据"><span class="toc-number">8.</span> <span class="toc-text">主页控制器发送请求拿数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#拿到数据展示数据到首页路由"><span class="toc-number">9.</span> <span class="toc-text">拿到数据展示数据到首页路由</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#子路由详情控制器拿到参数进行页面展示"><span class="toc-number">10.</span> <span class="toc-text">子路由详情控制器拿到参数进行页面展示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#子路由详情页模板"><span class="toc-number">11.</span> <span class="toc-text">子路由详情页模板</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他小技巧"><span class="toc-number">12.</span> <span class="toc-text">其他小技巧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">13.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#效果"><span class="toc-number">14.</span> <span class="toc-text">效果</span></a></li></ol>
         
@@ -355,10 +355,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
     <script>
-        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
     </script>
 
 
@@ -397,15 +397,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/09/Angular简单应用/" title="Pre: Angular简单应用">
+            <a href="/2016/04/09/Angular简单应用/" title="上一篇: Angular简单应用">
                 <i class="fa fa-angle-left"></i>
             </a>
         
 
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/11/Angular问题总结/" title="Next: Angular总结">
+            <a href="/2016/04/11/Angular问题总结/" title="下一篇: Angular总结">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -428,14 +428,14 @@
                 2016-2017 劳柏明
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -444,7 +444,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -461,9 +461,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
